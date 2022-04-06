@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Collapsius">
         <activity
+            android:name=".SelectMode"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
