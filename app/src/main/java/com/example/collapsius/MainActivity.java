@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonNewGame;
 
+   // public int choosemode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("ggg","Right");
+                Log.d("ggg","Mode- ");
                Intent intent = new Intent(MainActivity.this, SelectMode.class);
                startActivity(intent);
             }
