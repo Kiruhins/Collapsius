@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CL_mainMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -10,21 +11,22 @@
         android:id="@+id/buttonNewGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выбор режима"
+        android:text="@string/_choosemode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229"
-        />
+        app:layout_constraintVertical_bias="0.229" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/Settings"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="@null"
+        android:contentDescription="@string/Settings"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/settingsbutton" />
+        app:srcCompat="@drawable/settingsbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

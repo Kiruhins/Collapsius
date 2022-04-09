@@ -2,18 +2,166 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CL_field_configuration"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="jkljlkj"
+    android:contentDescription="@string/CL_field_configuration"
     tools:context=".FieldConfiguration">
 
-  <Button
-      android:id="@+id/button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Button"
+  <ImageButton
+      android:id="@+id/bt_map6"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="20dp"
+      android:contentDescription="@string/map6"
+      app:layout_constraintStart_toEndOf="@+id/bt_map5"
+      app:layout_constraintTop_toBottomOf="@+id/bt_map3"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/bt_map4"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginEnd="20dp"
+      android:contentDescription="@string/map4"
+      app:layout_constraintEnd_toStartOf="@+id/bt_map5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bt_map1"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/bt_map5"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="156dp"
+      android:layout_marginTop="20dp"
+      android:contentDescription="@string/map5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bt_map2"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/bt_map2"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="156dp"
+      android:layout_marginTop="70dp"
+      android:layout_marginEnd="155dp"
+      android:layout_marginBottom="319dp"
+      android:contentDescription="@string/map2"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/maps"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/bt_map3"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="160dp"
+      android:layout_marginEnd="35dp"
+      android:layout_marginBottom="319dp"
+      android:contentDescription="@string/map3"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/bt_map2"
+      app:layout_constraintTop_toBottomOf="@+id/bt_3players"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/bt_map1"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="35dp"
+      android:layout_marginTop="160dp"
+      android:layout_marginEnd="20dp"
+      android:layout_marginBottom="319dp"
+      android:contentDescription="@string/map1"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/bt_map2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bt_3players"
+      app:srcCompat="@drawable/settingsbutton"
+      tools:ignore="ImageContrastCheck" />
+
+  <TextView
+      android:id="@+id/players"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="138dp"
+      android:layout_marginEnd="138dp"
+      android:layout_marginBottom="48dp"
+      android:text="@string/_numberofplayers"
+      app:layout_constraintBottom_toTopOf="@+id/bt_3players"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/bt_3players"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/_3"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.152" />
+
+  <Button
+      android:id="@+id/bt_2players"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="53dp"
+      android:layout_marginTop="104dp"
+      android:layout_marginEnd="20dp"
+      android:text="@string/_2"
+      app:layout_constraintEnd_toStartOf="@+id/bt_3players"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/bt_4players"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="104dp"
+      android:layout_marginEnd="54dp"
+      android:text="@string/_4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/bt_3players"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/maps"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="70dp"
+      android:text="@string/_choosemap"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bt_3players" />
+
+  <Button
+      android:id="@+id/Next"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="160dp"
+      android:layout_marginTop="60dp"
+      android:layout_marginEnd="160dp"
+      android:text="@string/_next"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bt_map5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

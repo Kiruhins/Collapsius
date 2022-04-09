@@ -5,4 +5,19 @@
     <string name="mode2">mode2</string>
     <string name="mode3">mode3</string>
     <string name="mode4">mode4</string>
+    <string name="CL_field_configuration">CL_field_configuration</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_4">4</string>
+    <string name="_numberofplayers">Количество игроков</string>
+    <string name="_choosemode">Выбор режима</string>
+    <string name="Settings">Settings</string>
+    <string name="_choosemap">Выберите карту</string>
+    <string name="map1">map1</string>
+    <string name="map2">map2</string>
+    <string name="map3">map3</string>
+    <string name="map4">map4</string>
+    <string name="map5">map5</string>
+    <string name="map6">map6</string>
+    <string name="_next">Далее</string>
 </resources>
