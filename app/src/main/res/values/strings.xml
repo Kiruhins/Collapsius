@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Collapsius</string>
+    <string name="classic">classic</string>
+    <string name="mode1">mode1</string>
+    <string name="mode2">mode2</string>
+    <string name="mode3">mode3</string>
+    <string name="mode4">mode4</string>
 </resources>
