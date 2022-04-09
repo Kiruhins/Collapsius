@@ -5,8 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FieldConfiguration extends AppCompatActivity {
+
+    private Button bt_Next;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +23,17 @@ public class FieldConfiguration extends AppCompatActivity {
         Integer mode;
         mode=intent.getIntExtra("mode",0);
         Log.d("ggg", String.valueOf(mode));
+
+        bt_Next=findViewById(R.id.bt_Next);
+
+        bt_Next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(FieldConfiguration.this,PlayingField.class);
+              //  intent.putExtra("mode",2);
+                startActivity(intent);
+            }
+        });
 
     }
 }
