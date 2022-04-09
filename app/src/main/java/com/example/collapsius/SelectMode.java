@@ -30,6 +30,7 @@ public class SelectMode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",1);
                 startActivity(intent);
             }
         });
@@ -38,14 +39,7 @@ public class SelectMode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
-                startActivity(intent);
-            }
-        });
-
-        bt_editable.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",2);
                 startActivity(intent);
             }
         });
@@ -54,9 +48,21 @@ public class SelectMode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",3);
                 startActivity(intent);
             }
         });
+
+        bt_editable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",4);
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }
