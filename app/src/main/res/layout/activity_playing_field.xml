@@ -7,6 +7,18 @@
     tools:context=".PlayingField">
 
     <ImageButton
+        android:id="@+id/bt_52"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="348dp"
+        android:contentDescription="@string/_52"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_51"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_kusokpolya"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
         android:id="@+id/bt_51"
         android:layout_width="45dp"
         android:layout_height="45dp"
