@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" width="420" height="420">
+	<title>фишка</title>
+	<defs>
+		<image  width="420" height="420" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAsSURBVHic7cEBAQAAAIIg/69uSEABAAAAAAAAAAAAAAAAAAAAAAAAAAAALwZYmAAByX9ucgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		.s0 { fill: #82695c;stroke: #2a3132;stroke-width: 10 } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<path id="форма 1" class="s0" d="m0 0h420v420h-420z"/>
+</svg>

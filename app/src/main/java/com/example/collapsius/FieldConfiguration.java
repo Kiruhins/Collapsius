@@ -22,7 +22,7 @@ public class FieldConfiguration extends AppCompatActivity {
         Intent intent=getIntent();
         Integer mode;
         mode=intent.getIntExtra("mode",0);
-        Log.d("ggg", String.valueOf(mode));
+        //Log.d("ggg", String.valueOf(mode));
 
         bt_Next=findViewById(R.id.bt_Next);
 
