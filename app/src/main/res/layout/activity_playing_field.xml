@@ -7,15 +7,147 @@
     tools:context=".PlayingField">
 
     <ImageButton
+        android:id="@+id/bt_64"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_64"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_63"
+        app:layout_constraintTop_toBottomOf="@+id/bt_56"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_63"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_63"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_62"
+        app:layout_constraintTop_toBottomOf="@+id/bt_55"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_62"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_62"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_61"
+        app:layout_constraintTop_toBottomOf="@+id/bt_54"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_61"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_61"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_60"
+        app:layout_constraintTop_toBottomOf="@+id/bt_53"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_60"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_60"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_59"
+        app:layout_constraintTop_toBottomOf="@+id/bt_52"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_59"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_59"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_58"
+        app:layout_constraintTop_toBottomOf="@+id/bt_51"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_58"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_58"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_57"
+        app:layout_constraintTop_toBottomOf="@+id/bt_50"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_57"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="25dp"
+        android:contentDescription="@string/_57"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_49"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_56"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_56"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_55"
+        app:layout_constraintTop_toBottomOf="@+id/bt_48"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_55"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_55"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_54"
+        app:layout_constraintTop_toBottomOf="@+id/bt_47"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_54"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_54"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_53"
+        app:layout_constraintTop_toBottomOf="@+id/bt_46"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/bt_53"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:contentDescription="@string/_53"
+        android:scaleType="center"
+        app:layout_constraintStart_toEndOf="@+id/bt_52"
+        app:layout_constraintTop_toBottomOf="@+id/bt_45"
+        app:srcCompat="@drawable/partoffield"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
         android:id="@+id/bt_52"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="348dp"
         android:contentDescription="@string/_52"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_51"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:layout_constraintTop_toBottomOf="@+id/bt_44"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -26,7 +158,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_50"
         app:layout_constraintTop_toBottomOf="@+id/bt_43"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -37,7 +169,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_49"
         app:layout_constraintTop_toBottomOf="@+id/bt_42"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,ImageContrastCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -49,7 +181,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_41"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -60,7 +192,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_47"
         app:layout_constraintTop_toBottomOf="@+id/bt_40"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -71,7 +203,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_46"
         app:layout_constraintTop_toBottomOf="@+id/bt_39"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -82,7 +214,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_45"
         app:layout_constraintTop_toBottomOf="@+id/bt_38"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -93,7 +225,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_44"
         app:layout_constraintTop_toBottomOf="@+id/bt_37"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -104,7 +236,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_43"
         app:layout_constraintTop_toBottomOf="@+id/bt_36"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -115,7 +247,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_42"
         app:layout_constraintTop_toBottomOf="@+id/bt_35"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -126,7 +258,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_41"
         app:layout_constraintTop_toBottomOf="@+id/bt_34"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -138,7 +270,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_33"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -149,7 +281,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_39"
         app:layout_constraintTop_toBottomOf="@+id/bt_32"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -160,7 +292,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_38"
         app:layout_constraintTop_toBottomOf="@+id/bt_31"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -171,7 +303,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_37"
         app:layout_constraintTop_toBottomOf="@+id/bt_30"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -182,7 +314,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_36"
         app:layout_constraintTop_toBottomOf="@+id/bt_29"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -193,7 +325,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_35"
         app:layout_constraintTop_toBottomOf="@+id/bt_28"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -204,7 +336,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_34"
         app:layout_constraintTop_toBottomOf="@+id/bt_27"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -215,7 +347,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_33"
         app:layout_constraintTop_toBottomOf="@+id/bt_26"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -227,7 +359,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_25"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -238,7 +370,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_17"
         app:layout_constraintTop_toBottomOf="@+id/bt_10"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -249,7 +381,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_25"
         app:layout_constraintTop_toBottomOf="@+id/bt_18"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -260,7 +392,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_31"
         app:layout_constraintTop_toBottomOf="@+id/bt_24"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -271,7 +403,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_30"
         app:layout_constraintTop_toBottomOf="@+id/bt_23"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -282,7 +414,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_29"
         app:layout_constraintTop_toBottomOf="@+id/bt_22"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -293,7 +425,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_28"
         app:layout_constraintTop_toBottomOf="@+id/bt_21"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -304,7 +436,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_27"
         app:layout_constraintTop_toBottomOf="@+id/bt_20"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -316,7 +448,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_17"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -327,7 +459,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_26"
         app:layout_constraintTop_toBottomOf="@+id/bt_19"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -338,7 +470,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_23"
         app:layout_constraintTop_toBottomOf="@+id/bt_16"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -349,7 +481,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_22"
         app:layout_constraintTop_toBottomOf="@+id/bt_15"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -360,7 +492,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_21"
         app:layout_constraintTop_toBottomOf="@+id/bt_14"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -371,7 +503,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_20"
         app:layout_constraintTop_toBottomOf="@+id/bt_13"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -382,7 +514,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_19"
         app:layout_constraintTop_toBottomOf="@+id/bt_12"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -394,7 +526,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_9"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/ic_fieldpart"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -405,7 +537,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_18"
         app:layout_constraintTop_toBottomOf="@+id/bt_11"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -416,7 +548,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_9"
         app:layout_constraintTop_toBottomOf="@+id/bt_2"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -427,7 +559,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_15"
         app:layout_constraintTop_toBottomOf="@+id/bt_8"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -438,7 +570,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_14"
         app:layout_constraintTop_toBottomOf="@+id/bt_7"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -449,7 +581,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_13"
         app:layout_constraintTop_toBottomOf="@+id/bt_6"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -460,7 +592,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_12"
         app:layout_constraintTop_toBottomOf="@+id/bt_5"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -471,7 +603,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_11"
         app:layout_constraintTop_toBottomOf="@+id/bt_4"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -483,7 +615,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_1"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -494,67 +626,67 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_10"
         app:layout_constraintTop_toBottomOf="@+id/bt_3"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_8"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_8"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_7"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_7"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_7"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_6"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_6"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_6"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_5"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_5"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_5"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_4"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_4"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_4"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -562,36 +694,36 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_1"
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_3"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_3"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_2"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/_2"
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/bt_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_kusokpolya"
+        app:srcCompat="@drawable/partoffield"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
