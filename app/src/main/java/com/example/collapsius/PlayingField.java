@@ -3,9 +3,12 @@ package com.example.collapsius;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import java.io.IOException;
 
 class Cells {
     public int[][] cellsmas;
@@ -25,6 +28,18 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
     int[][] cellsmas= new int[8][8];
     int[][] player= new int[8][8];
     Cells cell;
+
+    Integer xxx=0;
+    Integer yyy=0;
+    Integer shot=1;
+    Integer shotp=0;
+    Boolean trigger=false;
+    Integer clickbuttonn=0;
+    Boolean speed=false;
+    Integer num=25;
+    Integer nump=0;
+    Integer playerp=0;
+    Integer clickbutton=0;
 
     private ImageButton bt_1;
     private ImageButton bt_2;
@@ -239,7 +254,206 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
+        ImageButton bt=(ImageButton) findViewById(v.getId());
+
+       // String num= String.valueOf(bt.getTag());
+        try {
+            String numm= (String) bt.getTag();
+            num= Integer.valueOf(numm)-1;
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
+       // Log.d("ggg", String.valueOf(num));
+        System.out.println(String.valueOf(num));
+
+        int xx = 0;
+        int yy = 0;
+        if (num <= 7) {
+            xx = num;
+            yy = 0;
+        } else if ((num > 7) && (num <= 15)) {
+            xx = num - 8;
+            yy = yy + 1;
+        } else if ((num <= 23) && (num > 15)) {
+            xx = num - 16;
+            yy = yy + 2;
+        } else if ((num <= 31) && (num > 23)) {
+            xx = num - 24;
+            yy = yy + 3;
+        } else if ((num <= 39) && (num > 31)) {
+            xx = num - 32;
+            yy = yy + 4;
+        } else if ((num <= 47) && (num > 39)) {
+            xx = num - 40;
+            yy = yy + 5;
+        } else if ((num <= 55) && (num > 47)) {
+            xx = num - 48;
+            yy = yy + 6;
+        } else if (num > 55) {
+            xx = num - 56;
+            yy = yy + 7;
+        }
+        Log.d("ggg", "xx- "+xx+" yy- "+yy);
+
+        if (cell.cellsmas[xx][yy]==0){
+
+            bt.setImageResource(R.drawable.grey1);
+            paintComponent();
+        }
+
+
+        if ((shot%2!=0)&&(cell.player[xx][yy]!=2))
+        {
+
+
+            if(clickbuttonn<1)
+            {
+                clickbuttonn++;
+                cell.player[xx][yy] = 1;
+                shot++;
+                System.out.println("Какой игрок-"+shot);
+            }
+            else if ((num==nump)||(cell.player[xx][yy]==2)||(cell.cellsmas[xx][yy]==0))
+            {
+
+            }
+            else
+            {
+
+                cell.player[xx][yy] = 1;
+                shot++;
+                clickbutton++;
+                System.out.println("Какой игрок-"+shot);
+            }
+
+
+        }
+        if ((shot%2==0)&&(cell.player[xx][yy]!=1))
+        {
+
+            if (clickbuttonn<2) {
+                clickbuttonn++;
+                cell.player[xx][yy] = 2;
+                shot++;
+                System.out.println("Какой игрок-"+shot);
+            }
+            else if (((num==nump))||(cell.player[xx][yy]==1)||(cell.cellsmas[xx][yy]==0))
+            {
+
+            }
+            else
+            {
+                System.out.println("Какая ячейка-"+cell.cellsmas[xx][yy]);
+                cell.player[xx][yy] = 2;
+                shot++;
+                clickbutton++;
+                System.out.println("Какой игрок-"+shot);
+            }
+
+
+        }
+
+        /*
+        switch (v.getId()) {
+            case R.id.myButton1: myTextView.setText("Вы нажали на 1-ю кнопку"); break;
+            case R.id.myButton2: myTextView.setText("Вы нажали на 2-ю кнопку"); break;
+            case R.id.myButton3: myTextView.setText("Вы нажали на 3-ю кнопку"); break;
+        }
+        */
 
     }
+
+
+    public void paintComponent() {
+
+        //  k = k+1;
+
+        //   System.out.println(k);
+        int start=bt_1.getId();
+        System.out.println("Какой ID-"+bt_1.getId());
+        for (int i=start;i<start+64;i++){
+            ImageButton bt=findViewById(i);
+            bt.setImageResource(R.drawable.grey1);
+        }
+
+        /*
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (cell.cellsmas[i][j] == 0) {
+                    ImageButton bt=find
+                    img = new ImageIcon("res/0.jpg").getImage();
+                    g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+
+
+                }
+                if (cell.cellsmas[i][j] == 1) {
+                    if (cell.player[i][j]==1) {
+                        img = new ImageIcon("res/red1.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        // System.out.println(num);
+                    }
+                    else if (cell.player[i][j]==2)
+                    {
+                        img = new ImageIcon("res/blue1.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        //System.out.println(num);
+                    }
+
+
+                }
+                if (cell.cellsmas[i][j] == 2) {
+                    if (cell.player[i][j]==1) {
+                        img = new ImageIcon("res/red2.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        // System.out.println(num);
+                    }
+                    else if (cell.player[i][j]==2)
+                    {
+                        img = new ImageIcon("res/blue2.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        // System.out.println(num);
+                    }
+                }
+                if (cell.cellsmas[i][j] == 3) {
+                    if (cell.player[i][j]==1) {
+                        img = new ImageIcon("res/red3.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        //System.out.println(num);
+                    }
+                    else if (cell.player[i][j]==2)
+                    {
+                        img = new ImageIcon("res/blue3.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        //System.out.println(num);
+                    }
+                }
+                if (cell.cellsmas[i][j] == 4) {
+
+                    if (cell.player[i][j]==1) {
+                        img = new ImageIcon("res/red4.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        // playerp=cell.player[i][j];
+                    }
+                    else if (cell.player[i][j]==2)
+                    {
+                        img = new ImageIcon("res/blue4.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        // playerp=cell.player[i][j];
+                    }
+                    win();
+                    speed=true;
+                    paintcells=true;
+                }
+            }
+        }
+
+
+        shotp=shot;
+
+         */
+    }
+
+
 }

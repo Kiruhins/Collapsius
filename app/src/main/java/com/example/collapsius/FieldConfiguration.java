@@ -20,8 +20,8 @@ public class FieldConfiguration extends AppCompatActivity {
         setContentView(R.layout.activity_field_configuration);
 
         Intent intent=getIntent();
-        Integer mode;
-        mode=intent.getIntExtra("mode",0);
+        Integer mode=intent.getIntExtra("mode",0);
+        //Integer player=intent.getIntExtra("player",0);
         //Log.d("ggg", String.valueOf(mode));
 
         bt_Next=findViewById(R.id.bt_Next);
