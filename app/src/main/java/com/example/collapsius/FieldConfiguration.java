@@ -13,6 +13,7 @@ public class FieldConfiguration extends AppCompatActivity {
 
     private Button bt_Next;
 
+    Integer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class FieldConfiguration extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(FieldConfiguration.this,PlayingField.class);
               //  intent.putExtra("mode",2);
+                intent.putExtra("player",player);
+                intent.putExtra("mode",mode);
                 startActivity(intent);
             }
         });
