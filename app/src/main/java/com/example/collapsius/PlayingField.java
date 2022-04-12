@@ -2,6 +2,7 @@ package com.example.collapsius;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -115,10 +116,10 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
 
         cell = new Cells(cellsmas, player);
 
-        for (int i=0;i<cell.cellsmas.length;++i){
-            for (int j=0;j<cell.cellsmas.length;++j){
-                cell.cellsmas[i][j]=0;
-                cell.player[i][j]=0;
+        for (int i = 0; i < cell.cellsmas.length; ++i) {
+            for (int j = 0; j < cell.cellsmas.length; ++j) {
+                cell.cellsmas[i][j] = 0;
+                cell.player[i][j] = 0;
             }
         }
 
@@ -250,6 +251,7 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
         bt_63.setOnClickListener(this);
         bt_64 = findViewById(R.id.bt_64);
         bt_64.setOnClickListener(this);
+        
 
     }
 
@@ -377,6 +379,8 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
             ImageButton bt=findViewById(i);
             bt.setImageResource(R.drawable.grey1);
         }
+
+
 
         /*
         for (int i = 0; i < 8; i++) {

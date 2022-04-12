@@ -40,7 +40,7 @@
         android:layout_marginTop="68dp"
         android:contentDescription="@string/mode2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/bt_triangle"
         app:srcCompat="@drawable/settingsbutton"
         tools:ignore="ImageContrastCheck" />
 
@@ -57,7 +57,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/bt_triangle"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="68dp"

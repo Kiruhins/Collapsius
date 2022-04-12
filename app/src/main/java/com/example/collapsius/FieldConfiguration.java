@@ -12,25 +12,110 @@ import android.widget.ImageButton;
 public class FieldConfiguration extends AppCompatActivity {
 
     private Button bt_Next;
+    private Button bt_2players;
+    private Button bt_3players;
+    private Button bt_4players;
+    private ImageButton bt_map1;
+    private ImageButton bt_map2;
+    private ImageButton bt_map3;
+    private ImageButton bt_map4;
+    private ImageButton bt_map5;
+    private ImageButton bt_map6;
 
+    Integer player=2;
+    Integer map=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field_configuration);
 
+        bt_Next=findViewById(R.id.bt_Next);
+        bt_2players=findViewById(R.id.bt_2players);
+        bt_3players=findViewById(R.id.bt_3players);
+        bt_4players=findViewById(R.id.bt_4players);
+        bt_map1=findViewById(R.id.bt_map1);
+        bt_map2=findViewById(R.id.bt_map2);
+        bt_map3=findViewById(R.id.bt_map3);
+        bt_map4=findViewById(R.id.bt_map4);
+        bt_map5=findViewById(R.id.bt_map5);
+        bt_map6=findViewById(R.id.bt_map6);
+
         Intent intent=getIntent();
         Integer mode=intent.getIntExtra("mode",0);
-        //Integer player=intent.getIntExtra("player",0);
-        //Log.d("ggg", String.valueOf(mode));
 
-        bt_Next=findViewById(R.id.bt_Next);
+        bt_2players.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = 2;
+            }
+        });
+
+        bt_3players.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = 3;
+            }
+        });
+
+        bt_4players.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = 4;
+            }
+        });
+
+        bt_map1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 1;
+            }
+        });
+
+        bt_map2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 2;
+            }
+        });
+
+        bt_map3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 3;
+            }
+        });
+
+        bt_map4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 4;
+            }
+        });
+
+        bt_map5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 5;
+            }
+        });
+
+        bt_map6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                map = 6;
+            }
+        });
+
+
 
         bt_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(FieldConfiguration.this,PlayingField.class);
-              //  intent.putExtra("mode",2);
+                intent.putExtra("map",map);
+                intent.putExtra("player",player);
+                intent.putExtra("mode",mode);
                 startActivity(intent);
             }
         });
