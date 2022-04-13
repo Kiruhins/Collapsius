@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+
+import java.io.IOException;
 
 class Cells {
     public int[][] cellsmas;
@@ -38,9 +41,6 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
     Integer nump=0;
     Integer playerp=0;
     Integer clickbutton=0;
-    Integer startid;
-    Integer razm=8;
-
 
     private ImageButton bt_1;
     private ImageButton bt_2;
@@ -116,17 +116,14 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
 
         cell = new Cells(cellsmas, player);
 
-        for (int i=0;i<cell.cellsmas.length;++i){
-            for (int j=0;j<cell.cellsmas.length;++j){
-                cell.cellsmas[i][j]=0;
-                cell.player[i][j]=0;
+        for (int i = 0; i < cell.cellsmas.length; ++i) {
+            for (int j = 0; j < cell.cellsmas.length; ++j) {
+                cell.cellsmas[i][j] = 0;
+                cell.player[i][j] = 0;
             }
         }
 
         bt_1 = findViewById(R.id.bt_1);
-
-        startid=bt_1.getId();
-
         bt_1.setOnClickListener(this);
         bt_2 = findViewById(R.id.bt_2);
         bt_2.setOnClickListener(this);
@@ -254,16 +251,7 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
         bt_63.setOnClickListener(this);
         bt_64 = findViewById(R.id.bt_64);
         bt_64.setOnClickListener(this);
-
-
-        Intent intent = getIntent();
-        Integer mode = intent.getIntExtra("mode", 0);
-        Integer players = intent.getIntExtra("player", 0);
-        Integer map = intent.getIntExtra("map", 0);
-
-        Log.d("mode", String.valueOf(mode));
-        Log.d("players", String.valueOf(players));
-        Log.d("map", String.valueOf(map));
+        
 
     }
 
@@ -317,7 +305,6 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
             paintComponent();
         }
 
-        Log.d("ggg", "Тест");
 
         if ((shot%2!=0)&&(cell.player[xx][yy]!=2))
         {
@@ -383,38 +370,38 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
 
     public void paintComponent() {
 
+        //  k = k+1;
 
+        //   System.out.println(k);
+        int start=bt_1.getId();
         System.out.println("Какой ID-"+bt_1.getId());
-        for (int i=startid;i<startid+64;i++){
+        for (int i=start;i<start+64;i++){
             ImageButton bt=findViewById(i);
             bt.setImageResource(R.drawable.grey1);
         }
 
+
+
+        /*
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (cell.cellsmas[i][j] == 0) {
-                    ImageButton bt=findViewById(NumOut(i,j,razm));
-                    System.out.println("Какой ID- "+bt.getId());
-                    Log.d("ggg", String.valueOf(NumOut(i,j,razm)-startid));
-                   // img = new ImageIcon("res/0.jpg").getImage();
-                    //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                    ImageButton bt=find
+                    img = new ImageIcon("res/0.jpg").getImage();
+                    g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
 
 
                 }
                 if (cell.cellsmas[i][j] == 1) {
                     if (cell.player[i][j]==1) {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 1 \n");
-                        //img = new ImageIcon("res/red1.jpg").getImage();
-                       // g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/red1.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         // System.out.println(num);
                     }
                     else if (cell.player[i][j]==2)
                     {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 1 \n");
-                       // img = new ImageIcon("res/blue1.jpg").getImage();
-                        //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/blue1.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         //System.out.println(num);
                     }
 
@@ -422,70 +409,54 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
                 }
                 if (cell.cellsmas[i][j] == 2) {
                     if (cell.player[i][j]==1) {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 2 \n");
-                       // img = new ImageIcon("res/red2.jpg").getImage();
-                        //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/red2.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         // System.out.println(num);
                     }
                     else if (cell.player[i][j]==2)
                     {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 2 \n");
-                       // img = new ImageIcon("res/blue2.jpg").getImage();
-                       // g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/blue2.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         // System.out.println(num);
                     }
                 }
                 if (cell.cellsmas[i][j] == 3) {
                     if (cell.player[i][j]==1) {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 3 \n");
-                        //img = new ImageIcon("res/red3.jpg").getImage();
-                        //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/red3.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         //System.out.println(num);
                     }
                     else if (cell.player[i][j]==2)
                     {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 3 \n");
-                       // img = new ImageIcon("res/blue3.jpg").getImage();
-                        //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/blue3.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         //System.out.println(num);
                     }
                 }
                 if (cell.cellsmas[i][j] == 4) {
 
                     if (cell.player[i][j]==1) {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 4 \n");
-                       // img = new ImageIcon("res/red4.jpg").getImage();
-                       // g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/red4.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         // playerp=cell.player[i][j];
                     }
                     else if (cell.player[i][j]==2)
                     {
-                        ImageButton bt=findViewById(NumOut(i,j,razm));
-                        System.out.println("Какой ID- "+bt.getId()+" 4 \n");
-                       // img = new ImageIcon("res/blue4.jpg").getImage();
-                        //g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
+                        img = new ImageIcon("res/blue4.jpg").getImage();
+                        g.drawImage(img, 30 + i * 53, 30 + j * 53, 53, 53, null);
                         // playerp=cell.player[i][j];
                     }
-                   // win();
-                   // speed=true;
-                   // paintcells=true;
+                    win();
+                    speed=true;
+                    paintcells=true;
                 }
             }
         }
 
 
         shotp=shot;
-        Log.d("ggg", "Тест");
 
-    }
-
-    public Integer NumOut(Integer x, Integer y, Integer razm){
-        return startid+(x+1)+(y*razm);
+         */
     }
 
 

@@ -14,6 +14,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_peklo;
     private ImageButton bt_editable;
     private ImageButton bt_5in1;
+    private ImageButton bt_triangle;
 
 
     @Override
@@ -25,12 +26,13 @@ public class SelectMode extends AppCompatActivity {
         bt_peklo=findViewById(R.id.bt_peklo);
         bt_editable=findViewById(R.id.bt_editable);
         bt_5in1=findViewById(R.id.bt_5in1);
+        bt_triangle=findViewById(R.id.bt_triangle);
 
-        bt_classic.setOnClickListener(new View.OnClickListener() {
+        bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
-                intent.putExtra("mode",1);
+                intent.putExtra("mode",5);
                 startActivity(intent);
             }
         });
