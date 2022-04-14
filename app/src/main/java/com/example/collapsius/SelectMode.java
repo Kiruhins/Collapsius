@@ -64,7 +64,14 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
-
+        bt_classic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",1);
+                startActivity(intent);
+            }
+        });
 
 
     }
