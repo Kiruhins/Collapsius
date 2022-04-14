@@ -317,12 +317,12 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
 
             }
-            if (cell.cellsmas[xx][yy] == 2) {
+            else if (cell.cellsmas[xx][yy] == 2) {
                 bt.setImageResource(R.drawable.bblue3);
                 cell.cellsmas[xx][yy] = 3;
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
-            if (cell.cellsmas[xx][yy] == 3) {
+            else if (cell.cellsmas[xx][yy] == 3) {
                 cell.cellsmas[xx][yy] = 4;
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
                 paintComponent();
@@ -334,12 +334,12 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
                 cell.cellsmas[xx][yy] = 2;
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
-            if (cell.cellsmas[xx][yy] == 2) {
+            else if (cell.cellsmas[xx][yy] == 2) {
                 bt.setImageResource(R.drawable.bgreen3);
                 cell.cellsmas[xx][yy] = 3;
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
-            if (cell.cellsmas[xx][yy] == 3) {
+            else if (cell.cellsmas[xx][yy] == 3) {
                 cell.cellsmas[xx][yy] = 4;
                 System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
                 paintComponent();
