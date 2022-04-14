@@ -314,13 +314,17 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
             if (cell.cellsmas[xx][yy] == 1) {
                 bt.setImageResource(R.drawable.bblue2);
                 cell.cellsmas[xx][yy] = 2;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
+
             }
             if (cell.cellsmas[xx][yy] == 2) {
                 bt.setImageResource(R.drawable.bblue3);
                 cell.cellsmas[xx][yy] = 3;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
             if (cell.cellsmas[xx][yy] == 3) {
-                cell.cellsmas[xx][yy] = 0;
+                cell.cellsmas[xx][yy] = 4;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
                 paintComponent();
             }
         }
@@ -328,24 +332,29 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
             if (cell.cellsmas[xx][yy] == 1) {
                 bt.setImageResource(R.drawable.bgreen2);
                 cell.cellsmas[xx][yy] = 2;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
             if (cell.cellsmas[xx][yy] == 2) {
                 bt.setImageResource(R.drawable.bgreen3);
                 cell.cellsmas[xx][yy] = 3;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             }
             if (cell.cellsmas[xx][yy] == 3) {
-                cell.cellsmas[xx][yy] = 0;
+                cell.cellsmas[xx][yy] = 4;
+                System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
                 paintComponent();
             }
         }
         if ((cell.player[xx][yy]==0) && (shot % 2 == 1)) {
             bt.setImageResource(R.drawable.bblue1);
             cell.cellsmas[xx][yy] = 1;
+            System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             cell.player[xx][yy] = 1;
         }
         if ((cell.player[xx][yy]==0) && (shot % 2 == 0)) {
             bt.setImageResource(R.drawable.bgreen1);
             cell.cellsmas[xx][yy] = 1;
+            System.out.println("cellmass["+xx+"]["+yy+"] = " + cell.cellsmas[xx][yy]);
             cell.player[xx][yy] = 2;
         }
 
