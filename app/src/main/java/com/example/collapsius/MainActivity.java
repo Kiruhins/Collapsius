@@ -8,10 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonNewGame;
+    private ImageButton Settings;
+
 
    // public int choosemode;
 
@@ -32,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("ggg","Mode- ");
                Intent intent = new Intent(MainActivity.this, SelectMode.class);
                startActivity(intent);
+            }
+        });
+
+        Settings = findViewById(R.id.Settings);
+        Settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectMode.class);
+                startActivity(intent);
             }
         });
 

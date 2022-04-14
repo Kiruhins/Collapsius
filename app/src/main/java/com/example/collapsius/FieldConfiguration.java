@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 public class FieldConfiguration extends AppCompatActivity {
 
     private Button bt_Next;
+    private Button bt_back2;
     private Button bt_2players;
     private Button bt_3players;
     private Button bt_4players;
@@ -28,9 +29,14 @@ public class FieldConfiguration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow();
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         setContentView(R.layout.activity_field_configuration);
 
         bt_Next=findViewById(R.id.bt_Next);
+        bt_back2=findViewById(R.id.bt_back2);
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
         bt_4players=findViewById(R.id.bt_4players);
@@ -116,6 +122,13 @@ public class FieldConfiguration extends AppCompatActivity {
                 intent.putExtra("map",map);
                 intent.putExtra("player",player);
                 intent.putExtra("mode",mode);
+                startActivity(intent);
+            }
+        });
+        bt_back2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(FieldConfiguration.this,SelectMode.class);
                 startActivity(intent);
             }
         });

@@ -10,7 +10,7 @@
         android:id="@+id/bt_classic"
         android:layout_width="274dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="170dp"
         android:contentDescription="@string/classic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:id="@+id/bt_5in1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="68dp"
         android:contentDescription="@string/mode3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +61,20 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="@string/mode4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settingsbutton"
         tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/bt_back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="73dp"
+        android:text="@string/_bt_back1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class SelectMode extends AppCompatActivity {
@@ -15,11 +17,14 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_editable;
     private ImageButton bt_5in1;
     private ImageButton bt_triangle;
-
+    private Button bt_back1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow();
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.activity_select_mode);
 
         bt_classic=findViewById(R.id.bt_classic);
@@ -27,7 +32,7 @@ public class SelectMode extends AppCompatActivity {
         bt_editable=findViewById(R.id.bt_editable);
         bt_5in1=findViewById(R.id.bt_5in1);
         bt_triangle=findViewById(R.id.bt_triangle);
-
+        bt_back1=findViewById(R.id.bt_back1);
         bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +78,13 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
+        bt_back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(SelectMode.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

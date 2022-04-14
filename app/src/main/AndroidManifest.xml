@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Collapsius">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
             android:name=".PlayingField"
             android:exported="false" />
         <activity
