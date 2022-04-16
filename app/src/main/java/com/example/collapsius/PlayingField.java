@@ -3,10 +3,13 @@ package com.example.collapsius;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+
+import java.util.concurrent.TimeUnit;
 
 class Cells {
     public int[][] cellsmas;
@@ -26,6 +29,8 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
     int[][] cellsmas = new int[8][8];
     int[][] player = new int[8][8];
     Cells cell;
+
+
 
     Integer xxx = 0;
     Integer yyy = 0;
@@ -255,8 +260,7 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
         bt_64 = findViewById(R.id.bt_64);
         bt_64.setOnClickListener(this);
 
-        Thread thread= new MyThread();
-        thread.start();
+
 
         Intent intent = getIntent();
         Integer mode = intent.getIntExtra("mode", 0);
@@ -271,7 +275,11 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
     // просто нажимаем любую кнопку + находим по тегу
     @Override
     public void onClick(View v) {
+
+
         ImageButton bt = (ImageButton) findViewById(v.getId());
+        MyAsyncTask thread = new MyAsyncTask();
+        thread.execute();
 
         // String num= String.valueOf(bt.getTag());
         try {
@@ -515,9 +523,25 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
             return startid + j + (i * razm);
         }
 
-    private class MyThread extends Thread {
+    private class MyAsyncTask extends AsyncTask<Integer, Void,Void> {
         @Override
-        public void run() {
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+        @Override
+        protected Void doInBackground(Integer... params) {
+            try{
+                TimeUnit.SECONDS.sleep(5);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
             while(true) {
                 if (paintcells == true) {
                     Log.d("ggg", "Тест");
@@ -649,6 +673,163 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
                                  */
 
                                 try {
+                                    Thread.sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                                if (speed==true)
+                                {
+                                    speed=false; // Эта переменная не дает программе считать очки, пока не пройдет рисовка
+                                }
+                                paintComponent();
+                            }
+                        }
+                    }
+                    paintcells = false;
+                }
+
+                paintComponent();
+
+            }
+        }
+        }
+
+/*
+    class MyTask extends AsyncTask<Void,Void,Void> {
+        @Override
+        protected void run() {
+            while(true) {
+                if (paintcells == true) {
+                    Log.d("ggg", "Тест");
+
+                    if (speed==false) {
+                        int xx = 0;
+                        int yy = 0;
+                        if (num <= 7) {
+                            xx = num;
+                            yy = 0;
+                        } else if ((num > 7) && (num <= 15)) {
+                            xx = num - 8;
+                            yy = yy + 1;
+                        } else if ((num <= 23) && (num > 15)) {
+                            xx = num - 16;
+                            yy = yy + 2;
+                        } else if ((num <= 31) && (num > 23)) {
+                            xx = num - 24;
+                            yy = yy + 3;
+                        } else if ((num <= 39) && (num > 31)) {
+                            xx = num - 32;
+                            yy = yy + 4;
+                        } else if ((num <= 47) && (num > 39)) {
+                            xx = num - 40;
+                            yy = yy + 5;
+                        } else if ((num <= 55) && (num > 47)) {
+                            xx = num - 48;
+                            yy = yy + 6;
+                        } else if (num > 55) {
+                            xx = num - 56;
+                            yy = yy + 7;
+                        }
+                        //System.out.println("x-" + xx + "  y-" + yy);
+                        if (((shot%2==0)&&(cell.player[yy][xx]==1))||((shot%2!=0)&&(cell.player[yy][xx]==2)))
+                        {
+                            if ((clickbutton <= 2)&&(num != nump)&&(shotp!=shot)) {
+                                clickbutton++;
+                                // System.out.println();
+                                //System.out.println("Кнопка    " + clickbutton);
+                                cell.cellsmas[yy][xx] = cell.cellsmas[yy][xx] + 1;
+                            } else if ((num == nump) || (cell.cellsmas[yy][xx] == 0)||(shotp==shot)) {
+
+                                // System.out.println();
+                                // System.out.println("Кнопка    " + clickbutton);
+                            } else if (shotp!=shot){
+                                cell.cellsmas[yy][xx] = cell.cellsmas[yy][xx] + 1;
+
+                            }
+                        }
+
+
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        for (int j = 0; j < 5; j++) {
+                            if (cell.cellsmas[i][j] == 0) {
+
+                                xxx = i;
+                                yyy = j;
+                                paintComponent();
+
+                            }
+                            if (cell.cellsmas[i][j] == 1) {
+
+                                xxx = i;
+                                yyy = j;
+                                paintComponent();
+
+
+                            }
+                            if (cell.cellsmas[i][j] == 2) {
+
+                                xxx = i;
+                                yyy = j;
+                                paintComponent();
+
+
+                            }
+                            if (cell.cellsmas[i][j] == 3) {
+                                xxx = i;
+                                yyy = j;
+                                paintComponent();
+                            }
+                            if ((cell.cellsmas[i][j] == 4)||(cell.cellsmas[i][j] == 5)||(cell.cellsmas[i][j] == 6)||(cell.cellsmas[i][j] == 7)||(cell.cellsmas[i][j] == 8)) { // Значение 8 вроде не может быть
+                                cell.cellsmas[i][j] = 0;
+                                playerp=cell.player[i][j];
+                                paintComponent();
+                                System.out.println(playerp);
+                                cell.player[i][j]=0;
+                                trigger=true;
+                                if (playerp==1) {
+                                    if (i > 0) {
+                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                        cell.player[i - 1][j] = 1;
+                                    }
+                                    if (i < 4) {
+                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                        cell.player[i + 1][j] = 1;
+                                    }
+                                    if (j < 4) {
+                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                        cell.player[i][j+1] = 1;
+                                    }
+                                    if (j > 0) {
+                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                        cell.player[i][j-1] = 1;
+                                    }
+                                }
+                                if (playerp==2) {
+                                    if (i > 0) {
+                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                        cell.player[i - 1][j] = 2;
+                                    }
+                                    if (i < 4) {
+                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                        cell.player[i + 1][j] = 2;
+                                    }
+                                    if (j < 4) {
+                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                        cell.player[i][j+1] = 2;
+                                    }
+                                    if (j > 0) {
+                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                        cell.player[i][j-1] = 2;
+                                    }
+                                }
+
+                                /*
+                                 * Следующая конструкция тормозит деление клеток
+                                 */
+/*
+                                try {
                                     sleep(500);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
@@ -671,7 +852,8 @@ public class PlayingField extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
+    //mainHandler.post(myRunnable);
+*/
 
 
 }
