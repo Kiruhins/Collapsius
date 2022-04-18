@@ -83,5 +83,7 @@
     <string name="_49">49</string>
     <string name="_bt_back1">Назад</string>
     <string name="_bt_back2">Назад</string>
+    <string name="_NewGame">Новая Игра</string>
+    <string name="_Settings">Settings</string>
 
 </resources>

@@ -8,25 +8,26 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonNewGame"
+        android:id="@+id/NewGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_choosemode"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="150dp"
+        android:text="@string/_NewGame"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/Settings"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@null"
-        android:contentDescription="@string/Settings"
-        android:scaleType="centerInside"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/_Settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/settingsbutton"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="ImageContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
