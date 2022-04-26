@@ -849,8 +849,13 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             //Integer values = 1;
             //publishProgress(values);
             while (true) {
+                try {
+                    sleep(20);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-                Log.d("ggg", "запустился doInBackground");
+                //Log.d("ggg", "запустился doInBackground");
                 if (paintcells == true) {
                     Log.d("ggg", "произошло деление");
 
@@ -908,11 +913,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                             if ((cell.cellsmas[i][j] == 4) || (cell.cellsmas[i][j] == 5) || (cell.cellsmas[i][j] == 6) || (cell.cellsmas[i][j] == 7) || (cell.cellsmas[i][j] == 8)) { // Значение 8 вроде не может быть
                                 cell.cellsmas[i][j] = 0;
-                                try {
-                                    sleep(500);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
+
 
                                 //bt.setImageResource(R.drawable.emptycell);
                                 playerp = cell.player[i][j];
@@ -978,11 +979,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                     publishProgress((int) (num));
 
                 }
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+
                 //paintobjects
             }
 
@@ -1062,12 +1059,13 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                     }
                                 }
+                                
 
                         }
                     }
 
                 try {
-                    sleep(1000);
+                    sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
