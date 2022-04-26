@@ -5,6 +5,7 @@ import static java.lang.Thread.sleep;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,9 +55,9 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     Integer razm = 8;
     Boolean paintcells= false;
 
+    int[][] mas = new int[8][8];
 
-
-
+    boolean FromBackToProgress;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +76,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         }
         //Resources res = getResources();
 
-       // MyAsyncTask thread = new MyAsyncTask();
-        //thread.execute();
+        MyAsyncTask thread = new MyAsyncTask();
+        thread.execute();
 
             ImageButton bt_1;
             ImageButton bt_2;
@@ -143,136 +144,201 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             ImageButton bt_63;
             ImageButton bt_64;
 
-        bt_1 = findViewById(R.id.bt1);
 
-        startid = bt_1.getId();
+
+            bt_1 = findViewById(R.id.bt1);
+            mas[0][0] = bt_1.getId();
+        //startid = bt_1.getId();
 
         bt_1.setOnTouchListener(this);
         bt_2 = findViewById(R.id.bt2);
+        mas[0][1] = bt_2.getId();
         bt_2.setOnTouchListener(this);
         bt_3 = findViewById(R.id.bt3);
+        mas[0][2] = bt_3.getId();
         bt_3.setOnTouchListener(this);
         bt_4 = findViewById(R.id.bt4);
+        mas[0][3] = bt_4.getId();
         bt_4.setOnTouchListener(this);
         bt_5 = findViewById(R.id.bt5);
+        mas[0][4] = bt_5.getId();
         bt_5.setOnTouchListener(this);
         bt_6 = findViewById(R.id.bt6);
+        mas[0][5] = bt_6.getId();
         bt_6.setOnTouchListener(this);
         bt_7 = findViewById(R.id.bt7);
+        mas[0][6] = bt_7.getId();
         bt_7.setOnTouchListener(this);
         bt_8 = findViewById(R.id.bt8);
+        mas[0][7] = bt_8.getId();
         bt_8.setOnTouchListener(this);
         bt_9 = findViewById(R.id.bt9);
+        mas[1][0] = bt_9.getId();
         bt_9.setOnTouchListener(this);
         bt_10 = findViewById(R.id.bt10);
+        mas[1][1] = bt_10.getId();
         bt_10.setOnTouchListener(this);
         bt_11 = findViewById(R.id.bt11);
+        mas[1][2] = bt_11.getId();
         bt_11.setOnTouchListener(this);
         bt_12 = findViewById(R.id.bt12);
+        mas[1][3] = bt_12.getId();
         bt_12.setOnTouchListener(this);
         bt_13 = findViewById(R.id.bt13);
+        mas[1][4] = bt_13.getId();
         bt_13.setOnTouchListener(this);
         bt_14 = findViewById(R.id.bt14);
+        mas[1][5] = bt_14.getId();
         bt_14.setOnTouchListener(this);
         bt_15 = findViewById(R.id.bt15);
+        mas[1][6] = bt_15.getId();
         bt_15.setOnTouchListener(this);
         bt_16 = findViewById(R.id.bt16);
+        mas[1][7] = bt_16.getId();
         bt_16.setOnTouchListener(this);
         bt_17 = findViewById(R.id.bt17);
+        mas[2][0] = bt_17.getId();
         bt_17.setOnTouchListener(this);
         bt_18 = findViewById(R.id.bt18);
+        mas[2][1] = bt_18.getId();
         bt_18.setOnTouchListener(this);
         bt_19 = findViewById(R.id.bt19);
+        mas[2][2] = bt_19.getId();
         bt_19.setOnTouchListener(this);
         bt_20 = findViewById(R.id.bt20);
+        mas[2][3] = bt_20.getId();
         bt_20.setOnTouchListener(this);
         bt_21 = findViewById(R.id.bt21);
+        mas[2][4] = bt_21.getId();
         bt_21.setOnTouchListener(this);
         bt_22 = findViewById(R.id.bt22);
+        mas[2][5] = bt_22.getId();
         bt_22.setOnTouchListener(this);
         bt_23 = findViewById(R.id.bt23);
+        mas[2][6] = bt_23.getId();
         bt_23.setOnTouchListener(this);
         bt_24 = findViewById(R.id.bt24);
+        mas[2][7] = bt_24.getId();
         bt_24.setOnTouchListener(this);
         bt_25 = findViewById(R.id.bt25);
+        mas[3][0] = bt_25.getId();
         bt_25.setOnTouchListener(this);
         bt_26 = findViewById(R.id.bt26);
+        mas[3][1] = bt_26.getId();
         bt_26.setOnTouchListener(this);
         bt_27 = findViewById(R.id.bt27);
+        mas[3][2] = bt_27.getId();
         bt_27.setOnTouchListener(this);
         bt_28 = findViewById(R.id.bt28);
+        mas[3][3] = bt_28.getId();
         bt_28.setOnTouchListener(this);
         bt_29 = findViewById(R.id.bt29);
+        mas[3][4] = bt_29.getId();
         bt_29.setOnTouchListener(this);
         bt_30 = findViewById(R.id.bt30);
+        mas[3][5] = bt_30.getId();
         bt_30.setOnTouchListener(this);
         bt_31 = findViewById(R.id.bt31);
+        mas[3][6] = bt_31.getId();
         bt_31.setOnTouchListener(this);
         bt_32 = findViewById(R.id.bt32);
+        mas[3][7] = bt_32.getId();
         bt_32.setOnTouchListener(this);
         bt_33 = findViewById(R.id.bt33);
+        mas[4][0] = bt_33.getId();
         bt_33.setOnTouchListener(this);
         bt_34 = findViewById(R.id.bt34);
+        mas[4][1] = bt_34.getId();
         bt_34.setOnTouchListener(this);
         bt_35 = findViewById(R.id.bt35);
+        mas[4][2] = bt_35.getId();
         bt_35.setOnTouchListener(this);
         bt_36 = findViewById(R.id.bt36);
+        mas[4][3] = bt_36.getId();
         bt_36.setOnTouchListener(this);
         bt_37 = findViewById(R.id.bt37);
+        mas[4][4] = bt_37.getId();
         bt_37.setOnTouchListener(this);
         bt_38 = findViewById(R.id.bt38);
+        mas[4][5] = bt_38.getId();
         bt_38.setOnTouchListener(this);
         bt_39 = findViewById(R.id.bt39);
+        mas[4][6] = bt_39.getId();
         bt_39.setOnTouchListener(this);
         bt_40 = findViewById(R.id.bt40);
+        mas[4][7] = bt_40.getId();
         bt_40.setOnTouchListener(this);
         bt_41 = findViewById(R.id.bt41);
+        mas[5][0] = bt_41.getId();
         bt_41.setOnTouchListener(this);
         bt_42 = findViewById(R.id.bt42);
+        mas[5][1] = bt_42.getId();
         bt_42.setOnTouchListener(this);
         bt_43 = findViewById(R.id.bt43);
+        mas[5][2] = bt_43.getId();
         bt_43.setOnTouchListener(this);
         bt_44 = findViewById(R.id.bt44);
+        mas[5][3] = bt_44.getId();
         bt_44.setOnTouchListener(this);
         bt_45 = findViewById(R.id.bt45);
+        mas[5][4] = bt_45.getId();
         bt_45.setOnTouchListener(this);
         bt_46 = findViewById(R.id.bt46);
+        mas[5][5] = bt_46.getId();
         bt_46.setOnTouchListener(this);
         bt_47 = findViewById(R.id.bt47);
+        mas[5][6] = bt_47.getId();
         bt_47.setOnTouchListener(this);
         bt_48 = findViewById(R.id.bt48);
+        mas[5][7] = bt_48.getId();
         bt_48.setOnTouchListener(this);
         bt_49 = findViewById(R.id.bt49);
+        mas[6][0] = bt_49.getId();
         bt_49.setOnTouchListener(this);
         bt_50 = findViewById(R.id.bt50);
+        mas[6][1] = bt_50.getId();
         bt_50.setOnTouchListener(this);
         bt_51 = findViewById(R.id.bt51);
+        mas[6][2] = bt_51.getId();
         bt_51.setOnTouchListener(this);
         bt_52 = findViewById(R.id.bt52);
+        mas[6][3] = bt_52.getId();
         bt_52.setOnTouchListener(this);
         bt_53 = findViewById(R.id.bt53);
+        mas[6][4] = bt_53.getId();
         bt_53.setOnTouchListener(this);
         bt_54 = findViewById(R.id.bt54);
+        mas[6][5] = bt_54.getId();
         bt_54.setOnTouchListener(this);
         bt_55 = findViewById(R.id.bt55);
+        mas[6][6] = bt_55.getId();
         bt_55.setOnTouchListener(this);
         bt_56 = findViewById(R.id.bt56);
+        mas[6][7] = bt_56.getId();
         bt_56.setOnTouchListener(this);
         bt_57 = findViewById(R.id.bt57);
+        mas[7][0] = bt_57.getId();
         bt_57.setOnTouchListener(this);
         bt_58 = findViewById(R.id.bt58);
+        mas[7][1] = bt_58.getId();
         bt_58.setOnTouchListener(this);
         bt_59 = findViewById(R.id.bt59);
+        mas[7][2] = bt_59.getId();
         bt_59.setOnTouchListener(this);
         bt_60 = findViewById(R.id.bt60);
+        mas[7][3] = bt_60.getId();
         bt_60.setOnTouchListener(this);
         bt_61 = findViewById(R.id.bt61);
+        mas[7][4] = bt_61.getId();
         bt_61.setOnTouchListener(this);
         bt_62 = findViewById(R.id.bt62);
+        mas[7][5] = bt_62.getId();
         bt_62.setOnTouchListener(this);
         bt_63 = findViewById(R.id.bt63);
+        mas[7][6] = bt_63.getId();
         bt_63.setOnTouchListener(this);
-        bt_64 = findViewById(R.id.bt_64);
+        bt_64 = findViewById(R.id.bt64);
+        mas[7][7] = bt_64.getId();
         bt_64.setOnTouchListener(this);
 
 
@@ -352,7 +418,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
         //Resources res = getResources();
         //Drawable bblue1 = ResourcesCompat.getDrawable(res, R.drawable.bblue1, null);
-
 
 
         Intent intent = getIntent();
@@ -787,7 +852,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                 Log.d("ggg", "запустился doInBackground");
                 if (paintcells == true) {
-                    Log.d("ggg", "запустился поток");
+                    Log.d("ggg", "произошло деление");
 
                     if (speed == false) {
                         int xx = 0;
@@ -838,7 +903,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                     for (int i = 0; i < 8; i++) {
                         for (int j = 0; j < 8; j++) {
 
-                            ImageButton bt = findViewById(NumOut(i, j, razm));
+                            ImageButton bt = findViewById(mas[i][j]);
+                            Log.d("ggg" , "запустилось деление");
 
                             if ((cell.cellsmas[i][j] == 4) || (cell.cellsmas[i][j] == 5) || (cell.cellsmas[i][j] == 6) || (cell.cellsmas[i][j] == 7) || (cell.cellsmas[i][j] == 8)) { // Значение 8 вроде не может быть
                                 cell.cellsmas[i][j] = 0;
@@ -908,6 +974,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                         }
                     }
                     paintcells = false;
+                    FromBackToProgress = true;
                     publishProgress((int) (num));
 
                 }
@@ -927,7 +994,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             super.onProgressUpdate(values);
         //protected void onProgressUpdate(Integer... values) {
         //    super.onProgressUpdate(values);
-            while (true) {
+            while (FromBackToProgress == true) {
 
 
                     Log.d("ggg", "запустился onPostExecute");
@@ -935,31 +1002,31 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                         for (int j = 0; j < 8; j++) {
 
 
-                                ImageButton bt = findViewById(NumOut(i, j, razm));
-                                Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-
+                                ImageButton bt = findViewById(mas[i][j]);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                Log.d("ggg", "начало покраски");
                                 //paintobjects();
 
                                 if (cell.cellsmas[i][j] == 0) {
 
 
                                    //bt.setImageResource(R.drawable.emptycell);
-                                    bt.setImageResource(R.drawable.settings);
-
-                                    Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-
+                                    bt.setImageResource(R.drawable.emptycell);
+                                    bt.setBackgroundColor (Color.green(100));
+                                    //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                    Log.d("ggg", "перерисовка коллапса");
                                 }
                                 if (cell.cellsmas[i][j] == 1) {
                                     if (cell.player[i][j] == 1) {
 
                                         bt.setImageResource(R.drawable.bblue1);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                                     } else if (cell.player[i][j] == 2) {
 
                                         bt.setImageResource(R.drawable.bgreen1);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
                                     }
 
@@ -969,13 +1036,13 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (cell.player[i][j] == 1) {
 
                                         bt.setImageResource(R.drawable.bblue2);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                                     } else if (cell.player[i][j] == 2) {
 
                                         bt.setImageResource(R.drawable.bgreen2);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                                     }
@@ -984,13 +1051,13 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (cell.player[i][j] == 1) {
 
                                         bt.setImageResource(R.drawable.bblue3);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                                     } else if (cell.player[i][j] == 2) {
 
                                         bt.setImageResource(R.drawable.bgreen3);
-                                        Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                         System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                                     }
@@ -1005,6 +1072,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                     e.printStackTrace();
                 }
                 paintcells = false;
+                FromBackToProgress = false;
+
             }
         }
     }
