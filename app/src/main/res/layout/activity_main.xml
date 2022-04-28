@@ -5,30 +5,69 @@
     android:id="@+id/CL_mainMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_newmenu"
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/NewGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="@string/_NewGame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/Settings"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginBottom="78dp"
+        android:background="#00FFFFFF"
         android:contentDescription="@string/_Settings"
+        android:translationY="-3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/settingsbutton"
         tools:ignore="ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginBottom="79dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/_NewGame"
+        android:scaleType="centerInside"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:translationX="5"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:srcCompat="@drawable/a06104" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="9dp"
+        android:translationX="1"
+        android:translationY="2"
+        app:layout_constraintEnd_toEndOf="@+id/Settings"
+        app:layout_constraintTop_toTopOf="@+id/Settings"
+        app:srcCompat="@drawable/a63074" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="300dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
