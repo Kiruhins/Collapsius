@@ -8,416 +8,488 @@
 
     <ImageButton
         android:id="@+id/bt57"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_57"
+        android:scaleType="centerInside"
         android:tag="57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt49"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt59"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_59"
+        android:scaleType="centerInside"
         android:tag="59"
         app:layout_constraintStart_toEndOf="@+id/bt58"
         app:layout_constraintTop_toBottomOf="@+id/bt51"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt60"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_60"
+        android:scaleType="centerInside"
         android:tag="60"
         app:layout_constraintStart_toEndOf="@+id/bt59"
         app:layout_constraintTop_toBottomOf="@+id/bt52"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt61"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_61"
+        android:scaleType="centerInside"
         android:tag="61"
         app:layout_constraintStart_toEndOf="@+id/bt60"
         app:layout_constraintTop_toBottomOf="@+id/bt53"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt62"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_62"
+        android:scaleType="centerInside"
         android:tag="62"
         app:layout_constraintStart_toEndOf="@+id/bt61"
         app:layout_constraintTop_toBottomOf="@+id/bt54"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt63"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_63"
+        android:scaleType="centerInside"
         android:tag="63"
         app:layout_constraintStart_toEndOf="@+id/bt62"
         app:layout_constraintTop_toBottomOf="@+id/bt55"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt64"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_64"
+        android:scaleType="centerInside"
         android:tag="64"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt63"
         app:layout_constraintTop_toBottomOf="@+id/bt56"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt58"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_58"
+        android:scaleType="centerInside"
         android:tag="58"
         app:layout_constraintStart_toEndOf="@+id/bt57"
         app:layout_constraintTop_toBottomOf="@+id/bt50"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt49"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_49"
+        android:scaleType="centerInside"
         android:tag="49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt41"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt51"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_51"
+        android:scaleType="centerInside"
         android:tag="51"
         app:layout_constraintStart_toEndOf="@+id/bt50"
         app:layout_constraintTop_toBottomOf="@+id/bt43"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt52"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_52"
+        android:scaleType="centerInside"
         android:tag="52"
         app:layout_constraintStart_toEndOf="@+id/bt51"
         app:layout_constraintTop_toBottomOf="@+id/bt44"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt53"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_53"
+        android:scaleType="centerInside"
         android:tag="53"
         app:layout_constraintStart_toEndOf="@+id/bt52"
         app:layout_constraintTop_toBottomOf="@+id/bt45"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt54"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_54"
+        android:scaleType="centerInside"
         android:tag="54"
         app:layout_constraintStart_toEndOf="@+id/bt53"
         app:layout_constraintTop_toBottomOf="@+id/bt46"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt55"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_55"
+        android:scaleType="centerInside"
         android:tag="55"
         app:layout_constraintStart_toEndOf="@+id/bt54"
         app:layout_constraintTop_toBottomOf="@+id/bt47"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt56"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_56"
+        android:scaleType="centerInside"
         android:tag="56"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt55"
         app:layout_constraintTop_toBottomOf="@+id/bt48"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt50"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_50"
+        android:scaleType="centerInside"
         android:tag="50"
         app:layout_constraintStart_toEndOf="@+id/bt49"
         app:layout_constraintTop_toBottomOf="@+id/bt42"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt41"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_41"
+        android:scaleType="centerInside"
         android:tag="41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt33"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt43"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_43"
+        android:scaleType="centerInside"
         android:tag="43"
         app:layout_constraintStart_toEndOf="@+id/bt42"
         app:layout_constraintTop_toBottomOf="@+id/bt35"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt44"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_44"
+        android:scaleType="centerInside"
         android:tag="44"
         app:layout_constraintStart_toEndOf="@+id/bt43"
         app:layout_constraintTop_toBottomOf="@+id/bt36"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt45"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_45"
+        android:scaleType="centerInside"
         android:tag="45"
         app:layout_constraintStart_toEndOf="@+id/bt44"
         app:layout_constraintTop_toBottomOf="@+id/bt37"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt46"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_46"
+        android:scaleType="centerInside"
         android:tag="46"
         app:layout_constraintStart_toEndOf="@+id/bt45"
         app:layout_constraintTop_toBottomOf="@+id/bt38"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt47"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_47"
+        android:scaleType="centerInside"
         android:tag="47"
         app:layout_constraintStart_toEndOf="@+id/bt46"
         app:layout_constraintTop_toBottomOf="@+id/bt39"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt48"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_48"
+        android:scaleType="centerInside"
         android:tag="48"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt47"
         app:layout_constraintTop_toBottomOf="@+id/bt40"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt42"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_42"
+        android:scaleType="centerInside"
         android:tag="42"
         app:layout_constraintStart_toEndOf="@+id/bt41"
         app:layout_constraintTop_toBottomOf="@+id/bt34"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt33"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_33"
+        android:scaleType="centerInside"
         android:tag="33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt25"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt35"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_35"
+        android:scaleType="centerInside"
         android:tag="35"
         app:layout_constraintStart_toEndOf="@+id/bt34"
         app:layout_constraintTop_toBottomOf="@+id/bt27"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt36"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_36"
+        android:scaleType="centerInside"
         android:tag="36"
         app:layout_constraintStart_toEndOf="@+id/bt35"
         app:layout_constraintTop_toBottomOf="@+id/bt28"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt37"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_37"
+        android:scaleType="centerInside"
         android:tag="37"
         app:layout_constraintStart_toEndOf="@+id/bt36"
         app:layout_constraintTop_toBottomOf="@+id/bt29"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt38"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_38"
+        android:scaleType="centerInside"
         android:tag="38"
         app:layout_constraintStart_toEndOf="@+id/bt37"
         app:layout_constraintTop_toBottomOf="@+id/bt30"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt39"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_39"
+        android:scaleType="centerInside"
         android:tag="39"
         app:layout_constraintStart_toEndOf="@+id/bt38"
         app:layout_constraintTop_toBottomOf="@+id/bt31"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt40"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_40"
+        android:scaleType="centerInside"
         android:tag="40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt39"
         app:layout_constraintTop_toBottomOf="@+id/bt32"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt34"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_34"
+        android:scaleType="centerInside"
         android:tag="34"
         app:layout_constraintStart_toEndOf="@+id/bt33"
         app:layout_constraintTop_toBottomOf="@+id/bt26"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt25"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_25"
+        android:scaleType="centerInside"
         android:tag="25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt17"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt27"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_27"
+        android:scaleType="centerInside"
         android:tag="27"
         app:layout_constraintStart_toEndOf="@+id/bt26"
         app:layout_constraintTop_toBottomOf="@+id/bt19"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt28"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_28"
+        android:scaleType="centerInside"
         android:tag="28"
         app:layout_constraintStart_toEndOf="@+id/bt27"
         app:layout_constraintTop_toBottomOf="@+id/bt20"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt29"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
-        android:contentDescription="@string/_26"
+        android:contentDescription="@string/_29"
+        android:scaleType="centerInside"
         android:tag="29"
         app:layout_constraintStart_toEndOf="@+id/bt28"
         app:layout_constraintTop_toBottomOf="@+id/bt21"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt30"
@@ -428,324 +500,378 @@
         android:tag="30"
         app:layout_constraintStart_toEndOf="@+id/bt29"
         app:layout_constraintTop_toBottomOf="@+id/bt22"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
+        style="@android:style/Widget.ImageButton"
+        android:scaleType="centerInside" />
 
     <ImageButton
         android:id="@+id/bt31"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_31"
+        android:scaleType="centerInside"
         android:tag="31"
         app:layout_constraintStart_toEndOf="@+id/bt30"
         app:layout_constraintTop_toBottomOf="@+id/bt23"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt32"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_32"
+        android:scaleType="centerInside"
         android:tag="32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt31"
         app:layout_constraintTop_toBottomOf="@+id/bt24"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt26"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_26"
+        android:scaleType="centerInside"
         android:tag="26"
         app:layout_constraintStart_toEndOf="@+id/bt25"
         app:layout_constraintTop_toBottomOf="@+id/bt18"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt17"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_17"
+        android:scaleType="centerInside"
         android:tag="17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt9"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt19"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
-        android:contentDescription="@string/_21"
+        android:contentDescription="@string/_19"
+        android:scaleType="centerInside"
         android:tag="19"
         app:layout_constraintStart_toEndOf="@+id/bt18"
         app:layout_constraintTop_toBottomOf="@+id/bt11"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt20"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_20"
+        android:scaleType="centerInside"
         android:tag="20"
         app:layout_constraintStart_toEndOf="@+id/bt19"
         app:layout_constraintTop_toBottomOf="@+id/bt12"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt21"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_21"
+        android:scaleType="centerInside"
         android:tag="21"
         app:layout_constraintStart_toEndOf="@+id/bt20"
         app:layout_constraintTop_toBottomOf="@+id/bt13"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt22"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_22"
+        android:scaleType="centerInside"
         android:tag="22"
         app:layout_constraintStart_toEndOf="@+id/bt21"
         app:layout_constraintTop_toBottomOf="@+id/bt14"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt23"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_23"
+        android:scaleType="centerInside"
         android:tag="23"
         app:layout_constraintStart_toEndOf="@+id/bt22"
         app:layout_constraintTop_toBottomOf="@+id/bt15"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt24"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_24"
+        android:scaleType="centerInside"
         android:tag="24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt23"
         app:layout_constraintTop_toBottomOf="@+id/bt16"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt18"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_18"
+        android:scaleType="centerInside"
         android:tag="18"
         app:layout_constraintStart_toEndOf="@+id/bt17"
         app:layout_constraintTop_toBottomOf="@+id/bt10"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt9"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_9"
+        android:scaleType="centerInside"
         android:tag="9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt1"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt11"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
-        android:contentDescription="@string/_10"
+        android:contentDescription="@string/_11"
+        android:scaleType="centerInside"
         android:tag="11"
         app:layout_constraintStart_toEndOf="@+id/bt10"
         app:layout_constraintTop_toBottomOf="@+id/bt3"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt12"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
-        android:contentDescription="@string/_9"
+        android:contentDescription="@string/_12"
+        android:scaleType="centerInside"
         android:tag="12"
         app:layout_constraintStart_toEndOf="@+id/bt11"
         app:layout_constraintTop_toBottomOf="@+id/bt4"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt13"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_13"
+        android:scaleType="centerInside"
         android:tag="13"
         app:layout_constraintStart_toEndOf="@+id/bt12"
         app:layout_constraintTop_toBottomOf="@+id/bt5"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt14"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_14"
+        android:scaleType="centerInside"
         android:tag="14"
         app:layout_constraintStart_toEndOf="@+id/bt13"
         app:layout_constraintTop_toBottomOf="@+id/bt6"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt15"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_15"
+        android:scaleType="centerInside"
         android:tag="15"
         app:layout_constraintStart_toEndOf="@+id/bt14"
         app:layout_constraintTop_toBottomOf="@+id/bt7"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt16"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_16"
+        android:scaleType="centerInside"
         android:tag="16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bt15"
         app:layout_constraintTop_toBottomOf="@+id/bt8"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt10"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_10"
+        android:scaleType="centerInside"
         android:tag="10"
         app:layout_constraintStart_toEndOf="@+id/bt9"
         app:layout_constraintTop_toBottomOf="@+id/bt2"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt8"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
-        android:layout_marginEnd="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_8"
+        android:scaleType="centerInside"
         android:tag="8"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bt7"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt7"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_7"
+        android:scaleType="centerInside"
         android:tag="7"
         app:layout_constraintStart_toEndOf="@+id/bt6"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt6"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_6"
+        android:scaleType="centerInside"
         android:tag="6"
         app:layout_constraintStart_toEndOf="@+id/bt5"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt5"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_5"
+        android:scaleType="centerInside"
         android:tag="5"
         app:layout_constraintStart_toEndOf="@+id/bt4"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt4"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_4"
+        android:scaleType="centerInside"
         android:tag="4"
         app:layout_constraintStart_toEndOf="@+id/bt3"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt3"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_3"
+        android:scaleType="centerInside"
         android:tag="3"
         app:layout_constraintStart_toEndOf="@+id/bt2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt2"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_2"
+        android:scaleType="centerInside"
         android:tag="2"
         app:layout_constraintStart_toEndOf="@+id/bt1"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt1"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="140dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_1"
+        android:scaleType="centerInside"
         android:tag="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
