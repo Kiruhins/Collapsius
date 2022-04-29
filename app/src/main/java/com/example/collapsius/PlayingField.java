@@ -1059,7 +1059,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                     }
                                 }
-                                
+
+
 
                         }
                     }

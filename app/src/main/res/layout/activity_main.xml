@@ -23,7 +23,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/NewGame"
         style="@android:style/Widget.ImageButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -44,8 +44,8 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:translationX="5"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/NewGame"
+        app:layout_constraintTop_toTopOf="@+id/NewGame"
         app:srcCompat="@drawable/a06104" />
 
     <ImageView
