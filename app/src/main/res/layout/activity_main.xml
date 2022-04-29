@@ -17,7 +17,7 @@
         android:layout_marginBottom="78dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/_Settings"
-        android:translationY="-3"
+        android:translationY="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ImageContrastCheck" />
@@ -43,7 +43,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
-        android:translationX="5"
+        android:contentDescription="@string/_play"
+        android:translationX="5dp"
         app:layout_constraintEnd_toEndOf="@+id/NewGame"
         app:layout_constraintTop_toTopOf="@+id/NewGame"
         app:srcCompat="@drawable/a06104" />
@@ -54,8 +55,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="9dp"
-        android:translationX="1"
-        android:translationY="2"
+        android:contentDescription="@string/_settings"
+        android:translationX="1dp"
+        android:translationY="2dp"
         app:layout_constraintEnd_toEndOf="@+id/Settings"
         app:layout_constraintTop_toTopOf="@+id/Settings"
         app:srcCompat="@drawable/a63074" />
@@ -65,9 +67,11 @@
         android:layout_width="300dp"
         android:layout_height="176dp"
         android:layout_marginTop="180dp"
+        android:contentDescription="@string/_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

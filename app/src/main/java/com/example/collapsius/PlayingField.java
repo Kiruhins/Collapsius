@@ -856,7 +856,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 }
 
                 //Log.d("ggg", "запустился doInBackground");
-                if (paintcells == true) {
+                while ((paintcells == true) || (trigger == true)) {
                     Log.d("ggg", "произошло деление");
 
                     if (speed == false) {
@@ -905,11 +905,12 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                         }
                         return null;
                     }
+                    trigger = false;
                     for (int i = 0; i < 8; i++) {
                         for (int j = 0; j < 8; j++) {
 
                             ImageButton bt = findViewById(mas[i][j]);
-                            Log.d("ggg" , "запустилось деление");
+                            //Log.d("ggg" , "запустилось деление");
 
                             if ((cell.cellsmas[i][j] == 4) || (cell.cellsmas[i][j] == 5) || (cell.cellsmas[i][j] == 6) || (cell.cellsmas[i][j] == 7) || (cell.cellsmas[i][j] == 8)) { // Значение 8 вроде не может быть
                                 cell.cellsmas[i][j] = 0;
@@ -920,11 +921,14 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                 //paintobjects();
                                 System.out.println("playerp " + playerp);
                                 cell.player[i][j] = 0;
-                                trigger = true;
                                 if (playerp == 1) {
                                     if (i > 0) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
+                                        if (cell.cellsmas[i - 1][j] >= 4) {
+                                            trigger = true;
+
+                                        }
                                     }
                                     if (i < 7) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
@@ -937,12 +941,20 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (j > 0) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
+                                        if (cell.cellsmas[i ][j-1] >= 4) {
+                                            trigger = true;
+
+                                        }
                                     }
                                 }
                                 if (playerp == 2) {
                                     if (i > 0) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
+                                        if (cell.cellsmas[i - 1][j] >= 4) {
+                                            trigger = true;
+
+                                        }
                                     }
                                     if (i < 7) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
@@ -955,6 +967,10 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (j > 0) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
+                                        if (cell.cellsmas[i][j-1] >= 4) {
+                                            trigger = true;
+                                            
+                                        }
                                     }
                                 }
 
@@ -976,11 +992,11 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                     }
                     paintcells = false;
                     FromBackToProgress = true;
-                    publishProgress((int) (num));
+                    //publishProgress((int) (num));
 
                 }
+                publishProgress((int) (num));
 
-                //paintobjects
             }
 
 
@@ -991,18 +1007,18 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             super.onProgressUpdate(values);
         //protected void onProgressUpdate(Integer... values) {
         //    super.onProgressUpdate(values);
-            while (FromBackToProgress == true) {
+            if (FromBackToProgress == true) {
 
 
-                    Log.d("ggg", "запустился onPostExecute");
+                    //Log.d("ggg", "запустился onPostExecute");
                     for (int i = 0; i < 8; i++) {
                         for (int j = 0; j < 8; j++) {
 
 
                                 ImageButton bt = findViewById(mas[i][j]);
-                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                Log.d("ggg", "начало покраски");
-                                //paintobjects();
+
+                                //Log.d("ggg", "начало покраски");
+
 
                                 if (cell.cellsmas[i][j] == 0) {
 
@@ -1011,7 +1027,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     bt.setImageResource(R.drawable.emptycell);
                                     bt.setBackgroundColor (Color.green(100));
                                     //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                    Log.d("ggg", "перерисовка коллапса");
+                                    //Log.d("ggg", "перерисовка коллапса");
                                 }
                                 if (cell.cellsmas[i][j] == 1) {
                                     if (cell.player[i][j] == 1) {
