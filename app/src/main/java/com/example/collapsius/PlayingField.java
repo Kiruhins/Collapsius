@@ -849,6 +849,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             //Integer values = 1;
             //publishProgress(values);
             while (true) {
+                publishProgress((int) (num));
                 try {
                     sleep(20);
                 } catch (InterruptedException e) {
@@ -856,7 +857,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 }
 
                 //Log.d("ggg", "запустился doInBackground");
-                while ((paintcells == true) || (trigger == true)) {
+                while (paintcells == true) {
                     Log.d("ggg", "произошло деление");
 
                     if (speed == false) {
@@ -888,16 +889,25 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                             yy = yy + 7;
                         }
                         //System.out.println("x-" + xx + "  y-" + yy);
-                        if (((shot % 2 == 0) && (cell.player[yy][xx] == 1)) || ((shot % 2 != 0) && (cell.player[yy][xx] == 2))) {
+                        // shot - какой игрок ходит(нечетные- 1 игрок, четные- 2 игрок)
+                        // num-номер кнопки, которая поделилась последней
+                        // nump- номер кнопки, которая поделилась предпоследней
+                        // clickbutton- переменная, которая увеличивается при каждом коллапсе
+                        // Здесь мы увеличиваем значение клетки, которая поделилась до этого (зачем?)
+                        System.out.println("AAAAAAAAAAAAAAAAA " + clickbutton);
+
+
+                        if (((cell.player[yy][xx] == 1)) || ( (cell.player[yy][xx] == 2))) {
                             if ((clickbutton <= 2) && (num != nump) && (shotp != shot)) {
                                 clickbutton++;
+                                System.out.println("clickbutton " + clickbutton);
                                 // System.out.println();
                                 //System.out.println("Кнопка    " + clickbutton);
                                 cell.cellsmas[yy][xx] = cell.cellsmas[yy][xx] + 1;
                             } else if ((num == nump) || (cell.cellsmas[yy][xx] == 0) || (shotp == shot)) {
 
                                 // System.out.println();
-                                // System.out.println("Кнопка    " + clickbutton);
+                                System.out.println("clickbutton2  " + clickbutton);
                             } else if (shotp != shot) {
                                 cell.cellsmas[yy][xx] = cell.cellsmas[yy][xx] + 1;
 
@@ -925,10 +935,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (i > 0) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
-                                        if (cell.cellsmas[i - 1][j] >= 4) {
-                                            trigger = true;
 
-                                        }
                                     }
                                     if (i < 7) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
@@ -941,20 +948,14 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (j > 0) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
-                                        if (cell.cellsmas[i ][j-1] >= 4) {
-                                            trigger = true;
 
-                                        }
                                     }
                                 }
                                 if (playerp == 2) {
                                     if (i > 0) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
-                                        if (cell.cellsmas[i - 1][j] >= 4) {
-                                            trigger = true;
 
-                                        }
                                     }
                                     if (i < 7) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
@@ -967,10 +968,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (j > 0) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
-                                        if (cell.cellsmas[i][j-1] >= 4) {
-                                            trigger = true;
-                                            
-                                        }
+
                                     }
                                 }
 
@@ -981,21 +979,25 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     e.printStackTrace();
                                 }
 
+
                                 if (speed == true) {
                                     speed = false; // Эта переменная не дает программе считать очки, пока не пройдет рисовка
+                                    System.out.println("speed " + speed);
                                 }
                                 //paintobjects();
 
+                                FromBackToProgress = true;
+                                publishProgress((int) (num));
 
                             }
                         }
                     }
                     paintcells = false;
-                    FromBackToProgress = true;
+
                     //publishProgress((int) (num));
 
                 }
-                publishProgress((int) (num));
+
 
             }
 
@@ -1075,6 +1077,23 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                     }
                                 }
+                                if (cell.cellsmas[i][j] == 4) {
+                                    if (cell.player[i][j] == 1) {
+
+                                        bt.setImageResource(R.drawable.bblue4);
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                                    } else if (cell.player[i][j] == 2) {
+
+                                        bt.setImageResource(R.drawable.bgreen4);
+                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                                    }
+                                    paintcells=true;
+                                    speed=true;
+                                }
 
 
 
@@ -1091,6 +1110,9 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
             }
         }
+
+
+
     }
 
         /*
