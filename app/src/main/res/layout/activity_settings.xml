@@ -7,19 +7,6 @@
     android:background="@drawable/back__xz"
     tools:context=".Settings">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="328dp"
-        android:layout_height="259dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="400dp"
-        android:contentDescription="@string/allsettings"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settings" />
-
     <ImageButton
         android:id="@+id/BacktoMenu"
         android:layout_width="60dp"
@@ -31,5 +18,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back_to_menu" />
+
+    <ImageView
+        android:id="@+id/setlobby"
+        android:layout_width="328dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="400dp"
+        android:contentDescription="@string/allsettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
