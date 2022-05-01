@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class FieldConfiguration extends AppCompatActivity {
 
-    private Button bt_Next;
-    private Button bt_back2;
+    private ImageButton bt_Next;
+    private ImageButton bt_back2;
     private ImageButton bt_2players;
     private ImageButton bt_3players;
     private ImageButton bt_4players;
@@ -35,7 +34,6 @@ public class FieldConfiguration extends AppCompatActivity {
 
         setContentView(R.layout.activity_field_configuration);
 
-        bt_Next=findViewById(R.id.bt_Next);
         bt_back2=findViewById(R.id.bt_back2);
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
@@ -46,6 +44,7 @@ public class FieldConfiguration extends AppCompatActivity {
         bt_map4=findViewById(R.id.bt_map4);
         bt_map5=findViewById(R.id.bt_map5);
         bt_map6=findViewById(R.id.bt_map6);
+        bt_Next=findViewById(R.id.bt_Next);
 
         Intent intent=getIntent();
         Integer mode=intent.getIntExtra("mode",0);
