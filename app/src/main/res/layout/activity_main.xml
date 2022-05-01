@@ -5,7 +5,7 @@
     android:id="@+id/CL_mainMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_newmenu"
+    android:background="@drawable/back__xz"
     tools:context=".MainActivity">
 
 
@@ -13,9 +13,9 @@
         android:id="@+id/Settings"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginBottom="78dp"
-        android:background="#00FFFFFF"
+        android:layout_marginStart="93dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/set"
         android:contentDescription="@string/_Settings"
         android:translationY="-3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,29 +38,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:translationX="5"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:srcCompat="@drawable/a06104" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="9dp"
-        android:translationX="1"
-        android:translationY="2"
-        app:layout_constraintEnd_toEndOf="@+id/Settings"
-        app:layout_constraintTop_toTopOf="@+id/Settings"
-        app:srcCompat="@drawable/a63074" />
-
-    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="300dp"
         android:layout_height="176dp"
@@ -69,5 +46,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:srcCompat="@drawable/play" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
