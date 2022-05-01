@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonNewGame;
+    private ImageButton buttonNewGame;
     private ImageButton Settings;
 
 

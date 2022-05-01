@@ -19,7 +19,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@+id/bt_map5"
       app:layout_constraintTop_toBottomOf="@+id/bt_map3"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
@@ -31,7 +31,7 @@
       android:contentDescription="@string/map4"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/bt_map1"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
@@ -43,7 +43,7 @@
       android:contentDescription="@string/map5"
       app:layout_constraintStart_toEndOf="@+id/bt_map4"
       app:layout_constraintTop_toBottomOf="@+id/bt_map2"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
@@ -55,7 +55,7 @@
       android:contentDescription="@string/map2"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toEndOf="@+id/bt_map1"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
@@ -69,7 +69,7 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@+id/bt_map2"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
@@ -81,7 +81,7 @@
       android:contentDescription="@string/map1"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:srcCompat="@drawable/settingsbutton"
+      app:srcCompat="@drawable/map1"
       tools:ignore="ImageContrastCheck" />
 
   <TextView
