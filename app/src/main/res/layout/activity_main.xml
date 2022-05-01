@@ -14,7 +14,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="93dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="83dp"
         android:background="@drawable/set"
         android:contentDescription="@string/_Settings"
         android:translationY="3dp"
@@ -38,8 +38,29 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-<<<<<<< HEAD
-=======
+        android:id="@+id/imageView"
+        android:layout_width="79dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/NewGame"
+        app:layout_constraintEnd_toEndOf="@+id/NewGame"
+        app:layout_constraintStart_toStartOf="@+id/NewGame"
+        app:layout_constraintTop_toTopOf="@+id/NewGame"
+        app:layout_constraintVertical_bias="0.7"
+        app:srcCompat="@drawable/play" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="310dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="470dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+</androidx.constraintlayout.widget.ConstraintLayout><![CDATA[=======
         android:id="@+id/imageView2"
         android:layout_width="55dp"
         android:layout_height="55dp"
@@ -51,21 +72,9 @@
         app:layout_constraintTop_toTopOf="@+id/NewGame"
         app:srcCompat="@drawable/a06104" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="9dp"
-        android:contentDescription="@string/_settings"
-        android:translationX="1dp"
-        android:translationY="2dp"
-        app:layout_constraintEnd_toEndOf="@+id/Settings"
-        app:layout_constraintTop_toTopOf="@+id/Settings"
-        app:srcCompat="@drawable/a63074" />
 
-    <ImageView
->>>>>>> 93da46158f56d718fa8f5913e25d91a770555406
+
+    >>>>>> 93da46158f56d718fa8f5913e25d91a770555406
         android:id="@+id/imageView4"
         android:layout_width="300dp"
         android:layout_height="176dp"
@@ -77,14 +86,6 @@
         app:srcCompat="@drawable/logo"
         tools:ignore="ImageContrastCheck" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="81dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:srcCompat="@drawable/play" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+]]>
