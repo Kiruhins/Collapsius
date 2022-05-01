@@ -1099,7 +1099,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                             }
                             paintcells = true;
                             speed = true;
-                            win();
+                            //win();
                         }
 
 
@@ -1113,7 +1113,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 }
                 //paintcells = false;
                 FromBackToProgress = false;
-
+                win();
             }
         }
 
