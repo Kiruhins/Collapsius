@@ -17,10 +17,7 @@
     <string name="map5">map5</string>
     <string name="map6">map6</string>
     <string name="_next">Далее</string>
-    <string name="_2">2</string>
-    <string name="_3">3</string>
     <string name="_1">1</string>
-    <string name="_4">4</string>
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
@@ -88,5 +85,13 @@
     <string name="_play">play</string>
     <string name="_settings">settings</string>
     <string name="_logo">logo</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="bt_2players">bt_2players</string>
+    <string name="bt_3players">bt_3players</string>
+    <string name="bt_4players">bt_4players</string>
+    <string name="allsettings">allsettings</string>
+    <string name="back_to_menu">back_to_menu</string>
 
 </resources>

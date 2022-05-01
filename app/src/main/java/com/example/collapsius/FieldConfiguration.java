@@ -13,9 +13,9 @@ public class FieldConfiguration extends AppCompatActivity {
 
     private Button bt_Next;
     private Button bt_back2;
-    private Button bt_2players;
-    private Button bt_3players;
-    private Button bt_4players;
+    private ImageButton bt_2players;
+    private ImageButton bt_3players;
+    private ImageButton bt_4players;
     private ImageButton bt_map1;
     private ImageButton bt_map2;
     private ImageButton bt_map3;

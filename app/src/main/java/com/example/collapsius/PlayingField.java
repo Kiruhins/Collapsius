@@ -9,9 +9,11 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 
@@ -53,18 +55,18 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     Integer clickbutton = 0;
     Integer startid;
     Integer razm = 8;
-    Boolean paintcells= false;
+    Boolean paintcells = false;
 
     int[][] mas = new int[8][8];
 
     boolean FromBackToProgress;
 
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_field);
 
-        cell = new Cells(cellsmas, player,lastplayer ,lastcellsmas );
+        cell = new Cells(cellsmas, player, lastplayer, lastcellsmas);
 
         for (int i = 0; i < cell.cellsmas.length; ++i) {
             for (int j = 0; j < cell.cellsmas.length; ++j) {
@@ -79,75 +81,74 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         MyAsyncTask thread = new MyAsyncTask();
         thread.execute();
 
-            ImageButton bt_1;
-            ImageButton bt_2;
-            ImageButton bt_3;
-            ImageButton bt_4;
-            ImageButton bt_5;
-            ImageButton bt_6;
-            ImageButton bt_7;
-            ImageButton bt_8;
-            ImageButton bt_9;
-            ImageButton bt_10;
-            ImageButton bt_11;
-            ImageButton bt_12;
-            ImageButton bt_13;
-            ImageButton bt_14;
-            ImageButton bt_15;
-            ImageButton bt_16;
-            ImageButton bt_17;
-            ImageButton bt_18;
-            ImageButton bt_19;
-            ImageButton bt_20;
-            ImageButton bt_21;
-            ImageButton bt_22;
-            ImageButton bt_23;
-            ImageButton bt_24;
-            ImageButton bt_25;
-            ImageButton bt_26;
-            ImageButton bt_27;
-            ImageButton bt_28;
-            ImageButton bt_29;
-            ImageButton bt_30;
-            ImageButton bt_31;
-            ImageButton bt_32;
-            ImageButton bt_33;
-            ImageButton bt_34;
-            ImageButton bt_35;
-            ImageButton bt_36;
-            ImageButton bt_37;
-            ImageButton bt_38;
-            ImageButton bt_39;
-            ImageButton bt_40;
-            ImageButton bt_41;
-            ImageButton bt_42;
-            ImageButton bt_43;
-            ImageButton bt_44;
-            ImageButton bt_45;
-            ImageButton bt_46;
-            ImageButton bt_47;
-            ImageButton bt_48;
-            ImageButton bt_49;
-            ImageButton bt_50;
-            ImageButton bt_51;
-            ImageButton bt_52;
-            ImageButton bt_53;
-            ImageButton bt_54;
-            ImageButton bt_55;
-            ImageButton bt_56;
-            ImageButton bt_57;
-            ImageButton bt_58;
-            ImageButton bt_59;
-            ImageButton bt_60;
-            ImageButton bt_61;
-            ImageButton bt_62;
-            ImageButton bt_63;
-            ImageButton bt_64;
+        ImageButton bt_1;
+        ImageButton bt_2;
+        ImageButton bt_3;
+        ImageButton bt_4;
+        ImageButton bt_5;
+        ImageButton bt_6;
+        ImageButton bt_7;
+        ImageButton bt_8;
+        ImageButton bt_9;
+        ImageButton bt_10;
+        ImageButton bt_11;
+        ImageButton bt_12;
+        ImageButton bt_13;
+        ImageButton bt_14;
+        ImageButton bt_15;
+        ImageButton bt_16;
+        ImageButton bt_17;
+        ImageButton bt_18;
+        ImageButton bt_19;
+        ImageButton bt_20;
+        ImageButton bt_21;
+        ImageButton bt_22;
+        ImageButton bt_23;
+        ImageButton bt_24;
+        ImageButton bt_25;
+        ImageButton bt_26;
+        ImageButton bt_27;
+        ImageButton bt_28;
+        ImageButton bt_29;
+        ImageButton bt_30;
+        ImageButton bt_31;
+        ImageButton bt_32;
+        ImageButton bt_33;
+        ImageButton bt_34;
+        ImageButton bt_35;
+        ImageButton bt_36;
+        ImageButton bt_37;
+        ImageButton bt_38;
+        ImageButton bt_39;
+        ImageButton bt_40;
+        ImageButton bt_41;
+        ImageButton bt_42;
+        ImageButton bt_43;
+        ImageButton bt_44;
+        ImageButton bt_45;
+        ImageButton bt_46;
+        ImageButton bt_47;
+        ImageButton bt_48;
+        ImageButton bt_49;
+        ImageButton bt_50;
+        ImageButton bt_51;
+        ImageButton bt_52;
+        ImageButton bt_53;
+        ImageButton bt_54;
+        ImageButton bt_55;
+        ImageButton bt_56;
+        ImageButton bt_57;
+        ImageButton bt_58;
+        ImageButton bt_59;
+        ImageButton bt_60;
+        ImageButton bt_61;
+        ImageButton bt_62;
+        ImageButton bt_63;
+        ImageButton bt_64;
 
 
-
-            bt_1 = findViewById(R.id.bt1);
-            mas[0][0] = bt_1.getId();
+        bt_1 = findViewById(R.id.bt1);
+        mas[0][0] = bt_1.getId();
         //startid = bt_1.getId();
 
         bt_1.setOnTouchListener(this);
@@ -342,7 +343,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         bt_64.setOnTouchListener(this);
 
 
-
         System.out.println("номер клетки 1 " + String.valueOf(bt_1.getId()));
         System.out.println("номер клетки 2 " + String.valueOf(bt_2.getId()));
         System.out.println("номер клетки 3 " + String.valueOf(bt_3.getId()));
@@ -415,7 +415,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         System.out.println("номер клетки 64 " + String.valueOf(bt_64.getId()));
 
 
-
         //Resources res = getResources();
         //Drawable bblue1 = ResourcesCompat.getDrawable(res, R.drawable.bblue1, null);
 
@@ -430,167 +429,166 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         Log.d("map", String.valueOf(map));
 
     }
+
     // просто нажимаем любую кнопку + находим по тегу
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
+        if (paintcells == false) {
+            ImageButton bt = (ImageButton) findViewById(v.getId());
 
-        ImageButton bt = (ImageButton) findViewById(v.getId());
 
-
-        // String num= String.valueOf(bt.getTag());
-        try {
-            String numm = (String) bt.getTag();
-            num = Integer.valueOf(numm) - 1;
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        // Log.d("ggg", String.valueOf(num));
-        System.out.println("номер клетки " + String.valueOf(num));
-
-        int xx = 0;
-        int yy = 0;
-        if (num <= 7) {
-            xx = num;
-            yy = 0;
-        } else if ((num > 7) && (num <= 15)) {
-            xx = num - 8;
-            yy = yy + 1;
-        } else if ((num <= 23) && (num > 15)) {
-            xx = num - 16;
-            yy = yy + 2;
-        } else if ((num <= 31) && (num > 23)) {
-            xx = num - 24;
-            yy = yy + 3;
-        } else if ((num <= 39) && (num > 31)) {
-            xx = num - 32;
-            yy = yy + 4;
-        } else if ((num <= 47) && (num > 39)) {
-            xx = num - 40;
-            yy = yy + 5;
-        } else if ((num <= 55) && (num > 47)) {
-            xx = num - 48;
-            yy = yy + 6;
-        } else if (num > 55) {
-            xx = num - 56;
-            yy = yy + 7;
-        }
-       // Log.d("ggg", "xx- " + xx + " yy- " + yy);
-
-        //Прописываем изменения кнопки
-        if ((cell.player[yy][xx] == 1) && (shot % 2 == 1)) {
-            //cell.lastplayer[yy][xx] = cell.player[yy][xx];
-            if (cell.cellsmas[yy][xx] == 1) {
-                bt.setImageResource(R.drawable.bblue2);
-                cell.cellsmas[yy][xx] = 2;
-                //cell.lastcellsmas[yy][xx] = 2;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-
+            // String num= String.valueOf(bt.getTag());
+            try {
+                String numm = (String) bt.getTag();
+                num = Integer.valueOf(numm) - 1;
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
-            else if (cell.cellsmas[yy][xx] == 2) {
-                bt.setImageResource(R.drawable.bblue3);
-                cell.cellsmas[yy][xx] = 3;
-                //cell.lastcellsmas[yy][xx] = 3;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
+            // Log.d("ggg", String.valueOf(num));
+            System.out.println("номер клетки " + String.valueOf(num));
+
+            int xx = 0;
+            int yy = 0;
+            if (num <= 7) {
+                xx = num;
+                yy = 0;
+            } else if ((num > 7) && (num <= 15)) {
+                xx = num - 8;
+                yy = yy + 1;
+            } else if ((num <= 23) && (num > 15)) {
+                xx = num - 16;
+                yy = yy + 2;
+            } else if ((num <= 31) && (num > 23)) {
+                xx = num - 24;
+                yy = yy + 3;
+            } else if ((num <= 39) && (num > 31)) {
+                xx = num - 32;
+                yy = yy + 4;
+            } else if ((num <= 47) && (num > 39)) {
+                xx = num - 40;
+                yy = yy + 5;
+            } else if ((num <= 55) && (num > 47)) {
+                xx = num - 48;
+                yy = yy + 6;
+            } else if (num > 55) {
+                xx = num - 56;
+                yy = yy + 7;
             }
-            else if (cell.cellsmas[yy][xx] == 3) {
-                cell.cellsmas[yy][xx] = 4;
-                //cell.lastcellsmas[yy][xx] = 4;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-                Log.d("ggg", "запустился paintobjects()");
-                bt.setImageResource(R.drawable.bblue4);
-                //paintobjects();
-                paintcells = true;
-                speed = true;
-                //doWork();
+            // Log.d("ggg", "xx- " + xx + " yy- " + yy);
+            System.out.println("player " + String.valueOf(cell.player[xx][yy]));
+            //Прописываем изменения кнопки
+            if ((cell.player[yy][xx] == 1) && (shot % 2 == 1)) {
+                //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                if (cell.cellsmas[yy][xx] == 1) {
+                    bt.setImageResource(R.drawable.bblue2);
+                    cell.cellsmas[yy][xx] = 2;
+                    //cell.lastcellsmas[yy][xx] = 2;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
 
+                } else if (cell.cellsmas[yy][xx] == 2) {
+                    bt.setImageResource(R.drawable.bblue3);
+                    cell.cellsmas[yy][xx] = 3;
+                    //cell.lastcellsmas[yy][xx] = 3;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                } else if (cell.cellsmas[yy][xx] == 3) {
+                    cell.cellsmas[yy][xx] = 4;
+                    //cell.lastcellsmas[yy][xx] = 4;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    Log.d("ggg", "запустился paintobjects()");
+                    bt.setImageResource(R.drawable.bblue4);
+                    //paintobjects();
+                    paintcells = true;
+                    speed = true;
+                    //doWork();
+
+                }
             }
-        }
-        if ((cell.player[yy][xx] == 2) && (shot % 2 == 0)) {
-            //cell.lastplayer[yy][xx] = cell.player[yy][xx];
-            if (cell.cellsmas[yy][xx] == 1) {
-                bt.setImageResource(R.drawable.bgreen2);
-                cell.cellsmas[yy][xx] = 2;
-                //cell.lastcellsmas[yy][xx] = 2;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
+            if ((cell.player[yy][xx] == 2) && (shot % 2 == 0)) {
+                //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                if (cell.cellsmas[yy][xx] == 1) {
+                    bt.setImageResource(R.drawable.bgreen2);
+                    cell.cellsmas[yy][xx] = 2;
+                    //cell.lastcellsmas[yy][xx] = 2;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                } else if (cell.cellsmas[yy][xx] == 2) {
+                    bt.setImageResource(R.drawable.bgreen3);
+                    cell.cellsmas[yy][xx] = 3;
+                    //cell.lastcellsmas[yy][xx] = 3;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                } else if (cell.cellsmas[yy][xx] == 3) {
+                    cell.cellsmas[yy][xx] = 4;
+                    //cell.lastcellsmas[yy][xx] = 4;
+                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    Log.d("ggg", "запустился paintobjects()");
+                    bt.setImageResource(R.drawable.bgreen4);
+                    //paintobjects();
+                    paintcells = true;
+                    speed = true;
+                    //doWork();
+
+                }
             }
-            else if (cell.cellsmas[yy][xx] == 2) {
-                bt.setImageResource(R.drawable.bgreen3);
-                cell.cellsmas[yy][xx] = 3;
-                //cell.lastcellsmas[yy][xx] = 3;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-            }
-            else if (cell.cellsmas[yy][xx] == 3) {
-                cell.cellsmas[yy][xx] = 4;
-                //cell.lastcellsmas[yy][xx] = 4;
-                System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-                Log.d("ggg", "запустился paintobjects()");
-                bt.setImageResource(R.drawable.bgreen4);
-                //paintobjects();
-                paintcells = true;
-                speed = true;
-                //doWork();
-
-            }
-        }
-        if ((cell.cellsmas[yy][xx]==0) && (shot  == 1)) {
-            bt.setImageResource(R.drawable.bblue1);
-            cell.cellsmas[yy][xx] = 1;
-            //cell.lastcellsmas[yy][xx] = 1;
-            System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-            cell.player[yy][xx] = 1;
-            //cell.lastplayer[yy][xx] = cell.player[yy][xx];
-        }
-        if ((cell.cellsmas[yy][xx]==0) && (shot == 2))  {
-            bt.setImageResource(R.drawable.bgreen1);
-            cell.cellsmas[yy][xx] = 1;
-            //cell.lastcellsmas[yy][xx] = 1;
-            System.out.println("cellmass["+yy+"]["+xx+"] = " + cell.cellsmas[yy][xx]);
-            cell.player[yy][xx] = 2;
-            //cell.lastplayer[yy][xx] = cell.player[yy][xx];
-        }
-
-        // Log.d("ggg", "запустился paintobjects()");
-
-        //может ли  игрок походить на данную  клетку
-
-        if ((shot % 2 != 0) && (cell.player[yy][xx] == 1)) {
-
-            if (clickbuttonn < 1) {
-                System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
-                clickbuttonn++;
-                shot ++;
-                System.out.println("Какой игрок-" + shot);
-            } else if ((cell.player[yy][xx] == 2) || (cell.cellsmas[yy][xx] == 0)) {
-
-            } else {
-                System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+            if ((cell.cellsmas[yy][xx] == 0) && (shot == 1)) {
+                bt.setImageResource(R.drawable.bblue1);
+                cell.cellsmas[yy][xx] = 1;
+                //cell.lastcellsmas[yy][xx] = 1;
+                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 1;
-                shot ++;
-                clickbutton++;
-                System.out.println("Какой игрок-" + shot);
+                //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-
-
-        }
-        if ((shot % 2 == 0) && (cell.player[yy][xx] == 2)) {
-
-            if (clickbuttonn < 2) {
-                System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
-                clickbuttonn++;
-                shot++;
-                System.out.println("Какой игрок-" + shot);
-            } else if ( (cell.player[yy][xx] == 1) || (cell.cellsmas[yy][xx] == 0)) {
-
-            } else {
-                System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+            if ((cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
+                bt.setImageResource(R.drawable.bgreen1);
+                cell.cellsmas[yy][xx] = 1;
+                //cell.lastcellsmas[yy][xx] = 1;
+                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 2;
-                shot++;
-                clickbutton++;
-                System.out.println("Какой игрок-" + shot);
+                //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
 
+            // Log.d("ggg", "запустился paintobjects()");
+
+            //может ли  игрок походить на данную  клетку
+
+            if ((shot % 2 != 0) && (cell.player[yy][xx] == 1)) {
+
+                if (clickbuttonn < 1) {
+                    System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+                    clickbuttonn++;
+                    shot++;
+                    System.out.println("Какой игрок-" + shot);
+                } else if ((cell.player[yy][xx] == 2) || (cell.cellsmas[yy][xx] == 0)) {
+
+                } else {
+                    System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+                    cell.player[yy][xx] = 1;
+                    shot++;
+                    clickbutton++;
+                    System.out.println("Какой игрок-" + shot);
+                }
+
+
+            }
+            if ((shot % 2 == 0) && (cell.player[yy][xx] == 2)) {
+
+                if (clickbuttonn < 2) {
+                    System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+                    clickbuttonn++;
+                    shot++;
+                    System.out.println("Какой игрок-" + shot);
+                } else if ((cell.player[yy][xx] == 1) || (cell.cellsmas[yy][xx] == 0)) {
+
+                } else {
+                    System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
+                    cell.player[yy][xx] = 2;
+                    shot++;
+                    clickbutton++;
+                    System.out.println("Какой игрок-" + shot);
+                }
+
+            }
         }
+
         return true;
 
 
@@ -599,22 +597,23 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     // для перерисовки после хода
 
 
-        public Integer NumOut (Integer i, Integer j, Integer razm){
-            Integer k = 0;
-            if ((i + j * razm) >= 22)  {
-                k = 1;
-            }
-            if ((i + j * razm) >= 33)  {
-                k = 2;
-            }
-            if ((i + j * razm) >= 44)  {
-                k = 3;
-            }
-            if ((i + j * razm) >= 55)  {
-                k = 4;
-            }
-            return startid + j + (i * razm) + k;
+    public Integer NumOut(Integer i, Integer j, Integer razm) {
+        Integer k = 0;
+        if ((i + j * razm) >= 22) {
+            k = 1;
         }
+        if ((i + j * razm) >= 33) {
+            k = 2;
+        }
+        if ((i + j * razm) >= 44) {
+            k = 3;
+        }
+        if ((i + j * razm) >= 55) {
+            k = 4;
+        }
+        return startid + j + (i * razm) + k;
+    }
+
     /*
     public void doWork() {
             //Handler handler = new Handler();
@@ -827,10 +826,10 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             }).start();
         }
     */
-    private class MyAsyncTask extends AsyncTask<Integer, Integer,Void> {
-        private WeakReference <PlayingField> PlayingField;
+    private class MyAsyncTask extends AsyncTask<Integer, Integer, Void> {
+        private WeakReference<PlayingField> PlayingField;
 
-        void setPlayingField (WeakReference <PlayingField> PlayingField) {
+        void setPlayingField(WeakReference<PlayingField> PlayingField) {
             this.PlayingField = PlayingField;
         }
 
@@ -860,6 +859,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 while (paintcells == true) {
                     Log.d("ggg", "произошло деление");
 
+                    /*
                     if (speed == false) {
                         int xx = 0;
                         int yy = 0;
@@ -897,7 +897,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                         System.out.println("AAAAAAAAAAAAAAAAA " + clickbutton);
 
 
-                        if (((cell.player[yy][xx] == 1)) || ( (cell.player[yy][xx] == 2))) {
+                        if (((cell.player[yy][xx] == 1)) || ((cell.player[yy][xx] == 2))) {
                             if ((clickbutton <= 2) && (num != nump) && (shotp != shot)) {
                                 clickbutton++;
                                 System.out.println("clickbutton " + clickbutton);
@@ -916,13 +916,23 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                         return null;
                     }
                     trigger = false;
+
+                    */
+
                     for (int i = 0; i < 8; i++) {
                         for (int j = 0; j < 8; j++) {
 
                             ImageButton bt = findViewById(mas[i][j]);
                             //Log.d("ggg" , "запустилось деление");
 
-                            if ((cell.cellsmas[i][j] == 4) || (cell.cellsmas[i][j] == 5) || (cell.cellsmas[i][j] == 6) || (cell.cellsmas[i][j] == 7) || (cell.cellsmas[i][j] == 8)) { // Значение 8 вроде не может быть
+                            if (cell.cellsmas[i][j] >= 4) { // Значение 8 вроде не может быть
+
+                                try {
+                                    sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
                                 cell.cellsmas[i][j] = 0;
 
 
@@ -930,6 +940,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                 playerp = cell.player[i][j];
                                 //paintobjects();
                                 System.out.println("playerp " + playerp);
+
+
                                 cell.player[i][j] = 0;
                                 if (playerp == 1) {
                                     if (i > 0) {
@@ -973,13 +985,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                 }
 
 
-                                try {
-                                    sleep(500);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-
-
                                 if (speed == true) {
                                     speed = false; // Эта переменная не дает программе считать очки, пока не пройдет рисовка
                                     System.out.println("speed " + speed);
@@ -992,9 +997,10 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                             }
                         }
                     }
-                    paintcells = false;
-
+                    //paintcells = false;
+                    //FromBackToProgress = true;
                     //publishProgress((int) (num));
+
 
                 }
 
@@ -1007,114 +1013,146 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-        //protected void onProgressUpdate(Integer... values) {
-        //    super.onProgressUpdate(values);
+            //protected void onProgressUpdate(Integer... values) {
+            //    super.onProgressUpdate(values);
             if (FromBackToProgress == true) {
 
-
-                    //Log.d("ggg", "запустился onPostExecute");
-                    for (int i = 0; i < 8; i++) {
-                        for (int j = 0; j < 8; j++) {
-
-
-                                ImageButton bt = findViewById(mas[i][j]);
-
-                                //Log.d("ggg", "начало покраски");
+                paintcells = false;
+                //Log.d("ggg", "запустился onPostExecute");
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 8; j++) {
 
 
-                                if (cell.cellsmas[i][j] == 0) {
+                        ImageButton bt = findViewById(mas[i][j]);
+
+                        //Log.d("ggg", "начало покраски");
 
 
-                                   //bt.setImageResource(R.drawable.emptycell);
-                                    bt.setImageResource(R.drawable.emptycell);
-                                    bt.setBackgroundColor (Color.green(100));
-                                    //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                    //Log.d("ggg", "перерисовка коллапса");
-                                }
-                                if (cell.cellsmas[i][j] == 1) {
-                                    if (cell.player[i][j] == 1) {
-
-                                        bt.setImageResource(R.drawable.bblue1);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    } else if (cell.player[i][j] == 2) {
-
-                                        bt.setImageResource(R.drawable.bgreen1);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-                                    }
+                        if (cell.cellsmas[i][j] == 0) {
 
 
-                                }
-                                if (cell.cellsmas[i][j] == 2) {
-                                    if (cell.player[i][j] == 1) {
+                            //bt.setImageResource(R.drawable.emptycell);
+                            bt.setImageResource(R.drawable.emptycell);
+                            bt.setBackgroundColor(Color.green(100));
+                            //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                            //Log.d("ggg", "перерисовка коллапса");
+                        }
+                        if (cell.cellsmas[i][j] == 1) {
+                            if (cell.player[i][j] == 1) {
 
-                                        bt.setImageResource(R.drawable.bblue2);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+                                bt.setImageResource(R.drawable.bblue1);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
-                                    } else if (cell.player[i][j] == 2) {
+                            } else if (cell.player[i][j] == 2) {
 
-                                        bt.setImageResource(R.drawable.bgreen2);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    }
-                                }
-                                if (cell.cellsmas[i][j] == 3) {
-                                    if (cell.player[i][j] == 1) {
-
-                                        bt.setImageResource(R.drawable.bblue3);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    } else if (cell.player[i][j] == 2) {
-
-                                        bt.setImageResource(R.drawable.bgreen3);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    }
-                                }
-                                if (cell.cellsmas[i][j] == 4) {
-                                    if (cell.player[i][j] == 1) {
-
-                                        bt.setImageResource(R.drawable.bblue4);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    } else if (cell.player[i][j] == 2) {
-
-                                        bt.setImageResource(R.drawable.bgreen4);
-                                        //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
-                                        System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
-
-                                    }
-                                    paintcells=true;
-                                    speed=true;
-                                }
-
+                                bt.setImageResource(R.drawable.bgreen1);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+                            }
 
 
                         }
+                        if (cell.cellsmas[i][j] == 2) {
+                            if (cell.player[i][j] == 1) {
+
+                                bt.setImageResource(R.drawable.bblue2);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            } else if (cell.player[i][j] == 2) {
+
+                                bt.setImageResource(R.drawable.bgreen2);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            }
+                        }
+                        if (cell.cellsmas[i][j] == 3) {
+                            if (cell.player[i][j] == 1) {
+
+                                bt.setImageResource(R.drawable.bblue3);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            } else if (cell.player[i][j] == 2) {
+
+                                bt.setImageResource(R.drawable.bgreen3);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            }
+                        }
+                        if (cell.cellsmas[i][j] >= 4) {
+                            if (cell.player[i][j] == 1) {
+
+                                bt.setImageResource(R.drawable.bblue4);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            } else if (cell.player[i][j] == 2) {
+
+                                bt.setImageResource(R.drawable.bgreen4);
+                                //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
+                                System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
+
+                            }
+                            paintcells = true;
+                            speed = true;
+                            win();
+                        }
+
+
                     }
+                }
 
                 try {
                     sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                paintcells = false;
+                //paintcells = false;
                 FromBackToProgress = false;
 
             }
         }
 
 
-
     }
 
+    void win() // Функция для выявления победителя
+    {
+        //System.out.println("AAAAAAAAAAAAAAAAA " + clickbutton);
+        int k = 0;
+        int k1 = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (cell.player[i][j] != 2) {
+                    k++;
+
+                }
+                if (cell.player[i][j] != 1) {
+                    k1++;
+                }
+            }
+        }
+        System.out.println(k);
+        System.out.println(k1);
+        if (k == 64) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Выйграл красный!",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        } else if (k1 == 64) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Выйграл синий!",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
+    }
+}
         /*
     class MyTask extends AsyncTask<Void,Void,Void> {
         @Override
@@ -1276,4 +1314,4 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 */
 
 
-    }
+

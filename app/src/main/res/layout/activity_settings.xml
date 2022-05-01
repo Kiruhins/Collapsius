@@ -13,6 +13,7 @@
         android:layout_height="259dp"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="400dp"
+        android:contentDescription="@string/allsettings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +21,7 @@
         app:srcCompat="@drawable/settings" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/BacktoMenu"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:adjustViewBounds="false"
