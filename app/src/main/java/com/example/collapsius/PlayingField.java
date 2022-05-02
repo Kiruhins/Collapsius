@@ -58,12 +58,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     Boolean paintcells = false;
     Integer players=2;
 
-    Boolean dead1 = false;
-    Boolean dead2 = false;
-    Boolean dead3 = false;
-    Boolean dead4 = false;
-
-
     int[][] mas = new int[8][8];
 
     boolean FromBackToProgress;
@@ -1143,45 +1137,44 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         int k3 = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (cell.player[i][j] == 1) {
+                if (cell.player[i][j] != 1) {
                     k++;
 
                 }
-                if (cell.player[i][j] == 2) {
+                if (cell.player[i][j] != 2) {
                     k1++;
                 }
-                if (cell.player[i][j] == 3) {
+                if (cell.player[i][j] != 3) {
                     k2++;
                 }
-                if (cell.player[i][j] == 4) {
+                if (cell.player[i][j] != 4) {
                     k3++;
                 }
             }
         }
-        System.out.println("Сколько захватил кнопок 1 игрок " +k);
-        System.out.println("Сколько захватил кнопок 2 игрок " +k1);
-        System.out.println("Сколько захватил кнопок 3 игрок " +k2);
-        System.out.println("Сколько захватил кнопок 4 игрок " +k3);
-
-        if ((k1 == 0) && (k2 == 0) && (k3 == 0))   {
+        System.out.println("Сколько захватил кнопок 1 игрок "+k);
+        System.out.println("Сколько захватил кнопок 2 игрок "+k1);
+        System.out.println("Сколько захватил кнопок 3 игрок "+k2);
+        System.out.println("Сколько захватил кнопок 4 игрок "+k3);
+        if (k == 64) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл первый игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if ((k == 0) && (k2 == 0) && (k3 == 0)) {
+        } else if (k1 == 64) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл второй игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if ((k == 0) && (k1 == 0) && (k3 == 0)) {
+        } else if (k2 == 64) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл третий игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if ((k == 0) && (k1 == 0) && (k2 == 0)) {
+        } else if (k3 == 64) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл четвертый игрок!",
                     Toast.LENGTH_SHORT);
