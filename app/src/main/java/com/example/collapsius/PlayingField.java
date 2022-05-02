@@ -58,6 +58,12 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     Boolean paintcells = false;
     Integer players=2;
 
+    Boolean dead1 = false;
+    Boolean dead2 = false;
+    Boolean dead3 = false;
+    Boolean dead4 = false;
+
+
     int[][] mas = new int[8][8];
 
     boolean FromBackToProgress;
@@ -485,11 +491,13 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 yy = yy + 7;
             }
             // Log.d("ggg", "xx- " + xx + " yy- " + yy);
-           // System.out.println("player " + String.valueOf(cell.player[xx][yy]));
+            // System.out.println("player " + String.valueOf(cell.player[xx][yy]));
 
             // TODO Для остальных случаев (1,2,3)
             //Прописываем изменения кнопки
-            if ((cell.player[yy][xx] == 1) && (shot % 4 == 0)) {
+            if (((players==2)&&(cell.player[yy][xx] == 1) && (shot % 2 == 0))
+                    ||((players==3)&&(cell.player[yy][xx] == 1) && (shot % 3 == 0))
+                    ||((players==4)&&(cell.player[yy][xx] == 1) && (shot % 4 == 0))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.bblue2);
@@ -518,7 +526,9 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                 }
             }
-            if ((cell.player[yy][xx] == 2) && (shot % 4 == 1)) {
+            if (((players==2)&&(cell.player[yy][xx] == 2) && (shot % 2 == 1))
+                    ||((players==3)&&(cell.player[yy][xx] == 2) && (shot % 3 == 1))
+                    ||((players==4)&&(cell.player[yy][xx] == 2) && (shot % 4 == 1))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.bgreen2);
@@ -543,7 +553,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                 }
             }
-            if ((cell.player[yy][xx] == 3) && (shot % 4 == 2)) {
+            if (((players==3)&&(cell.player[yy][xx] == 3) && (shot % 3 == 2))
+                    ||((players==4)&&(cell.player[yy][xx] == 3) && (shot % 4 == 2))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.wblue2);
@@ -617,7 +628,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 System.out.println("shot при первом ходе-" + shot);
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-            if ((cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
+            if ((players>=3)&&(cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
                 bt.setImageResource(R.drawable.wblue1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
@@ -626,7 +637,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 System.out.println("shot при первом ходе-" + shot);
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-            if ((cell.cellsmas[yy][xx] == 0) && (shot == 3)) {
+            if ((players>=4)&&(cell.cellsmas[yy][xx] == 0) && (shot == 3)) {
                 bt.setImageResource(R.drawable.wgreen1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
@@ -890,7 +901,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                     }
                                 }
-                                if (playerp == 2) {
+                                else if (playerp == 2) {
                                     if (i > 0) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
@@ -907,6 +918,46 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                                     if (j > 0) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
+
+                                    }
+                                }
+                                else if (playerp == 3) {
+                                    if (i > 0) {
+                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                        cell.player[i - 1][j] = 3;
+
+                                    }
+                                    if (i < 7) {
+                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                        cell.player[i + 1][j] = 3;
+                                    }
+                                    if (j < 7) {
+                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                        cell.player[i][j + 1] = 3;
+                                    }
+                                    if (j > 0) {
+                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                        cell.player[i][j - 1] = 3;
+
+                                    }
+                                }
+                                else if (playerp == 4) {
+                                    if (i > 0) {
+                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                        cell.player[i - 1][j] = 4;
+
+                                    }
+                                    if (i < 7) {
+                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                        cell.player[i + 1][j] = 4;
+                                    }
+                                    if (j < 7) {
+                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                        cell.player[i][j + 1] = 4;
+                                    }
+                                    if (j > 0) {
+                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                        cell.player[i][j - 1] = 4;
 
                                     }
                                 }
@@ -1107,27 +1158,30 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 }
             }
         }
-        System.out.println(k);
-        System.out.println(k1);
-        if (k == 64) {
+        System.out.println("Сколько захватил кнопок 1 игрок " +k);
+        System.out.println("Сколько захватил кнопок 2 игрок " +k1);
+        System.out.println("Сколько захватил кнопок 3 игрок " +k2);
+        System.out.println("Сколько захватил кнопок 4 игрок " +k3);
+
+        if ((k1 == 0) && (k2 == 0) && (k3 == 0))   {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл первый игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if (k1 == 64) {
+        } else if ((k == 0) && (k2 == 0) && (k3 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл второй игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if (k2 == 64) {
+        } else if ((k == 0) && (k1 == 0) && (k3 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл третий игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-        } else if (k3 == 64) {
+        } else if ((k == 0) && (k1 == 0) && (k2 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл четвертый игрок!",
                     Toast.LENGTH_SHORT);
