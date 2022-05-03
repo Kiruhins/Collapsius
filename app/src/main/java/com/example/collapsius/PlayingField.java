@@ -43,6 +43,10 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
     Cells cell;
 
+    boolean lost1 = false;
+    boolean lost2 = false;
+    boolean lost3 = false;
+    boolean lost4 = false;
 
     Integer shot = 0;
     Integer shotp = -1;
@@ -487,6 +491,44 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             // Log.d("ggg", "xx- " + xx + " yy- " + yy);
             // System.out.println("player " + String.valueOf(cell.player[xx][yy]));
 
+            System.out.println("shot после пересчёта" + shot);
+
+            if (players == 3) {
+                if ((shot % 3 == 0) && (lost1 == true)) {
+                    shot ++;
+                }
+                if ((shot % 3 == 1) && (lost2 == true)) {
+                    shot ++;
+                }
+                if ((shot % 3 == 2) && (lost3 == true)) {
+                    shot ++;
+                }
+                /*
+                if ((shot % 3 == 0) && (lost1 == true)) {
+                    shot ++;
+                }
+                */
+            }
+            if (players == 4) {
+                if ((shot % 4 == 0) && (lost1 == true)) {
+                    shot ++;
+                }
+                if ((shot % 4 == 1) && (lost2 == true)) {
+                    shot ++;
+                }
+                if ((shot % 4 == 2) && (lost3 == true)) {
+                    shot ++;
+                }
+                if ((shot % 4 == 3) && (lost4 == true)) {
+                    shot ++;
+                }
+                if ((shot % 4 == 0) && (lost1 == true)) {
+                    shot ++;
+                }
+            }
+
+            System.out.println("shot после пересчёта" + shot);
+
             // TODO Для остальных случаев (1,2,3)
             //Прописываем изменения кнопки
             if (((players==2)&&(cell.player[yy][xx] == 1) && (shot % 2 == 0))
@@ -640,10 +682,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 System.out.println("shot при первом ходе-" + shot);
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-
-
-
-
 
             // Log.d("ggg", "запустился paintobjects()");
 
@@ -1001,7 +1039,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                         if (cell.cellsmas[i][j] == 0) {
 
-
                             //bt.setImageResource(R.drawable.emptycell);
                             bt.setImageResource(R.drawable.emptycell);
                             bt.setBackgroundColor(Color.green(100));
@@ -1152,10 +1189,23 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 }
             }
         }
-        System.out.println("Сколько захватил кнопок 1 игрок "+k);
-        System.out.println("Сколько захватил кнопок 2 игрок "+k1);
-        System.out.println("Сколько захватил кнопок 3 игрок "+k2);
-        System.out.println("Сколько захватил кнопок 4 игрок "+k3);
+        //System.out.println("Сколько захватил кнопок 1 игрок "+k);
+        //System.out.println("Сколько захватил кнопок 2 игрок "+k1);
+        //System.out.println("Сколько захватил кнопок 3 игрок "+k2);
+        //System.out.println("Сколько захватил кнопок 4 игрок "+k3);
+        if (k == 0) {
+            lost1 = true;
+        }
+        if (k1 == 0) {
+            lost2 = true;
+        }
+        if (k2 == 0) {
+            lost3 = true;
+        }
+        if (k3 == 0) {
+            lost4 = true;
+        }
+
         if ((k1 == 0) && (k2 == 0) && (k3 == 0)){
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл первый игрок!",
