@@ -53,6 +53,10 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 player = 2;
+                // меняем изображение на кнопке
+                bt_2players.setImageResource(R.drawable.tackpl);
+                bt_3players.setImageResource(R.drawable.pusto);
+                bt_4players.setImageResource(R.drawable.pusto);
             }
         });
 
@@ -60,6 +64,10 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 player = 3;
+                // меняем изображение на кнопке
+                    bt_2players.setImageResource(R.drawable.pusto);
+                    bt_3players.setImageResource(R.drawable.tackpl);
+                    bt_4players.setImageResource(R.drawable.pusto);
             }
         });
 
@@ -67,6 +75,9 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 player = 4;
+                bt_3players.setImageResource(R.drawable.pusto);
+                bt_2players.setImageResource(R.drawable.pusto);
+                bt_4players.setImageResource(R.drawable.tackpl);
             }
         });
 
@@ -74,6 +85,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 1;
+                bt_map1.setImageResource(R.drawable.choicemap1);
+                bt_map2.setImageResource(R.drawable.map2);
+                bt_map3.setImageResource(R.drawable.map3);
+                bt_map4.setImageResource(R.drawable.map4);
+                bt_map5.setImageResource(R.drawable.map5);
+                bt_map6.setImageResource(R.drawable.map6);
             }
         });
 
@@ -81,6 +98,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 2;
+                bt_map1.setImageResource(R.drawable.map1);
+                bt_map2.setImageResource(R.drawable.choicemap2);
+                bt_map3.setImageResource(R.drawable.map3);
+                bt_map4.setImageResource(R.drawable.map4);
+                bt_map5.setImageResource(R.drawable.map5);
+                bt_map6.setImageResource(R.drawable.map6);
             }
         });
 
@@ -88,6 +111,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 3;
+                bt_map1.setImageResource(R.drawable.map1);
+                bt_map2.setImageResource(R.drawable.map2);
+                bt_map3.setImageResource(R.drawable.choicemap3);
+                bt_map4.setImageResource(R.drawable.map4);
+                bt_map5.setImageResource(R.drawable.map5);
+                bt_map6.setImageResource(R.drawable.map6);
             }
         });
 
@@ -95,6 +124,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 4;
+                bt_map1.setImageResource(R.drawable.map1);
+                bt_map2.setImageResource(R.drawable.map2);
+                bt_map3.setImageResource(R.drawable.map3);
+                bt_map4.setImageResource(R.drawable.choicemap4);
+                bt_map5.setImageResource(R.drawable.map5);
+                bt_map6.setImageResource(R.drawable.map6);
             }
         });
 
@@ -102,6 +137,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 5;
+                bt_map1.setImageResource(R.drawable.map1);
+                bt_map2.setImageResource(R.drawable.map2);
+                bt_map3.setImageResource(R.drawable.map3);
+                bt_map4.setImageResource(R.drawable.map4);
+                bt_map5.setImageResource(R.drawable.choicemap5);
+                bt_map6.setImageResource(R.drawable.map6);
             }
         });
 
@@ -109,6 +150,12 @@ public class FieldConfiguration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 map = 6;
+                bt_map1.setImageResource(R.drawable.map1);
+                bt_map2.setImageResource(R.drawable.map2);
+                bt_map3.setImageResource(R.drawable.map3);
+                bt_map4.setImageResource(R.drawable.map4);
+                bt_map5.setImageResource(R.drawable.map5);
+                bt_map6.setImageResource(R.drawable.choicemap6);
             }
         });
 
