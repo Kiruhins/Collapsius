@@ -4,7 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back__xz"
     tools:context=".SelectMode">
+
+    <ImageButton
+        android:id="@+id/bt_editable"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="76dp"
+        android:contentDescription="@string/mode1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_5in1"
+        app:srcCompat="@drawable/emptycell"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt_classic"
@@ -14,33 +27,21 @@
         android:contentDescription="@string/classic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_editable"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/emptycell" />
 
     <ImageButton
-        android:id="@+id/bt_editable"
+        android:id="@+id/bt_triangle"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="68dp"
-        android:contentDescription="@string/mode1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_5in1"
-        app:srcCompat="@drawable/emptycell"
-        tools:ignore="ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt_peklo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="68dp"
-        android:contentDescription="@string/mode2"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="212dp"
+        android:contentDescription="@string/mode4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_triangle"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/emptycell"
         tools:ignore="ImageContrastCheck" />
 
@@ -48,7 +49,7 @@
         android:id="@+id/bt_5in1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="216dp"
         android:layout_marginEnd="68dp"
         android:contentDescription="@string/mode3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,24 +58,63 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/bt_triangle"
+        android:id="@+id/bt_peklo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="120dp"
-        android:contentDescription="@string/mode4"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/mode2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_triangle"
         app:srcCompat="@drawable/emptycell"
         tools:ignore="ImageContrastCheck" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bt_back1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="73dp"
-        android:text="@string/_bt_back1"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/_bt_back1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@drawable/pusto" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="@string/_bt_back1"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_back1"
+        app:layout_constraintEnd_toEndOf="@+id/bt_back1"
+        app:layout_constraintStart_toStartOf="@+id/bt_back1"
+        app:layout_constraintTop_toTopOf="@+id/bt_back1"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <TextView
+        android:id="@+id/takemode"
+        android:layout_width="190dp"
+        android:layout_height="36dp"
+        android:background="@drawable/take_players"
+        android:fontFamily="@font/alata"
+        android:text="Выберите режим"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

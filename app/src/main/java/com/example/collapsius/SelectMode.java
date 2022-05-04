@@ -17,7 +17,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_editable;
     private ImageButton bt_5in1;
     private ImageButton bt_triangle;
-    private Button bt_back1;
+    private ImageButton bt_back1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
