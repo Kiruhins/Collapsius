@@ -1028,83 +1028,79 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                 cell.player[i][j] = 0;
                                 if (playerp == 1) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 1;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 1;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
-
                                     }
                                 }
                                 else if (playerp == 2) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 2;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 2;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
-
                                     }
                                 }
                                 else if (playerp == 3) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 3;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 3;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 3;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 3;
-
                                     }
                                 }
                                 else if (playerp == 4) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 4;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 4;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 4;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 4;
-
                                     }
                                 }
 
