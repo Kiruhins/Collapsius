@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
 
 public class SelectMode extends AppCompatActivity {
 
@@ -18,6 +20,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_5in1;
     private ImageButton bt_triangle;
     private ImageButton bt_back1;
+    private ImageButton question;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,53 @@ public class SelectMode extends AppCompatActivity {
         bt_5in1=findViewById(R.id.bt_5in1);
         bt_triangle=findViewById(R.id.bt_triangle);
         bt_back1=findViewById(R.id.bt_back1);
+        question=findViewById(R.id.question);
+
+
         bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",5);
                 startActivity(intent);
+            }
+        });
+        question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bt_5in1.setImageResource(R.drawable.animation2_2);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_5in1.setImageResource(R.drawable.animation2_3);
+                    }
+                }, 300);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_5in1.setImageResource(R.drawable.animation2_4);
+
+                    }
+                    },600);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_5in1.setImageResource(R.drawable.animation2_5);
+                    }
+                },900);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_5in1.setImageResource(R.drawable.animation2_6);
+                    }
+                },1200);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_5in1.setImageResource(R.drawable.animation2_1);
+
+                    }
+                },1500);
             }
         });
 
@@ -57,6 +101,7 @@ public class SelectMode extends AppCompatActivity {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",3);
                 startActivity(intent);
+                bt_5in1.setImageResource(R.drawable.animation2_6tk);
             }
         });
 
@@ -75,6 +120,7 @@ public class SelectMode extends AppCompatActivity {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",1);
                 startActivity(intent);
+                bt_classic.setImageResource(R.drawable.choicemap1);
             }
         });
 
