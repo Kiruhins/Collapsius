@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_play"
     tools:context=".PlayingField">
 
     <ImageButton
@@ -493,16 +494,16 @@
 
     <ImageButton
         android:id="@+id/bt30"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_30"
+        android:scaleType="centerInside"
         android:tag="30"
         app:layout_constraintStart_toEndOf="@+id/bt29"
         app:layout_constraintTop_toBottomOf="@+id/bt22"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        style="@android:style/Widget.ImageButton"
-        android:scaleType="centerInside" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt31"
