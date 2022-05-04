@@ -20,15 +20,11 @@ import java.lang.ref.WeakReference;
 class Cells {
     public int[][] cellsmas;
     public int[][] player;
-    public int[][] lastplayer;
-    public int[][] lastcellsmas;
 
 
-    public Cells(int[][] cellmass,int[][] player,int[][] lastplayer,int[][] lastcellsmas){
+    public Cells(int[][] cellmass,int[][] player){
         this.cellsmas=cellmass;
         this.player=player;
-        this.lastplayer = lastplayer;
-        this.lastcellsmas = lastcellsmas;
     }
 
 }
@@ -38,8 +34,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
     int[][] cellsmas = new int[8][8];
     int[][] player = new int[8][8];
-    int[][] lastcellsmas = new int[8][8];
-    int[][] lastplayer = new int[8][8];
 
     Cells cell;
 
@@ -63,6 +57,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     Integer players=2;
 
     int[][] mas = new int[8][8];
+    int[][] vision = new int[8][8];
+
 
     boolean FromBackToProgress;
 
@@ -71,19 +67,128 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_field);
 
-        cell = new Cells(cellsmas, player, lastplayer, lastcellsmas);
+        Intent intent = getIntent();
+        Integer mode = intent.getIntExtra("mode", 0);
+        players = intent.getIntExtra("player", 0);
+        Integer map = intent.getIntExtra("map", 0);
+
+        cell = new Cells(cellsmas, player);
 
         for (int i = 0; i < cell.cellsmas.length; ++i) {
             for (int j = 0; j < cell.cellsmas.length; ++j) {
                 cell.cellsmas[i][j] = 0;
                 cell.player[i][j] = 0;
-                cell.lastplayer[i][j] = 0;
-                cell.lastcellsmas[i][j] = 0;
+
             }
         }
-        //Resources res = getResources();
 
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                vision[i][j] = 1;
+            }
+        }
 
+        if (map == 2) {
+            vision[1][3] = 0;
+            vision[1][4] = 0;
+            vision[6][3] = 0;
+            vision[6][4] = 0;
+            vision[3][1] = 0;
+            vision[4][1] = 0;
+            vision[3][6] = 0;
+            vision[4][6] = 0;
+            for (int i = 0; i < 8; i ++) {
+                vision[7][i] = 0;
+                vision[i][7] = 0;
+                vision[0][i] = 0;
+                vision[i][0] = 0;
+            }
+        }
+
+        if (map == 3) {
+            vision[0][3] = 0;
+            vision[1][3] = 0;
+            vision[5][3] = 0;
+            vision[6][3] = 0;
+            vision[3][3] = 0;
+            vision[3][0] = 0;
+            vision[3][1] = 0;
+            vision[3][5] = 0;
+            vision[3][6] = 0;
+            for (int i = 0; i < 8; i ++) {
+                vision[7][i] = 0;
+                vision[i][7] = 0;
+            }
+        }
+
+        if (map == 4) {
+            vision[0][3] = 0;
+            vision[2][3] = 0;
+            vision[3][3] = 0;
+            vision[4][3] = 0;
+            vision[6][3] = 0;
+            vision[3][0] = 0;
+            vision[3][2] = 0;
+            vision[3][4] = 0;
+            vision[3][6] = 0;
+            for (int i = 0; i < 8; i ++) {
+                vision[7][i] = 0;
+                vision[i][7] = 0;
+            }
+        }
+
+        if (map ==  5) {
+            vision[0][0] = 0;
+            vision[0][2] = 0;
+            vision[0][3] = 0;
+            vision[0][4] = 0;
+            vision[0][5] = 0;
+            vision[0][6] = 0;
+            vision[1][5] = 0;
+            vision[1][6] = 0;
+            vision[2][6] = 0;
+            vision[3][6] = 0;
+            vision[4][6] = 0;
+            vision[6][6] = 0;
+            vision[2][0] = 0;
+            vision[3][0] = 0;
+            vision[4][0] = 0;
+            vision[5][0] = 0;
+            vision[6][0] = 0;
+            vision[5][1] = 0;
+            vision[6][1] = 0;
+            vision[6][2] = 0;
+            vision[6][3] = 0;
+            vision[6][4] = 0;
+            vision[6][6] = 0;
+            for (int i = 0; i < 8; i ++) {
+                vision[7][i] = 0;
+                vision[i][7] = 0;
+            }
+        }
+
+        if (map == 6) {
+            vision[0][0] = 0;
+            vision[6][6] = 0;
+            vision[5][0] = 0;
+            vision[6][0] = 0;
+            vision[4][1] = 0;
+            vision[5][1] = 0;
+            vision[6][1] = 0;
+            vision[4][2] = 0;
+            vision[5][2] = 0;
+            vision[0][5] = 0;
+            vision[0][6] = 0;
+            vision[1][4] = 0;
+            vision[1][5] = 0;
+            vision[1][6] = 0;
+            vision[2][4] = 0;
+            vision[2][5] = 0;
+            for (int i = 0; i < 8; i ++) {
+                vision[7][i] = 0;
+                vision[i][7] = 0;
+            }
+        }
 
 
 
@@ -351,6 +456,17 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         mas[7][7] = bt_64.getId();
         bt_64.setOnTouchListener(this);
 
+        // TODO Меняем поля в зависимости от выбранного режима
+
+        for (int i = 0; i < 8; i ++) {
+            for (int j = 0; j < 8; j++) {
+                if (vision[i][j] == 0) {
+                    ImageButton bt = (ImageButton) findViewById(mas[i][j]);
+                    bt.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+
 
         System.out.println("номер клетки 1 " + String.valueOf(bt_1.getId()));
         System.out.println("номер клетки 2 " + String.valueOf(bt_2.getId()));
@@ -427,12 +543,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
         //Resources res = getResources();
         //Drawable bblue1 = ResourcesCompat.getDrawable(res, R.drawable.bblue1, null);
 
-
-        Intent intent = getIntent();
-        Integer mode = intent.getIntExtra("mode", 0);
-        players = intent.getIntExtra("player", 0);
-        Integer map = intent.getIntExtra("map", 0);
-
         Log.d("mode", String.valueOf(mode));
         Log.d("players", String.valueOf(players));
         Log.d("map", String.valueOf(map));
@@ -447,10 +557,14 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
+
+
         if (paintcells == false) {
             ImageButton bt = (ImageButton) findViewById(v.getId());
-
-
+            /*
+            ImageButton bt_1 = (ImageButton) findViewById(mas[0][0]);
+            bt_1.setX(3000);
+            */
             // String num= String.valueOf(bt.getTag());
             try {
                 String numm = (String) bt.getTag();
@@ -914,83 +1028,79 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
                                 cell.player[i][j] = 0;
                                 if (playerp == 1) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 1;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 1;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
-
                                     }
                                 }
                                 else if (playerp == 2) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 2;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 2;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
-
                                     }
                                 }
                                 else if (playerp == 3) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 3;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 3;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 3;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 3;
-
                                     }
                                 }
                                 else if (playerp == 4) {
-                                    if (i > 0) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 4;
 
                                     }
-                                    if (i < 7) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 4;
                                     }
-                                    if (j < 7) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 4;
                                     }
-                                    if (j > 0) {
+                                    if ((j > 0) && (vision[i][j-1] == 1)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 4;
-
                                     }
                                 }
 
@@ -1049,21 +1159,23 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                             if (cell.player[i][j] == 1) {
 
                                 bt.setImageResource(R.drawable.bblue1);
+                                //bt.setVisibility(View.INVISIBLE);
                                 //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                 System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
 
                             } else if (cell.player[i][j] == 2) {
 
+                                //bt.setVisibility(View.INVISIBLE);
                                 bt.setImageResource(R.drawable.bgreen1);
                                 //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                 System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
                             } else if (cell.player[i][j] == 3) {
-
+                                //bt.setVisibility(View.INVISIBLE);
                                 bt.setImageResource(R.drawable.wblue1);
                                 //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                 System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
                             } else if (cell.player[i][j] == 4) {
-
+                                //bt.setVisibility(View.INVISIBLE);
                                 bt.setImageResource(R.drawable.wgreen1);
                                 //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                                 System.out.println("cellmass[" + i + "][" + j + "] = " + cell.cellsmas[i][j]);
