@@ -167,11 +167,20 @@ public class FieldConfiguration extends AppCompatActivity {
         bt_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(FieldConfiguration.this,PlayingField.class);
-                intent.putExtra("map",map);
-                intent.putExtra("player",player);
-                intent.putExtra("mode",mode);
-                startActivity(intent);
+                if (mode == 1) {
+                    Intent intent = new Intent(FieldConfiguration.this, PlayingField.class);
+                    intent.putExtra("map", map);
+                    intent.putExtra("player", player);
+                    intent.putExtra("mode", mode);
+                    startActivity(intent);
+                }
+                if (mode == 3) {
+                    Intent intent = new Intent(FieldConfiguration.this, playing_field_5in1.class);
+                    intent.putExtra("map", map);
+                    intent.putExtra("player", player);
+                    intent.putExtra("mode", mode);
+                    startActivity(intent);
+                }
             }
         });
         bt_back2.setOnClickListener(new View.OnClickListener() {
