@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Collapsius">
         <activity
+            android:name=".playing_field_peklo"
+            android:exported="false" />
+        <activity
             android:name=".playing_field_5in1"
             android:exported="false" />
         <activity

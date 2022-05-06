@@ -174,6 +174,13 @@ public class FieldConfiguration extends AppCompatActivity {
                     intent.putExtra("mode", mode);
                     startActivity(intent);
                 }
+                if (mode == 2) {
+                    Intent intent = new Intent(FieldConfiguration.this, playing_field_peklo.class);
+                    intent.putExtra("map", map);
+                    intent.putExtra("player", player);
+                    intent.putExtra("mode", mode);
+                    startActivity(intent);
+                }
                 if (mode == 3) {
                     Intent intent = new Intent(FieldConfiguration.this, playing_field_5in1.class);
                     intent.putExtra("map", map);
@@ -181,6 +188,7 @@ public class FieldConfiguration extends AppCompatActivity {
                     intent.putExtra("mode", mode);
                     startActivity(intent);
                 }
+
             }
         });
         bt_back2.setOnClickListener(new View.OnClickListener() {

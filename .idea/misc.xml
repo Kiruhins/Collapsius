@@ -15,6 +15,8 @@
         <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_main.xml" value="0.165625" />
         <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_playing_field.xml" value="0.33" />
         <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_playing_field5in1.xml" value="0.3375" />
+        <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_playing_field_peklo.xml" value="0.3375" />
+        <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_select_mode.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/vet30/collapse/Collapsius/Collapsius/app/src/main/res/layout/activity_settings.xml" value="0.165625" />
         <entry key="..\:/Users/vet30/collapse/Collapsius/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2385" />
         <entry key="..\:/Users/vet30/collapse/Collapsius/app/src/main/res/drawable/ic_menuwithbuttons.xml" value="0.2385" />
@@ -28,7 +30,7 @@
         <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_field_configuration.xml" value="0.264" />
         <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_playing_field.xml" value="0.20863616930312098" />
-        <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_select_mode.xml" value="0.264" />
+        <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_select_mode.xml" value="0.536" />
         <entry key="..\:/colaps/Collapsius/app/src/main/res/layout/activity_settings.xml" value="0.20863616930312098" />
       </map>
     </option>
