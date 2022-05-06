@@ -21,6 +21,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_triangle;
     private ImageButton bt_back1;
     private ImageButton question;
+    private ImageButton question2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class SelectMode extends AppCompatActivity {
         bt_triangle=findViewById(R.id.bt_triangle);
         bt_back1=findViewById(R.id.bt_back1);
         question=findViewById(R.id.question);
-
+        question2=findViewById(R.id.question2);
 
         bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +87,39 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
+        question2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bt_classic.setImageResource(R.drawable.animation2_2);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_classic.setImageResource(R.drawable.animation2_3);
+                    }
+                }, 300);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_classic.setImageResource(R.drawable.animation2_4);
+
+                    }
+                },600);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_classic.setImageResource(R.drawable.animation1_5);
+                    }
+                },900);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_classic.setImageResource(R.drawable.animation2_1);
+                    }
+                },1200);
+
+            }
+        });
+
         bt_peklo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +154,7 @@ public class SelectMode extends AppCompatActivity {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",1);
                 startActivity(intent);
-                bt_classic.setImageResource(R.drawable.choicemap1);
+                bt_classic.setImageResource(R.drawable.anipation1tk);
             }
         });
 
