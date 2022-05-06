@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageSwitcher;
 
 public class SelectMode extends AppCompatActivity {
 
@@ -22,6 +19,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton bt_back1;
     private ImageButton question;
     private ImageButton question2;
+    private ImageButton question3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +37,8 @@ public class SelectMode extends AppCompatActivity {
         bt_back1=findViewById(R.id.bt_back1);
         question=findViewById(R.id.question);
         question2=findViewById(R.id.question2);
+        question3=findViewById(R.id.question3);
 
-        bt_triangle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
-                intent.putExtra("mode",5);
-                startActivity(intent);
-            }
-        });
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +55,7 @@ public class SelectMode extends AppCompatActivity {
                         bt_5in1.setImageResource(R.drawable.animation2_4);
 
                     }
-                    },600);
+                },600);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
@@ -120,12 +111,53 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
+        question3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bt_peklo.setImageResource(R.drawable.bg2);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_peklo.setImageResource(R.drawable.bg3);
+                    }
+                }, 300);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_peklo.setImageResource(R.drawable.bg4);
+                    }
+                },600);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_peklo.setImageResource(R.drawable.bg5);
+                    }
+                },900);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_peklo.setImageResource(R.drawable.bg1);
+                    }
+                },1200);
+            }
+        });
+
+        bt_triangle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
+                intent.putExtra("mode",5);
+                startActivity(intent);
+            }
+        });
+
         bt_peklo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",2);
                 startActivity(intent);
+                bt_peklo.setImageResource(R.drawable.bgtk);
             }
         });
 
