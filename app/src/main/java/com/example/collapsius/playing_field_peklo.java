@@ -16,8 +16,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
-
-
+import java.util.Random;
 
 
 public class playing_field_peklo extends AppCompatActivity implements View.OnTouchListener {
@@ -50,8 +49,14 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
     int[][] vision = new int[8][8];
     int[][] block = new int[8][8];
 
-
     boolean FromBackToProgress;
+
+    // TODO для рандомных клеток
+
+    boolean randomblock = false;
+    boolean repaintblock = false;
+
+    boolean EndOfAsynck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,8 +191,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 vision[i][7] = 0;
             }
         }
-
-
 
         MyAsyncTask thread = new MyAsyncTask();
         thread.execute();
@@ -484,6 +487,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
 
         if (paintcells == false) {
+
+            randomblock = true;
+
             ImageButton bt = (ImageButton) findViewById(v.getId());
             /*
             ImageButton bt_1 = (ImageButton) findViewById(mas[0][0]);
@@ -726,9 +732,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             // TODO смена игроков
             //может ли  игрок походить на данную  клетку
 
-            if (((players==2)&&(shot % 2 == 0) && (cell.player[yy][xx] == 1))
+            if ((((players==2)&&(shot % 2 == 0) && (cell.player[yy][xx] == 1))
                     ||((players==3)&&(shot % 3 == 0) && (cell.player[yy][xx] == 1))
-                    ||((players==4)&&(shot % 4 == 0) && (cell.player[yy][xx] == 1))) {
+                    ||((players==4)&&(shot % 4 == 0) && (cell.player[yy][xx] == 1))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 1) {  // TODO Надо будет как-то исправить
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -748,9 +754,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
 
             }
-            if (((players==2)&&(shot % 2 == 1) && (cell.player[yy][xx] == 2))
+            if ((((players==2)&&(shot % 2 == 1) && (cell.player[yy][xx] == 2))
                     ||((players==3)&&(shot % 3 == 1) && (cell.player[yy][xx] == 2))
-                    ||((players==4)&&(shot % 4 == 1) && (cell.player[yy][xx] == 2))) {
+                    ||((players==4)&&(shot % 4 == 1) && (cell.player[yy][xx] == 2))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 2) {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -769,8 +775,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 }
 
             }
-            if (((players==3)&&(shot % 3 == 2) && (cell.player[yy][xx] == 3))
-                    ||((players==4)&&(shot % 4 == 2) && (cell.player[yy][xx] == 3))) {
+            if ((((players==3)&&(shot % 3 == 2) && (cell.player[yy][xx] == 3))
+                    ||((players==4)&&(shot % 4 == 2) && (cell.player[yy][xx] == 3))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 3) {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -788,7 +794,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 }
 
             }
-            if ((shot % 4 == 3) && (cell.player[yy][xx] == 4)) {
+            if (((shot % 4 == 3) && (cell.player[yy][xx] == 4)) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 4) {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -1041,12 +1047,70 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             }
                         }
                     }
-                    //paintcells = false;
-                    //FromBackToProgress = true;
-                    //publishProgress((int) (num));
 
                 }
 
+                // рандомно выбераем 1 из 15 на вероятность, потом выбераем 1 клетку,
+                // потом выбераем кол-во от 1 до 4.
+
+                if (EndOfAsynck == true) {
+
+                    Random random = new Random();
+                    int probability = random.nextInt(16-1) + 1;
+                    if (probability == 7) {
+
+                        int randomcell = random.nextInt(64-0) + 0;
+                        int numberofmoves = random.nextInt(6-2) + 2;
+
+                        // ищем координаты рандомной точки
+
+                        int xx = 0;
+                        int yy = 0;
+                        if (num <= 7) {
+                            xx = num;
+                            yy = 0;
+                        } else if ((num > 7) && (num <= 15)) {
+                            xx = num - 8;
+                            yy = yy + 1;
+                        } else if ((num <= 23) && (num > 15)) {
+                            xx = num - 16;
+                            yy = yy + 2;
+                        } else if ((num <= 31) && (num > 23)) {
+                            xx = num - 24;
+                            yy = yy + 3;
+                        } else if ((num <= 39) && (num > 31)) {
+                            xx = num - 32;
+                            yy = yy + 4;
+                        } else if ((num <= 47) && (num > 39)) {
+                            xx = num - 40;
+                            yy = yy + 5;
+                        } else if ((num <= 55) && (num > 47)) {
+                            xx = num - 48;
+                            yy = yy + 6;
+                        } else if (num > 55) {
+                            xx = num - 56;
+                            yy = yy + 7;
+                        }
+
+                        block[yy][xx] = numberofmoves;
+                        player[yy][xx] = 0;
+
+                    }
+
+                    // Убавляем с каждым ходом в блокировке по 1
+
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if (block[i][j] > 0) {
+                                block[i][j] -= 1;
+                            }
+                        }
+                    }
+
+                    repaintblock = true;
+                    publishProgress((int) (num));
+
+                }
 
             }
 
@@ -1064,7 +1128,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 //Log.d("ggg", "запустился onPostExecute");
                 for (int i = 0; i < 8; i++) {
                     for (int j = 0; j < 8; j++) {
-
 
                         ImageButton bt = findViewById(mas[i][j]);
 
@@ -1195,6 +1258,37 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 //paintcells = false;
                 FromBackToProgress = false;
                 win();
+            }
+
+            // закончился пересчёт и перекраска, т.к. перекраска всегда последняя
+
+            if ((paintcells == false) && (FromBackToProgress == false)) {
+                EndOfAsynck = true;
+            }
+
+            if (repaintblock == true) {
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 8; j++) {
+
+                        ImageButton bt = findViewById(mas[i][j]);
+
+                        if (block[i][j] == 4) {
+                            bt.setImageResource(R.drawable.lock);
+                        }
+                        else if (block[i][j] == 3){
+                            bt.setImageResource(R.drawable.lock);
+                        }
+                        else if (block[i][j] == 2){
+                            bt.setImageResource(R.drawable.lock);
+                        }
+                        else if (block[i][j] == 1){
+                            bt.setImageResource(R.drawable.lock);
+                        }
+                        else if ((block[i][j] == 0) && (player[i][j] == 0)){
+                            bt.setImageResource(R.drawable.emptycell);
+                        }
+                    }
+                }
             }
         }
 
