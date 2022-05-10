@@ -1060,14 +1060,14 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 // рандомно выбераем 1 из 15 на вероятность, потом выбераем 1 клетку,
                 // потом выбераем кол-во от 1 до 4.
 
-                if ((EndOfAsynck == true) && (StartRepaint == true)) {
+                if (EndOfAsynck == true) {
 
                     Random random = new Random();
-                    int probability = random.nextInt(16-1) + 1;
-                    if (probability == 7) {
+                    int probability = random.nextInt(2-1) + 1;
+                    if (probability == 1) {
 
                         int randomcell = random.nextInt(64-0) + 0;
-                        int numberofmoves = random.nextInt(6-2) + 2;
+                        int numberofmoves = random.nextInt(12-2) + 2;
 
                         // ищем координаты рандомной точки
 
@@ -1116,11 +1116,10 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                         }
                     }
 
+                    StartRepaint = false;
                     repaintblock = true;
                     publishProgress((int) (num));
                     EndOfAsynck = false;
-                    StartRepaint = false;
-
                 }
 
             }
@@ -1145,7 +1144,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                         //Log.d("ggg", "начало покраски");
 
 
-                        if (cell.cellsmas[i][j] == 0) {
+                        if ((cell.cellsmas[i][j] == 0) && (block[i][j] == 0)) {
 
                             //bt.setImageResource(R.drawable.emptycell);
                             bt.setImageResource(R.drawable.emptycell);
@@ -1273,7 +1272,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
             // закончился пересчёт и перекраска, т.к. перекраска всегда последняя
 
-            if ((paintcells == false) && (FromBackToProgress == false)) {
+            if ((paintcells == false) && (FromBackToProgress == false) && (StartRepaint == true)) {
                 EndOfAsynck = true;
             }
 
@@ -1285,15 +1284,19 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         if (block[i][j] == 4) {
                             bt.setImageResource(R.drawable.lock);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 3){
                             bt.setImageResource(R.drawable.lock);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 2){
                             bt.setImageResource(R.drawable.lock);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 1){
                             bt.setImageResource(R.drawable.lock);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if ((block[i][j] == 0) && (player[i][j] == 0)){
                             bt.setImageResource(R.drawable.emptycell);
