@@ -51,12 +51,17 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
     boolean FromBackToProgress;
 
-    // TODO для рандомных клеток
+    // для начала перерисовки блоков
 
-    boolean randomblock = false;
     boolean repaintblock = false;
 
+    // показывает, что закончилась перерисовка коллапса
+
     boolean EndOfAsynck = false;
+
+    // делает так, чтобы мы 1 раз за ход искали рандомную клетку
+
+    boolean StartRepaint = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -488,8 +493,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
         if (paintcells == false) {
 
-            randomblock = true;
-
             ImageButton bt = (ImageButton) findViewById(v.getId());
             /*
             ImageButton bt_1 = (ImageButton) findViewById(mas[0][0]);
@@ -750,6 +753,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
+                    StartRepaint = true;
                 }
 
 
@@ -772,6 +776,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
+                    StartRepaint = true;
                 }
 
             }
@@ -791,6 +796,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
+                    StartRepaint = true;
                 }
 
             }
@@ -809,6 +815,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
+                    StartRepaint = true;
                 }
 
             }
@@ -958,77 +965,77 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                                 cell.player[i][j] = 0;
                                 if (playerp == 1) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1)){
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 1;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 1;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1)) {
+                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
                                     }
                                 }
                                 else if (playerp == 2) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1)){
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 2;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 2;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1)) {
+                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
                                     }
                                 }
                                 else if (playerp == 3) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1)){
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 3;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 3;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 3;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1)) {
+                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 3;
                                     }
                                 }
                                 else if (playerp == 4) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1)){
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 4;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1)) {
+                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 4;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1)) {
+                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 4;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1)) {
+                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 4;
                                     }
@@ -1053,7 +1060,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 // рандомно выбераем 1 из 15 на вероятность, потом выбераем 1 клетку,
                 // потом выбераем кол-во от 1 до 4.
 
-                if (EndOfAsynck == true) {
+                if ((EndOfAsynck == true) && (StartRepaint == true)) {
 
                     Random random = new Random();
                     int probability = random.nextInt(16-1) + 1;
@@ -1066,34 +1073,36 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         int xx = 0;
                         int yy = 0;
-                        if (num <= 7) {
-                            xx = num;
+                        if (randomcell <= 7) {
+                            xx = randomcell;
                             yy = 0;
-                        } else if ((num > 7) && (num <= 15)) {
-                            xx = num - 8;
+                        } else if ((randomcell > 7) && (randomcell <= 15)) {
+                            xx = randomcell - 8;
                             yy = yy + 1;
-                        } else if ((num <= 23) && (num > 15)) {
-                            xx = num - 16;
+                        } else if ((randomcell <= 23) && (randomcell > 15)) {
+                            xx = randomcell - 16;
                             yy = yy + 2;
-                        } else if ((num <= 31) && (num > 23)) {
-                            xx = num - 24;
+                        } else if ((randomcell <= 31) && (randomcell > 23)) {
+                            xx = randomcell - 24;
                             yy = yy + 3;
-                        } else if ((num <= 39) && (num > 31)) {
-                            xx = num - 32;
+                        } else if ((randomcell <= 39) && (randomcell > 31)) {
+                            xx = randomcell - 32;
                             yy = yy + 4;
-                        } else if ((num <= 47) && (num > 39)) {
-                            xx = num - 40;
+                        } else if ((randomcell <= 47) && (randomcell > 39)) {
+                            xx = randomcell - 40;
                             yy = yy + 5;
-                        } else if ((num <= 55) && (num > 47)) {
-                            xx = num - 48;
+                        } else if ((randomcell <= 55) && (randomcell > 47)) {
+                            xx = randomcell - 48;
                             yy = yy + 6;
-                        } else if (num > 55) {
-                            xx = num - 56;
+                        } else if (randomcell > 55) {
+                            xx = randomcell - 56;
                             yy = yy + 7;
                         }
 
                         block[yy][xx] = numberofmoves;
                         player[yy][xx] = 0;
+
+                        win();
 
                     }
 
@@ -1109,6 +1118,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                     repaintblock = true;
                     publishProgress((int) (num));
+                    EndOfAsynck = false;
+                    StartRepaint = false;
 
                 }
 
@@ -1289,6 +1300,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                         }
                     }
                 }
+                repaintblock = false;
             }
         }
 

@@ -1200,8 +1200,6 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 win();
             }
         }
-
-
     }
 
     void win() // Функция для выявления победителя
