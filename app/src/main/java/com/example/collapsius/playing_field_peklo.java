@@ -1067,7 +1067,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     if (probability == 1) {
 
                         int randomcell = random.nextInt(64-0) + 0;
-                        int numberofmoves = random.nextInt(12-2) + 2;
+                        int numberofmoves = random.nextInt(11-2) + 2;
 
                         // ищем координаты рандомной точки
 
@@ -1099,9 +1099,10 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             yy = yy + 7;
                         }
 
-                        block[yy][xx] = numberofmoves;
-                        player[yy][xx] = 0;
-
+                        if (block[yy][xx] == 0) {
+                            block[yy][xx] = numberofmoves;
+                            player[yy][xx] = 0;
+                        }
                         win();
 
                     }
@@ -1282,20 +1283,44 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         ImageButton bt = findViewById(mas[i][j]);
 
-                        if (block[i][j] == 4) {
-                            bt.setImageResource(R.drawable.lock);
+                        if (block[i][j] == 10) {
+                            bt.setImageResource(R.drawable.lock10);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 9){
+                            bt.setImageResource(R.drawable.lock9);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 8){
+                            bt.setImageResource(R.drawable.lock8);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 7){
+                            bt.setImageResource(R.drawable.lock7);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 6){
+                            bt.setImageResource(R.drawable.lock6);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 5){
+                            bt.setImageResource(R.drawable.lock5);
+                            System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
+                        }
+                        else if (block[i][j] == 4){
+                            bt.setImageResource(R.drawable.lock4);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 3){
-                            bt.setImageResource(R.drawable.lock);
+                            bt.setImageResource(R.drawable.lock3);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 2){
-                            bt.setImageResource(R.drawable.lock);
+                            bt.setImageResource(R.drawable.lock2);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if (block[i][j] == 1){
-                            bt.setImageResource(R.drawable.lock);
+                            bt.setImageResource(R.drawable.lock1);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
                         }
                         else if ((block[i][j] == 0) && (player[i][j] == 0)){
@@ -1357,25 +1382,67 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            paintcells = false;
+            FromBackToProgress = false;
+            repaintblock = false;
         } else if ((k == 0) && (k2 == 0) && (k3 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл второй игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            paintcells = false;
+            FromBackToProgress = false;
+            repaintblock = false;
         } else if ((k == 0) && (k1 == 0) && (k3 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл третий игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            paintcells = false;
+            FromBackToProgress = false;
+            repaintblock = false;
         } else if ((k == 0) && (k1 == 0) && (k2 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Выйграл четвертый игрок!",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            paintcells = false;
+            FromBackToProgress = false;
+            repaintblock = false;
         }
+    }
+    void fieldclear() {
+        for (int i = 0; i < 8 ; i ++) {
+            for (int j = 0; j < 8 ; j ++) {
+                block[i][j] = 0;
+                cell.player[i][j] = 0;
+                cell.cellsmas[i][j] = 0;
+
+                ImageButton bt = findViewById(mas[i][j]);
+                bt.setImageResource(R.drawable.emptycell);
+            }
+        }
+        lost1 = false;
+        lost2 = false;
+        lost3 = false;
+        lost4 = false;
+        shot = 0;
+        shotp = -1;
+        trigger = false;
+        clickbuttonn = 0;
+        speed = false;
+        num = 0;
+        nump = 0;
+        playerp = 0;
+        clickbutton = 0;
+        razm = 8;
+        paintcells = false;
+        repaintblock = false;
+        EndOfAsynck = false;
+        StartRepaint = false;
     }
 }
 
