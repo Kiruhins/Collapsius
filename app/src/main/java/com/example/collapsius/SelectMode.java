@@ -20,6 +20,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton question;
     private ImageButton question2;
     private ImageButton question3;
+    private ImageButton question4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class SelectMode extends AppCompatActivity {
         question=findViewById(R.id.question);
         question2=findViewById(R.id.question2);
         question3=findViewById(R.id.question3);
+        question4=findViewById(R.id.question4);
 
         question.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,12 +144,38 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
+        question4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bt_triangle.setImageResource(R.drawable.animtrigon2);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_triangle.setImageResource(R.drawable.animtrigon3);
+                    }
+                }, 300);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_triangle.setImageResource(R.drawable.animtrigon4);
+                    }
+                },600);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_triangle.setImageResource(R.drawable.animtrigon1);
+                    }
+                },900);
+            }
+        });
+
         bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",5);
                 startActivity(intent);
+                bt_triangle.setImageResource(R.drawable.trigontk1);
             }
         });
 

@@ -5,127 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_play"
-    tools:context=".PlayingField">
+    tools:context=".PlayingField"
+    tools:layout_editor_absoluteX="160dp"
+    tools:layout_editor_absoluteY="-7dp">
 
     <ImageButton
-        android:id="@+id/bt57"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="25dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_57"
+        android:id="@+id/bt_backk"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="48dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="bt_back2"
         android:scaleType="centerInside"
-        android:tag="57"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt49"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt59"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_59"
-        android:scaleType="centerInside"
-        android:tag="59"
-        app:layout_constraintStart_toEndOf="@+id/bt58"
-        app:layout_constraintTop_toBottomOf="@+id/bt51"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt60"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_60"
-        android:scaleType="centerInside"
-        android:tag="60"
-        app:layout_constraintStart_toEndOf="@+id/bt59"
-        app:layout_constraintTop_toBottomOf="@+id/bt52"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt61"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_61"
-        android:scaleType="centerInside"
-        android:tag="61"
-        app:layout_constraintStart_toEndOf="@+id/bt60"
-        app:layout_constraintTop_toBottomOf="@+id/bt53"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt62"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_62"
-        android:scaleType="centerInside"
-        android:tag="62"
-        app:layout_constraintStart_toEndOf="@+id/bt61"
-        app:layout_constraintTop_toBottomOf="@+id/bt54"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt63"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_63"
-        android:scaleType="centerInside"
-        android:tag="63"
-        app:layout_constraintStart_toEndOf="@+id/bt62"
-        app:layout_constraintTop_toBottomOf="@+id/bt55"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt64"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_64"
-        android:scaleType="centerInside"
-        android:tag="64"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bt63"
-        app:layout_constraintTop_toBottomOf="@+id/bt56"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/bt58"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_58"
-        android:scaleType="centerInside"
-        android:tag="58"
-        app:layout_constraintStart_toEndOf="@+id/bt57"
-        app:layout_constraintTop_toBottomOf="@+id/bt50"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pusto" />
 
     <ImageButton
         android:id="@+id/bt49"
         style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_49"
         android:scaleType="centerInside"
         android:tag="49"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt50"
         app:layout_constraintTop_toBottomOf="@+id/bt41"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -138,7 +45,7 @@
         android:contentDescription="@string/_51"
         android:scaleType="centerInside"
         android:tag="51"
-        app:layout_constraintStart_toEndOf="@+id/bt50"
+        app:layout_constraintEnd_toStartOf="@+id/bt52"
         app:layout_constraintTop_toBottomOf="@+id/bt43"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -151,7 +58,8 @@
         android:contentDescription="@string/_52"
         android:scaleType="centerInside"
         android:tag="52"
-        app:layout_constraintStart_toEndOf="@+id/bt51"
+        app:layout_constraintEnd_toEndOf="@+id/bt44"
+        app:layout_constraintStart_toStartOf="@+id/bt44"
         app:layout_constraintTop_toBottomOf="@+id/bt44"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -195,22 +103,6 @@
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/bt56"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_56"
-        android:scaleType="centerInside"
-        android:tag="56"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bt55"
-        app:layout_constraintTop_toBottomOf="@+id/bt48"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
         android:id="@+id/bt50"
         style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
@@ -219,7 +111,7 @@
         android:contentDescription="@string/_50"
         android:scaleType="centerInside"
         android:tag="50"
-        app:layout_constraintStart_toEndOf="@+id/bt49"
+        app:layout_constraintEnd_toStartOf="@+id/bt51"
         app:layout_constraintTop_toBottomOf="@+id/bt42"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -228,12 +120,11 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="25dp"
         android:background="@drawable/emptycell"
         android:contentDescription="@string/_41"
         android:scaleType="centerInside"
         android:tag="41"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt42"
         app:layout_constraintTop_toBottomOf="@+id/bt33"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -246,7 +137,7 @@
         android:contentDescription="@string/_43"
         android:scaleType="centerInside"
         android:tag="43"
-        app:layout_constraintStart_toEndOf="@+id/bt42"
+        app:layout_constraintEnd_toStartOf="@+id/bt44"
         app:layout_constraintTop_toBottomOf="@+id/bt35"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -259,7 +150,8 @@
         android:contentDescription="@string/_44"
         android:scaleType="centerInside"
         android:tag="44"
-        app:layout_constraintStart_toEndOf="@+id/bt43"
+        app:layout_constraintEnd_toEndOf="@+id/bt36"
+        app:layout_constraintStart_toStartOf="@+id/bt36"
         app:layout_constraintTop_toBottomOf="@+id/bt36"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -303,22 +195,6 @@
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/bt48"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_48"
-        android:scaleType="centerInside"
-        android:tag="48"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bt47"
-        app:layout_constraintTop_toBottomOf="@+id/bt40"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
         android:id="@+id/bt42"
         style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
@@ -327,7 +203,7 @@
         android:contentDescription="@string/_42"
         android:scaleType="centerInside"
         android:tag="42"
-        app:layout_constraintStart_toEndOf="@+id/bt41"
+        app:layout_constraintEnd_toStartOf="@+id/bt43"
         app:layout_constraintTop_toBottomOf="@+id/bt34"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -340,9 +216,9 @@
         android:contentDescription="@string/_33"
         android:scaleType="centerInside"
         android:tag="33"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt34"
+        app:layout_constraintTop_toBottomOf="@+id/bt25"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt35"
@@ -353,9 +229,9 @@
         android:contentDescription="@string/_35"
         android:scaleType="centerInside"
         android:tag="35"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt36"
+        app:layout_constraintTop_toBottomOf="@+id/bt27"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt36"
@@ -366,9 +242,10 @@
         android:contentDescription="@string/_36"
         android:scaleType="centerInside"
         android:tag="36"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintEnd_toEndOf="@+id/bt28"
+        app:layout_constraintStart_toEndOf="@+id/bt27"
+        app:layout_constraintTop_toBottomOf="@+id/bt28"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt37"
@@ -379,9 +256,9 @@
         android:contentDescription="@string/_37"
         android:scaleType="centerInside"
         android:tag="37"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt36"
+        app:layout_constraintTop_toBottomOf="@+id/bt29"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt38"
@@ -392,9 +269,9 @@
         android:contentDescription="@string/_38"
         android:scaleType="centerInside"
         android:tag="38"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt37"
+        app:layout_constraintTop_toBottomOf="@+id/bt30"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt39"
@@ -410,22 +287,6 @@
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/bt40"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_40"
-        android:scaleType="centerInside"
-        android:tag="40"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bt39"
-        app:layout_constraintTop_toBottomOf="@+id/bt32"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
-
-    <ImageButton
         android:id="@+id/bt34"
         style="@android:style/Widget.ImageButton"
         android:layout_width="45dp"
@@ -434,9 +295,9 @@
         android:contentDescription="@string/_34"
         android:scaleType="centerInside"
         android:tag="34"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt35"
+        app:layout_constraintTop_toBottomOf="@+id/bt26"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt25"
@@ -447,9 +308,9 @@
         android:contentDescription="@string/_25"
         android:scaleType="centerInside"
         android:tag="25"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt26"
+        app:layout_constraintTop_toTopOf="@+id/bt26"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt27"
@@ -460,9 +321,9 @@
         android:contentDescription="@string/_27"
         android:scaleType="centerInside"
         android:tag="27"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt28"
+        app:layout_constraintTop_toTopOf="@+id/bt28"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt28"
@@ -473,9 +334,11 @@
         android:contentDescription="@string/_28"
         android:scaleType="centerInside"
         android:tag="28"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt29"
@@ -486,9 +349,9 @@
         android:contentDescription="@string/_29"
         android:scaleType="centerInside"
         android:tag="29"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt28"
+        app:layout_constraintTop_toTopOf="@+id/bt28"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt30"
@@ -499,9 +362,9 @@
         android:contentDescription="@string/_30"
         android:scaleType="centerInside"
         android:tag="30"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt29"
+        app:layout_constraintTop_toTopOf="@+id/bt29"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt31"
@@ -512,22 +375,9 @@
         android:contentDescription="@string/_31"
         android:scaleType="centerInside"
         android:tag="31"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="275dp" />
-
-    <ImageButton
-        android:id="@+id/bt32"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_32"
-        android:scaleType="centerInside"
-        android:tag="32"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="340dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt30"
+        app:layout_constraintTop_toTopOf="@+id/bt30"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt26"
@@ -538,9 +388,9 @@
         android:contentDescription="@string/_26"
         android:scaleType="centerInside"
         android:tag="26"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintEnd_toStartOf="@+id/bt27"
+        app:layout_constraintTop_toTopOf="@+id/bt27"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt17"
@@ -551,9 +401,9 @@
         android:contentDescription="@string/_17"
         android:scaleType="centerInside"
         android:tag="17"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt25"
+        app:layout_constraintEnd_toStartOf="@+id/bt18"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt19"
@@ -564,9 +414,9 @@
         android:contentDescription="@string/_19"
         android:scaleType="centerInside"
         android:tag="19"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt27"
+        app:layout_constraintEnd_toStartOf="@+id/bt20"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt20"
@@ -577,9 +427,10 @@
         android:contentDescription="@string/_20"
         android:scaleType="centerInside"
         android:tag="20"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt28"
+        app:layout_constraintEnd_toEndOf="@+id/bt28"
+        app:layout_constraintStart_toEndOf="@+id/bt27"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt21"
@@ -590,9 +441,9 @@
         android:contentDescription="@string/_21"
         android:scaleType="centerInside"
         android:tag="21"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt29"
+        app:layout_constraintStart_toEndOf="@+id/bt20"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt22"
@@ -603,9 +454,9 @@
         android:contentDescription="@string/_22"
         android:scaleType="centerInside"
         android:tag="22"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt30"
+        app:layout_constraintStart_toEndOf="@+id/bt21"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt23"
@@ -616,22 +467,9 @@
         android:contentDescription="@string/_23"
         android:scaleType="centerInside"
         android:tag="23"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="230dp" />
-
-    <ImageButton
-        android:id="@+id/bt24"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_24"
-        android:scaleType="centerInside"
-        android:tag="24"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="340dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt31"
+        app:layout_constraintStart_toEndOf="@+id/bt22"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt18"
@@ -642,9 +480,9 @@
         android:contentDescription="@string/_18"
         android:scaleType="centerInside"
         android:tag="18"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt26"
+        app:layout_constraintEnd_toStartOf="@+id/bt19"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt9"
@@ -655,9 +493,9 @@
         android:contentDescription="@string/_9"
         android:scaleType="centerInside"
         android:tag="9"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt17"
+        app:layout_constraintEnd_toStartOf="@+id/bt10"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt11"
@@ -668,9 +506,9 @@
         android:contentDescription="@string/_11"
         android:scaleType="centerInside"
         android:tag="11"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt19"
+        app:layout_constraintEnd_toStartOf="@+id/bt12"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt12"
@@ -681,9 +519,10 @@
         android:contentDescription="@string/_12"
         android:scaleType="centerInside"
         android:tag="12"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt20"
+        app:layout_constraintEnd_toEndOf="@+id/bt20"
+        app:layout_constraintStart_toEndOf="@+id/bt19"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt13"
@@ -694,9 +533,9 @@
         android:contentDescription="@string/_13"
         android:scaleType="centerInside"
         android:tag="13"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt21"
+        app:layout_constraintStart_toEndOf="@+id/bt12"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt14"
@@ -707,9 +546,9 @@
         android:contentDescription="@string/_14"
         android:scaleType="centerInside"
         android:tag="14"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt22"
+        app:layout_constraintStart_toEndOf="@+id/bt13"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt15"
@@ -720,22 +559,9 @@
         android:contentDescription="@string/_15"
         android:scaleType="centerInside"
         android:tag="15"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="185dp" />
-
-    <ImageButton
-        android:id="@+id/bt16"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_16"
-        android:scaleType="centerInside"
-        android:tag="16"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="340dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt23"
+        app:layout_constraintStart_toEndOf="@+id/bt14"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt10"
@@ -746,22 +572,9 @@
         android:contentDescription="@string/_10"
         android:scaleType="centerInside"
         android:tag="10"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="185dp" />
-
-    <ImageButton
-        android:id="@+id/bt8"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/emptycell"
-        android:contentDescription="@string/_8"
-        android:scaleType="centerInside"
-        android:tag="8"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="340dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt18"
+        app:layout_constraintEnd_toStartOf="@+id/bt11"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt7"
@@ -772,9 +585,9 @@
         android:contentDescription="@string/_7"
         android:scaleType="centerInside"
         android:tag="7"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt15"
+        app:layout_constraintStart_toEndOf="@+id/bt6"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt6"
@@ -785,9 +598,9 @@
         android:contentDescription="@string/_6"
         android:scaleType="centerInside"
         android:tag="6"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt14"
+        app:layout_constraintStart_toEndOf="@+id/bt5"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt5"
@@ -798,9 +611,9 @@
         android:contentDescription="@string/_5"
         android:scaleType="centerInside"
         android:tag="5"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt13"
+        app:layout_constraintStart_toEndOf="@+id/bt4"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt4"
@@ -811,9 +624,10 @@
         android:contentDescription="@string/_4"
         android:scaleType="centerInside"
         android:tag="4"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt12"
+        app:layout_constraintEnd_toEndOf="@+id/bt12"
+        app:layout_constraintStart_toEndOf="@+id/bt11"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt3"
@@ -824,9 +638,9 @@
         android:contentDescription="@string/_3"
         android:scaleType="centerInside"
         android:tag="3"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt11"
+        app:layout_constraintEnd_toStartOf="@+id/bt4"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt2"
@@ -837,9 +651,9 @@
         android:contentDescription="@string/_2"
         android:scaleType="centerInside"
         android:tag="2"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt10"
+        app:layout_constraintEnd_toStartOf="@+id/bt3"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/bt1"
@@ -850,8 +664,33 @@
         android:contentDescription="@string/_1"
         android:scaleType="centerInside"
         android:tag="1"
-        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt9"
+        app:layout_constraintEnd_toStartOf="@+id/bt2"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Назад"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_backk"
+        app:layout_constraintEnd_toEndOf="@+id/bt_backk"
+        app:layout_constraintStart_toStartOf="@+id/bt_backk"
+        app:layout_constraintTop_toTopOf="@+id/bt_backk" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/schet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

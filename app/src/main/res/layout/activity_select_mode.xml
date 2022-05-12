@@ -8,11 +8,48 @@
     tools:context=".SelectMode">
 
     <ImageButton
+        android:id="@+id/question4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="question4"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        app:srcCompat="@drawable/pusto" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/question4"
+        app:layout_constraintEnd_toEndOf="@+id/question4"
+        app:layout_constraintStart_toStartOf="@+id/question4"
+        app:layout_constraintTop_toTopOf="@+id/question4"
+        app:srcCompat="@drawable/question" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:background="@drawable/take_players"
+        android:fontFamily="@font/alata"
+        android:text="Три угла"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/bt_triangle"
+        app:layout_constraintTop_toBottomOf="@+id/bt_triangle" />
+
+    <ImageButton
         android:id="@+id/question3"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="#00FFFFFF"
-        android:contentDescription="question2"
+        android:contentDescription="question3"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,12 +154,14 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
+        android:background="#00FFFFFF"
         android:contentDescription="@string/mode2"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/emptycell"
+        app:srcCompat="@drawable/animtrigon1"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
