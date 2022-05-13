@@ -21,8 +21,8 @@ import java.util.Random;
 
 public class playing_field_peklo extends AppCompatActivity implements View.OnTouchListener {
 
-    int[][] cellsmas = new int[8][8];
-    int[][] player = new int[8][8];
+    int[][] cellsmas = new int[7][7];
+    int[][] player = new int[7][7];
 
     Cells cell;
 
@@ -45,9 +45,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
     Boolean paintcells = false;
     Integer players=2;
 
-    int[][] mas = new int[8][8];
-    int[][] vision = new int[8][8];
-    int[][] block = new int[8][8];
+    int[][] mas = new int[7][7];
+    int[][] vision = new int[7][7];
+    int[][] block = new int[7][7];
 
     boolean FromBackToProgress;
 
@@ -75,22 +75,22 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
         cell = new Cells(cellsmas, player);
 
-        for (int i = 0; i < cell.cellsmas.length; ++i) {
-            for (int j = 0; j < cell.cellsmas.length; ++j) {
+        for (int i = 0; i < 7; ++i) {
+            for (int j = 0; j < 7; ++j) {
                 cell.cellsmas[i][j] = 0;
                 cell.player[i][j] = 0;
 
             }
         }
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
                 vision[i][j] = 1;
             }
         }
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
                 block[i][j] = 0;
             }
         }
@@ -104,9 +104,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[4][1] = 0;
             vision[3][6] = 0;
             vision[4][6] = 0;
-            for (int i = 0; i < 8; i ++) {
-                vision[7][i] = 0;
-                vision[i][7] = 0;
+            for (int i = 0; i < 7; i++) {
                 vision[0][i] = 0;
                 vision[i][0] = 0;
             }
@@ -122,10 +120,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[3][1] = 0;
             vision[3][5] = 0;
             vision[3][6] = 0;
-            for (int i = 0; i < 8; i ++) {
-                vision[7][i] = 0;
-                vision[i][7] = 0;
-            }
         }
 
         if (map == 4) {
@@ -138,13 +132,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[3][2] = 0;
             vision[3][4] = 0;
             vision[3][6] = 0;
-            for (int i = 0; i < 8; i ++) {
-                vision[7][i] = 0;
-                vision[i][7] = 0;
-            }
         }
 
-        if (map ==  5) {
+        if (map == 5) {
             vision[0][0] = 0;
             vision[0][2] = 0;
             vision[0][3] = 0;
@@ -168,10 +158,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[6][3] = 0;
             vision[6][4] = 0;
             vision[6][6] = 0;
-            for (int i = 0; i < 8; i ++) {
-                vision[7][i] = 0;
-                vision[i][7] = 0;
-            }
         }
 
         if (map == 6) {
@@ -191,280 +177,261 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[1][6] = 0;
             vision[2][4] = 0;
             vision[2][5] = 0;
-            for (int i = 0; i < 8; i ++) {
-                vision[7][i] = 0;
-                vision[i][7] = 0;
-            }
         }
 
         MyAsyncTask thread = new MyAsyncTask();
         thread.execute();
 
-        ImageButton bt_1;
-        ImageButton bt_2;
-        ImageButton bt_3;
-        ImageButton bt_4;
-        ImageButton bt_5;
-        ImageButton bt_6;
-        ImageButton bt_7;
-        ImageButton bt_8;
-        ImageButton bt_9;
-        ImageButton bt_10;
-        ImageButton bt_11;
-        ImageButton bt_12;
-        ImageButton bt_13;
-        ImageButton bt_14;
-        ImageButton bt_15;
-        ImageButton bt_16;
-        ImageButton bt_17;
-        ImageButton bt_18;
-        ImageButton bt_19;
-        ImageButton bt_20;
-        ImageButton bt_21;
-        ImageButton bt_22;
-        ImageButton bt_23;
-        ImageButton bt_24;
-        ImageButton bt_25;
-        ImageButton bt_26;
-        ImageButton bt_27;
-        ImageButton bt_28;
-        ImageButton bt_29;
-        ImageButton bt_30;
-        ImageButton bt_31;
-        ImageButton bt_32;
-        ImageButton bt_33;
-        ImageButton bt_34;
-        ImageButton bt_35;
-        ImageButton bt_36;
-        ImageButton bt_37;
-        ImageButton bt_38;
-        ImageButton bt_39;
-        ImageButton bt_40;
-        ImageButton bt_41;
-        ImageButton bt_42;
-        ImageButton bt_43;
-        ImageButton bt_44;
-        ImageButton bt_45;
-        ImageButton bt_46;
-        ImageButton bt_47;
-        ImageButton bt_48;
-        ImageButton bt_49;
-        ImageButton bt_50;
-        ImageButton bt_51;
-        ImageButton bt_52;
-        ImageButton bt_53;
-        ImageButton bt_54;
-        ImageButton bt_55;
-        ImageButton bt_56;
-        ImageButton bt_57;
-        ImageButton bt_58;
-        ImageButton bt_59;
-        ImageButton bt_60;
-        ImageButton bt_61;
-        ImageButton bt_62;
-        ImageButton bt_63;
-        ImageButton bt_64;
+        ImageButton b1;
+        ImageButton b2;
+        ImageButton b3;
+        ImageButton b4;
+        ImageButton b5;
+        ImageButton b6;
+        ImageButton b7;
+        ImageButton b8;
+        ImageButton b9;
+        ImageButton b10;
+        ImageButton b11;
+        ImageButton b12;
+        ImageButton b13;
+        ImageButton b14;
+        ImageButton b15;
+        ImageButton b16;
+        ImageButton b17;
+        ImageButton b18;
+        ImageButton b19;
+        ImageButton b20;
+        ImageButton b21;
+        ImageButton b22;
+        ImageButton b23;
+        ImageButton b24;
+        ImageButton b25;
+        ImageButton b26;
+        ImageButton b27;
+        ImageButton b28;
+        ImageButton b29;
+        ImageButton b30;
+        ImageButton b31;
+        ImageButton b32;
+        ImageButton b33;
+        ImageButton b34;
+        ImageButton b35;
+        ImageButton b36;
+        ImageButton b37;
+        ImageButton b38;
+        ImageButton b39;
+        ImageButton b40;
+        ImageButton b41;
+        ImageButton b42;
+        ImageButton b43;
+        ImageButton b44;
+        ImageButton b45;
+        ImageButton b46;
+        ImageButton b47;
+        ImageButton b48;
+        ImageButton b49;
 
+        b1 = findViewById(R.id.b1);
+        mas[0][0] = b1.getId();
+        b1.setOnTouchListener(this);
 
-        bt_1 = findViewById(R.id.bt1);
-        mas[0][0] = bt_1.getId();
-        //startid = bt_1.getId();
+        b2 = findViewById(R.id.b2);
+        mas[0][1] = b2.getId();
+        b2.setOnTouchListener(this);
 
-        bt_1.setOnTouchListener(this);
-        bt_2 = findViewById(R.id.bt2);
-        mas[0][1] = bt_2.getId();
-        bt_2.setOnTouchListener(this);
-        bt_3 = findViewById(R.id.bt3);
-        mas[0][2] = bt_3.getId();
-        bt_3.setOnTouchListener(this);
-        bt_4 = findViewById(R.id.bt4);
-        mas[0][3] = bt_4.getId();
-        bt_4.setOnTouchListener(this);
-        bt_5 = findViewById(R.id.bt5);
-        mas[0][4] = bt_5.getId();
-        bt_5.setOnTouchListener(this);
-        bt_6 = findViewById(R.id.bt6);
-        mas[0][5] = bt_6.getId();
-        bt_6.setOnTouchListener(this);
-        bt_7 = findViewById(R.id.bt7);
-        mas[0][6] = bt_7.getId();
-        bt_7.setOnTouchListener(this);
-        bt_8 = findViewById(R.id.bt8);
-        mas[0][7] = bt_8.getId();
-        bt_8.setOnTouchListener(this);
-        bt_9 = findViewById(R.id.bt9);
-        mas[1][0] = bt_9.getId();
-        bt_9.setOnTouchListener(this);
-        bt_10 = findViewById(R.id.bt10);
-        mas[1][1] = bt_10.getId();
-        bt_10.setOnTouchListener(this);
-        bt_11 = findViewById(R.id.bt11);
-        mas[1][2] = bt_11.getId();
-        bt_11.setOnTouchListener(this);
-        bt_12 = findViewById(R.id.bt12);
-        mas[1][3] = bt_12.getId();
-        bt_12.setOnTouchListener(this);
-        bt_13 = findViewById(R.id.bt13);
-        mas[1][4] = bt_13.getId();
-        bt_13.setOnTouchListener(this);
-        bt_14 = findViewById(R.id.bt14);
-        mas[1][5] = bt_14.getId();
-        bt_14.setOnTouchListener(this);
-        bt_15 = findViewById(R.id.bt15);
-        mas[1][6] = bt_15.getId();
-        bt_15.setOnTouchListener(this);
-        bt_16 = findViewById(R.id.bt16);
-        mas[1][7] = bt_16.getId();
-        bt_16.setOnTouchListener(this);
-        bt_17 = findViewById(R.id.bt17);
-        mas[2][0] = bt_17.getId();
-        bt_17.setOnTouchListener(this);
-        bt_18 = findViewById(R.id.bt18);
-        mas[2][1] = bt_18.getId();
-        bt_18.setOnTouchListener(this);
-        bt_19 = findViewById(R.id.bt19);
-        mas[2][2] = bt_19.getId();
-        bt_19.setOnTouchListener(this);
-        bt_20 = findViewById(R.id.bt20);
-        mas[2][3] = bt_20.getId();
-        bt_20.setOnTouchListener(this);
-        bt_21 = findViewById(R.id.bt21);
-        mas[2][4] = bt_21.getId();
-        bt_21.setOnTouchListener(this);
-        bt_22 = findViewById(R.id.bt22);
-        mas[2][5] = bt_22.getId();
-        bt_22.setOnTouchListener(this);
-        bt_23 = findViewById(R.id.bt23);
-        mas[2][6] = bt_23.getId();
-        bt_23.setOnTouchListener(this);
-        bt_24 = findViewById(R.id.bt24);
-        mas[2][7] = bt_24.getId();
-        bt_24.setOnTouchListener(this);
-        bt_25 = findViewById(R.id.bt25);
-        mas[3][0] = bt_25.getId();
-        bt_25.setOnTouchListener(this);
-        bt_26 = findViewById(R.id.bt26);
-        mas[3][1] = bt_26.getId();
-        bt_26.setOnTouchListener(this);
-        bt_27 = findViewById(R.id.bt27);
-        mas[3][2] = bt_27.getId();
-        bt_27.setOnTouchListener(this);
-        bt_28 = findViewById(R.id.bt28);
-        mas[3][3] = bt_28.getId();
-        bt_28.setOnTouchListener(this);
-        bt_29 = findViewById(R.id.bt29);
-        mas[3][4] = bt_29.getId();
-        bt_29.setOnTouchListener(this);
-        bt_30 = findViewById(R.id.bt30);
-        mas[3][5] = bt_30.getId();
-        bt_30.setOnTouchListener(this);
-        bt_31 = findViewById(R.id.bt31);
-        mas[3][6] = bt_31.getId();
-        bt_31.setOnTouchListener(this);
-        bt_32 = findViewById(R.id.bt32);
-        mas[3][7] = bt_32.getId();
-        bt_32.setOnTouchListener(this);
-        bt_33 = findViewById(R.id.bt33);
-        mas[4][0] = bt_33.getId();
-        bt_33.setOnTouchListener(this);
-        bt_34 = findViewById(R.id.bt34);
-        mas[4][1] = bt_34.getId();
-        bt_34.setOnTouchListener(this);
-        bt_35 = findViewById(R.id.bt35);
-        mas[4][2] = bt_35.getId();
-        bt_35.setOnTouchListener(this);
-        bt_36 = findViewById(R.id.bt36);
-        mas[4][3] = bt_36.getId();
-        bt_36.setOnTouchListener(this);
-        bt_37 = findViewById(R.id.bt37);
-        mas[4][4] = bt_37.getId();
-        bt_37.setOnTouchListener(this);
-        bt_38 = findViewById(R.id.bt38);
-        mas[4][5] = bt_38.getId();
-        bt_38.setOnTouchListener(this);
-        bt_39 = findViewById(R.id.bt39);
-        mas[4][6] = bt_39.getId();
-        bt_39.setOnTouchListener(this);
-        bt_40 = findViewById(R.id.bt40);
-        mas[4][7] = bt_40.getId();
-        bt_40.setOnTouchListener(this);
-        bt_41 = findViewById(R.id.bt41);
-        mas[5][0] = bt_41.getId();
-        bt_41.setOnTouchListener(this);
-        bt_42 = findViewById(R.id.bt42);
-        mas[5][1] = bt_42.getId();
-        bt_42.setOnTouchListener(this);
-        bt_43 = findViewById(R.id.bt43);
-        mas[5][2] = bt_43.getId();
-        bt_43.setOnTouchListener(this);
-        bt_44 = findViewById(R.id.bt44);
-        mas[5][3] = bt_44.getId();
-        bt_44.setOnTouchListener(this);
-        bt_45 = findViewById(R.id.bt45);
-        mas[5][4] = bt_45.getId();
-        bt_45.setOnTouchListener(this);
-        bt_46 = findViewById(R.id.bt46);
-        mas[5][5] = bt_46.getId();
-        bt_46.setOnTouchListener(this);
-        bt_47 = findViewById(R.id.bt47);
-        mas[5][6] = bt_47.getId();
-        bt_47.setOnTouchListener(this);
-        bt_48 = findViewById(R.id.bt48);
-        mas[5][7] = bt_48.getId();
-        bt_48.setOnTouchListener(this);
-        bt_49 = findViewById(R.id.bt49);
-        mas[6][0] = bt_49.getId();
-        bt_49.setOnTouchListener(this);
-        bt_50 = findViewById(R.id.bt50);
-        mas[6][1] = bt_50.getId();
-        bt_50.setOnTouchListener(this);
-        bt_51 = findViewById(R.id.bt51);
-        mas[6][2] = bt_51.getId();
-        bt_51.setOnTouchListener(this);
-        bt_52 = findViewById(R.id.bt52);
-        mas[6][3] = bt_52.getId();
-        bt_52.setOnTouchListener(this);
-        bt_53 = findViewById(R.id.bt53);
-        mas[6][4] = bt_53.getId();
-        bt_53.setOnTouchListener(this);
-        bt_54 = findViewById(R.id.bt54);
-        mas[6][5] = bt_54.getId();
-        bt_54.setOnTouchListener(this);
-        bt_55 = findViewById(R.id.bt55);
-        mas[6][6] = bt_55.getId();
-        bt_55.setOnTouchListener(this);
-        bt_56 = findViewById(R.id.bt56);
-        mas[6][7] = bt_56.getId();
-        bt_56.setOnTouchListener(this);
-        bt_57 = findViewById(R.id.bt57);
-        mas[7][0] = bt_57.getId();
-        bt_57.setOnTouchListener(this);
-        bt_58 = findViewById(R.id.bt58);
-        mas[7][1] = bt_58.getId();
-        bt_58.setOnTouchListener(this);
-        bt_59 = findViewById(R.id.bt59);
-        mas[7][2] = bt_59.getId();
-        bt_59.setOnTouchListener(this);
-        bt_60 = findViewById(R.id.bt60);
-        mas[7][3] = bt_60.getId();
-        bt_60.setOnTouchListener(this);
-        bt_61 = findViewById(R.id.bt61);
-        mas[7][4] = bt_61.getId();
-        bt_61.setOnTouchListener(this);
-        bt_62 = findViewById(R.id.bt62);
-        mas[7][5] = bt_62.getId();
-        bt_62.setOnTouchListener(this);
-        bt_63 = findViewById(R.id.bt63);
-        mas[7][6] = bt_63.getId();
-        bt_63.setOnTouchListener(this);
-        bt_64 = findViewById(R.id.bt64);
-        mas[7][7] = bt_64.getId();
-        bt_64.setOnTouchListener(this);
+        b3 = findViewById(R.id.b3);
+        mas[0][2] = b3.getId();
+        b3.setOnTouchListener(this);
+
+        b4 = findViewById(R.id.b4);
+        mas[0][3] = b4.getId();
+        b4.setOnTouchListener(this);
+
+        b5 = findViewById(R.id.b5);
+        mas[0][4] = b5.getId();
+        b5.setOnTouchListener(this);
+
+        b6 = findViewById(R.id.b6);
+        mas[0][5] = b6.getId();
+        b6.setOnTouchListener(this);
+
+        b7 = findViewById(R.id.b7);
+        mas[0][6] = b7.getId();
+        b7.setOnTouchListener(this);
+
+        b8 = findViewById(R.id.b8);
+        mas[1][0] = b8.getId();
+        b8.setOnTouchListener(this);
+
+        b9 = findViewById(R.id.b9);
+        mas[1][1] = b9.getId();
+        b9.setOnTouchListener(this);
+
+        b10 = findViewById(R.id.b10);
+        mas[1][2] = b10.getId();
+        b10.setOnTouchListener(this);
+
+        b11 = findViewById(R.id.b11);
+        mas[1][3] = b11.getId();
+        b11.setOnTouchListener(this);
+
+        b12 = findViewById(R.id.b12);
+        mas[1][4] = b12.getId();
+        b12.setOnTouchListener(this);
+
+        b13 = findViewById(R.id.b13);
+        mas[1][5] = b13.getId();
+        b13.setOnTouchListener(this);
+
+        b14 = findViewById(R.id.b14);
+        mas[1][6] = b14.getId();
+        b14.setOnTouchListener(this);
+
+        b15 = findViewById(R.id.b15);
+        mas[2][0] = b15.getId();
+        b15.setOnTouchListener(this);
+
+        b16 = findViewById(R.id.b16);
+        mas[2][1] = b16.getId();
+        b16.setOnTouchListener(this);
+
+        b17 = findViewById(R.id.b17);
+        mas[2][2] = b17.getId();
+        b17.setOnTouchListener(this);
+
+        b18 = findViewById(R.id.b18);
+        mas[2][3] = b18.getId();
+        b18.setOnTouchListener(this);
+
+        b19 = findViewById(R.id.b19);
+        mas[2][4] = b19.getId();
+        b19.setOnTouchListener(this);
+
+        b20 = findViewById(R.id.b20);
+        mas[2][5] = b20.getId();
+        b20.setOnTouchListener(this);
+
+        b21 = findViewById(R.id.b21);
+        mas[2][6] = b21.getId();
+        b21.setOnTouchListener(this);
+
+        b22 = findViewById(R.id.b22);
+        mas[3][0] = b22.getId();
+        b22.setOnTouchListener(this);
+
+        b23 = findViewById(R.id.b23);
+        mas[3][1] = b23.getId();
+        b23.setOnTouchListener(this);
+
+        b24 = findViewById(R.id.b24);
+        mas[3][2] = b24.getId();
+        b24.setOnTouchListener(this);
+
+        b25 = findViewById(R.id.b25);
+        mas[3][3] = b25.getId();
+        b25.setOnTouchListener(this);
+
+        b26 = findViewById(R.id.b26);
+        mas[3][4] = b26.getId();
+        b26.setOnTouchListener(this);
+
+        b27 = findViewById(R.id.b27);
+        mas[3][5] = b27.getId();
+        b27.setOnTouchListener(this);
+
+        b28 = findViewById(R.id.b28);
+        mas[3][6] = b28.getId();
+        b28.setOnTouchListener(this);
+
+        b29 = findViewById(R.id.b29);
+        mas[4][0] = b29.getId();
+        b29.setOnTouchListener(this);
+
+        b30 = findViewById(R.id.b30);
+        mas[4][1] = b30.getId();
+        b30.setOnTouchListener(this);
+
+        b31 = findViewById(R.id.b31);
+        mas[4][2] = b31.getId();
+        b31.setOnTouchListener(this);
+
+        b32 = findViewById(R.id.b32);
+        mas[4][3] = b32.getId();
+        b32.setOnTouchListener(this);
+
+        b33 = findViewById(R.id.b33);
+        mas[4][4] = b33.getId();
+        b33.setOnTouchListener(this);
+
+        b34 = findViewById(R.id.b34);
+        mas[4][5] = b34.getId();
+        b34.setOnTouchListener(this);
+
+        b35 = findViewById(R.id.b35);
+        mas[4][6] = b35.getId();
+        b35.setOnTouchListener(this);
+
+        b36 = findViewById(R.id.b36);
+        mas[5][0] = b36.getId();
+        b36.setOnTouchListener(this);
+
+        b37 = findViewById(R.id.b37);
+        mas[5][1] = b37.getId();
+        b37.setOnTouchListener(this);
+
+        b38 = findViewById(R.id.b38);
+        mas[5][2] = b38.getId();
+        b38.setOnTouchListener(this);
+
+        b39 = findViewById(R.id.b39);
+        mas[5][3] = b39.getId();
+        b39.setOnTouchListener(this);
+
+        b40 = findViewById(R.id.b40);
+        mas[5][4] = b40.getId();
+        b40.setOnTouchListener(this);
+
+        b41 = findViewById(R.id.b41);
+        mas[5][5] = b41.getId();
+        b41.setOnTouchListener(this);
+
+        b42 = findViewById(R.id.b42);
+        mas[5][6] = b42.getId();
+        b42.setOnTouchListener(this);
+
+        b43 = findViewById(R.id.b43);
+        mas[6][0] = b43.getId();
+        b43.setOnTouchListener(this);
+
+        b44 = findViewById(R.id.b44);
+        mas[6][1] = b44.getId();
+        b44.setOnTouchListener(this);
+
+        b45 = findViewById(R.id.b45);
+        mas[6][2] = b45.getId();
+        b45.setOnTouchListener(this);
+
+        b46 = findViewById(R.id.b46);
+        mas[6][3] = b46.getId();
+        b46.setOnTouchListener(this);
+
+        b47 = findViewById(R.id.b47);
+        mas[6][4] = b47.getId();
+        b47.setOnTouchListener(this);
+
+        b48 = findViewById(R.id.b48);
+        mas[6][5] = b48.getId();
+        b48.setOnTouchListener(this);
+
+        b49 = findViewById(R.id.b49);
+        mas[6][6] = b49.getId();
+        b49.setOnTouchListener(this);
 
         // TODO Меняем поля в зависимости от выбранного режима
 
-        for (int i = 0; i < 8; i ++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 7; i ++) {
+            for (int j = 0; j < 7; j++) {
                 if (vision[i][j] == 0) {
                     ImageButton bt = (ImageButton) findViewById(mas[i][j]);
                     bt.setVisibility(View.INVISIBLE);
@@ -510,30 +477,27 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
             int xx = 0;
             int yy = 0;
-            if (num <= 7) {
+            if (num <= 6) {
                 xx = num;
                 yy = 0;
-            } else if ((num > 7) && (num <= 15)) {
-                xx = num - 8;
+            } else if ((num > 6) && (num <= 13)) {
+                xx = num - 7;
                 yy = yy + 1;
-            } else if ((num <= 23) && (num > 15)) {
-                xx = num - 16;
+            } else if ((num <= 20) && (num > 13)) {
+                xx = num - 14;
                 yy = yy + 2;
-            } else if ((num <= 31) && (num > 23)) {
-                xx = num - 24;
+            } else if ((num <= 27) && (num > 20)) {
+                xx = num - 21;
                 yy = yy + 3;
-            } else if ((num <= 39) && (num > 31)) {
-                xx = num - 32;
+            } else if ((num <= 34) && (num > 27)) {
+                xx = num - 28;
                 yy = yy + 4;
-            } else if ((num <= 47) && (num > 39)) {
-                xx = num - 40;
+            } else if ((num <= 41) && (num > 34)) {
+                xx = num - 35;
                 yy = yy + 5;
-            } else if ((num <= 55) && (num > 47)) {
-                xx = num - 48;
+            } else if ((num <= 48) && (num > 41)) {
+                xx = num - 42;
                 yy = yy + 6;
-            } else if (num > 55) {
-                xx = num - 56;
-                yy = yy + 7;
             }
             // Log.d("ggg", "xx- " + xx + " yy- " + yy);
             // System.out.println("player " + String.valueOf(cell.player[xx][yy]));
@@ -829,24 +793,6 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
     // для перерисовки после хода
 
 
-    public Integer IdOut(Integer i, Integer j, Integer razm) {
-        Integer k = 0;
-        if ((i + j * razm) >= 22) {
-            k = 1;
-        }
-        if ((i + j * razm) >= 33) {
-            k = 2;
-        }
-        if ((i + j * razm) >= 44) {
-            k = 3;
-        }
-        if ((i + j * razm) >= 55) {
-            k = 4;
-        }
-        return startid + j + (i * razm) + k;
-    }
-
-
     private class MyAsyncTask extends AsyncTask<Integer, Integer, Void> {
         private WeakReference<PlayingField> PlayingField;
 
@@ -940,8 +886,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                     */
 
-                    for (int i = 0; i < 8; i++) {
-                        for (int j = 0; j < 8; j++) {
+                    for (int i = 0; i < 7; i++) {
+                        for (int j = 0; j < 7; j++) {
 
                             ImageButton bt = findViewById(mas[i][j]);
                             //Log.d("ggg" , "запустилось деление");
@@ -970,11 +916,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                                         cell.player[i - 1][j] = 1;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 1;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 1;
                                     }
@@ -989,11 +935,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                                         cell.player[i - 1][j] = 2;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 2;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 2;
                                     }
@@ -1008,11 +954,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                                         cell.player[i - 1][j] = 3;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 3;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 3;
                                     }
@@ -1027,11 +973,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                                         cell.player[i - 1][j] = 4;
 
                                     }
-                                    if ((i < 7) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 4;
                                     }
-                                    if ((j < 7) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 4;
                                     }
@@ -1073,35 +1019,108 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         int xx = 0;
                         int yy = 0;
-                        if (randomcell <= 7) {
+                        if (randomcell <= 6) {
                             xx = randomcell;
                             yy = 0;
-                        } else if ((randomcell > 7) && (randomcell <= 15)) {
-                            xx = randomcell - 8;
+                        } else if ((randomcell > 6) && (randomcell <= 13)) {
+                            xx = randomcell - 7;
                             yy = yy + 1;
-                        } else if ((randomcell <= 23) && (randomcell > 15)) {
-                            xx = randomcell - 16;
+                        } else if ((randomcell <= 20) && (randomcell > 13)) {
+                            xx = randomcell - 14;
                             yy = yy + 2;
-                        } else if ((randomcell <= 31) && (randomcell > 23)) {
-                            xx = randomcell - 24;
+                        } else if ((randomcell <= 27) && (randomcell > 20)) {
+                            xx = randomcell - 21;
                             yy = yy + 3;
-                        } else if ((randomcell <= 39) && (randomcell > 31)) {
-                            xx = randomcell - 32;
+                        } else if ((randomcell <= 34) && (randomcell > 27)) {
+                            xx = randomcell - 28;
                             yy = yy + 4;
-                        } else if ((randomcell <= 47) && (randomcell > 39)) {
-                            xx = randomcell - 40;
+                        } else if ((randomcell <= 41) && (randomcell > 34)) {
+                            xx = randomcell - 35;
                             yy = yy + 5;
-                        } else if ((randomcell <= 55) && (randomcell > 47)) {
-                            xx = randomcell - 48;
+                        } else if ((randomcell <= 48) && (randomcell > 41)) {
+                            xx = randomcell - 42;
                             yy = yy + 6;
-                        } else if (randomcell > 55) {
-                            xx = randomcell - 56;
-                            yy = yy + 7;
                         }
 
                         if (block[yy][xx] == 0) {
                             block[yy][xx] = numberofmoves;
                             player[yy][xx] = 0;
+                            cell.cellsmas[yy][xx] = 0;
+                        }
+
+                        // создаём поле вокруг клетки
+
+                        if ((xx > 0) && (block[yy][xx-1] == 0)) {
+                            int r21 = random.nextInt(2-1) + 1;
+                            if (r21 == 1) {
+                                int n21 = random.nextInt(11-2) + 2;
+                                block[yy][xx-1] = n21;
+                                player[yy][xx-1] = 0;
+                                cell.cellsmas[yy][xx-1] = 0;
+                            }
+                        }
+                        if ((xx < 6) && (block[yy][xx+1] == 0)) {
+                            int r23 = random.nextInt(2-1) + 1;
+                            if (r23 == 1) {
+                                int n23 = random.nextInt(11-2) + 2;
+                                block[yy][xx+1] = n23;
+                                player[yy][xx+1] = 0;
+                                cell.cellsmas[yy][xx+1] = 0;
+                            }
+                        }
+                        if ((yy > 0) && (block[yy-1][xx] == 0)) {
+                            int r12 = random.nextInt(2-1) + 1;
+                            if (r12 == 1) {
+                                int n12 = random.nextInt(11-2) + 2;
+                                block[yy-1][xx] = n12;
+                                player[yy-1][xx] = 0;
+                                cell.cellsmas[yy-1][xx] = 0;
+                            }
+                        }
+                        if ((yy < 6) && (block[yy+1][xx] == 0)) {
+                            int r32 = random.nextInt(2-1) + 1;
+                            if (r32 == 1) {
+                                int n32 = random.nextInt(11-2) + 2;
+                                block[yy+1][xx] = n32;
+                                player[yy+1][xx] = 0;
+                                cell.cellsmas[yy+1][xx] = 0;
+                            }
+                        }
+                        if (((xx > 0) && (yy > 0)) && (block[yy-1][xx-1] == 0)) {
+                            int r11 = random.nextInt(2-1) + 1;
+                            if (r11 == 1) {
+                                int n11 = random.nextInt(11-2) + 2;
+                                block[yy-1][xx-1] = n11;
+                                player[yy-1][xx-1] = 0;
+                                cell.cellsmas[yy-1][xx-1] = 0;
+                            }
+                        }
+                        if (((xx < 6) && (yy > 0)) && (block[yy-1][xx+1] == 0)) {
+                            int r13 = random.nextInt(2-1) + 1;
+                            if (r13 == 1) {
+                                int n13 = random.nextInt(11-2) + 2;
+                                block[yy-1][xx+1] = n13;
+                                player[yy-1][xx+1] = 0;
+                                cell.cellsmas[yy-1][xx+1] = 0;
+                            }
+                        }
+                        if (((xx > 0) && (yy < 6)) && (block[yy+1][xx-1] == 0)) {
+                            int r31 = random.nextInt(2-1) + 1;
+                            if (r31 == 1) {
+                                int n31 = random.nextInt(11-2) + 2;
+                                block[yy+1][xx-1] = n31;
+                                player[yy+1][xx-1] = 0;
+                                cell.cellsmas[yy+1][xx-1] = 0;
+                            }
+                        }
+                        if (((xx < 6) && (yy < 6)) && (block[yy+1][xx+1] == 0)) {
+                            int r33 = random.nextInt(2-1) + 1;
+                            if (r33 == 1) {
+                                int n33 = random.nextInt(11-2) + 2;
+                                block[yy+1][xx+1] = n33;
+                                player[yy+1][xx+1] = 0;
+                                cell.cellsmas[yy+1][xx+1] = 0;
+                            }
                         }
                         win();
 
@@ -1109,8 +1128,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                     // Убавляем с каждым ходом в блокировке по 1
 
-                    for (int i = 0; i < 8; i++) {
-                        for (int j = 0; j < 8; j++) {
+                    for (int i = 0; i < 7; i++) {
+                        for (int j = 0; j < 7; j++) {
                             if (block[i][j] > 0) {
                                 block[i][j] -= 1;
                             }
@@ -1137,8 +1156,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                 paintcells = false;
                 //Log.d("ggg", "запустился onPostExecute");
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
+                for (int i = 0; i < 7; i++) {
+                    for (int j = 0; j < 7; j++) {
 
                         ImageButton bt = findViewById(mas[i][j]);
 
@@ -1149,7 +1168,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                             //bt.setImageResource(R.drawable.emptycell);
                             bt.setImageResource(R.drawable.emptycell);
-                            bt.setBackgroundColor(Color.green(100));
+                            //bt.setBackgroundColor(Color.green(100));
                             //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                             //Log.d("ggg", "перерисовка коллапса");
                         }
@@ -1278,8 +1297,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             }
 
             if (repaintblock == true) {
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
+                for (int i = 0; i < 7; i++) {
+                    for (int j = 0; j < 7; j++) {
 
                         ImageButton bt = findViewById(mas[i][j]);
 
@@ -1342,8 +1361,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
         int k1 = 0;
         int k2 = 0;
         int k3 = 0;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
                 if (cell.player[i][j] == 1) {
                     k++;
 
@@ -1415,8 +1434,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
         }
     }
     void fieldclear() {
-        for (int i = 0; i < 8 ; i ++) {
-            for (int j = 0; j < 8 ; j ++) {
+        for (int i = 0; i < 7 ; i ++) {
+            for (int j = 0; j < 7 ; j ++) {
                 block[i][j] = 0;
                 cell.player[i][j] = 0;
                 cell.cellsmas[i][j] = 0;
