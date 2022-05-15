@@ -1611,6 +1611,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             repaintblock = false;
         }
     }
+
     void fieldclear() {
         for (int i = 0; i < 7 ; i ++) {
             for (int j = 0; j < 7 ; j ++) {

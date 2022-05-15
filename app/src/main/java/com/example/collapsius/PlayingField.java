@@ -32,6 +32,8 @@ class Cells {
 
 public class PlayingField extends AppCompatActivity implements View.OnTouchListener {
 
+    private ImageButton bt_back;
+
     int[][] cellsmas = new int[7][7];
     int[][] player = new int[7][7];
 
@@ -41,6 +43,8 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     boolean lost2 = false;
     boolean lost3 = false;
     boolean lost4 = false;
+
+    boolean change = false;
 
     Integer shot = 0;
     Integer shotp = -1;
@@ -66,6 +70,17 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_field);
+
+        bt_back = findViewById(R.id.bt_backk);
+
+        bt_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(PlayingField.this,SelectMode.class);
+                startActivity(intent);
+                fieldclear();
+            }
+        });
 
         Intent intent = getIntent();
         Integer mode = intent.getIntExtra("mode", 0);
@@ -785,6 +800,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 this.PlayingField = PlayingField;
             }
 
+
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -800,6 +816,9 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
                 //Integer values = 1;
                 //publishProgress(values);
                 while (true) {
+
+                    //cancel(change);
+
                     publishProgress((int) (num));
                     try {
                         sleep(20);
@@ -1208,6 +1227,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             }
         }
         void fieldclear () {
+
             for (int i = 0; i < 7; i++) {
                 for (int j = 0; j < 7; j++) {
                     cell.player[i][j] = 0;
@@ -1232,6 +1252,11 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             clickbutton = 0;
             razm = 7;
             paintcells = false;
+            FromBackToProgress = false;
+
+            //finish();
+            onBackPressed();
+
         }
     }
 
