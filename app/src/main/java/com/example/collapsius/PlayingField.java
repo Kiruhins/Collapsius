@@ -1183,25 +1183,25 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
 
             if ((k1 == 0) && (k2 == 0) && (k3 == 0)) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Выйграл первый игрок!",
+                        "Победил первый игрок!",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             } else if ((k == 0) && (k2 == 0) && (k3 == 0)) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Выйграл второй игрок!",
+                        "Победил второй игрок!",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             } else if ((k == 0) && (k1 == 0) && (k3 == 0)) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Выйграл третий игрок!",
+                        "Победил третий игрок!",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             } else if ((k == 0) && (k1 == 0) && (k2 == 0)) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Выйграл четвертый игрок!",
+                        "Победил четвертый игрок!",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
