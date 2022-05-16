@@ -1255,7 +1255,7 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
             FromBackToProgress = false;
 
             //finish();
-            onBackPressed();
+            //onBackPressed();
 
         }
     }
