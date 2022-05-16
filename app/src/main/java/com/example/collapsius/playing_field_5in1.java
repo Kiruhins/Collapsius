@@ -1260,32 +1260,7 @@ public class playing_field_5in1 extends AppCompatActivity implements View.OnTouc
             toast.show();
         }
     }
-    void fieldclear() {
-        for (int i = 0; i < 7 ; i ++) {
-            for (int j = 0; j < 7 ; j ++) {
-                cell.player[i][j] = 0;
-                cell.cellsmas[i][j] = 0;
 
-                ImageButton bt = findViewById(mas[i][j]);
-                bt.setImageResource(R.drawable.emptycell);
-            }
-        }
-        lost1 = false;
-        lost2 = false;
-        lost3 = false;
-        lost4 = false;
-        shot = 0;
-        shotp = -1;
-        trigger = false;
-        clickbuttonn = 0;
-        speed = false;
-        num = 0;
-        nump = 0;
-        playerp = 0;
-        clickbutton = 0;
-        razm = 7;
-        paintcells = false;
-    }
 }
 
 

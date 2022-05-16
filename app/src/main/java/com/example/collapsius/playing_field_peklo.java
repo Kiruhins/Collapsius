@@ -43,7 +43,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
     Integer startid;
     Integer razm = 8;
     Boolean paintcells = false;
-    Integer players=2;
+    Integer players = 2;
 
     int[][] mas = new int[7][7];
     int[][] vision = new int[7][7];
@@ -430,7 +430,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
         // TODO Меняем поля в зависимости от выбранного режима
 
-        for (int i = 0; i < 7; i ++) {
+        for (int i = 0; i < 7; i++) {
             for (int j = 0; j < 7; j++) {
                 if (vision[i][j] == 0) {
                     ImageButton bt = (ImageButton) findViewById(mas[i][j]);
@@ -448,14 +448,13 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
     }
 
-    Integer NumOut(int xx,int yy){
-        return xx*8+yy;
+    Integer NumOut(int xx, int yy) {
+        return xx * 8 + yy;
     }
 
     // просто нажимаем любую кнопку + находим по тегу
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-
 
 
         if (paintcells == false) {
@@ -506,13 +505,13 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
             if (players == 3) {
                 if ((shot % 3 == 0) && (lost1 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 3 == 1) && (lost2 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 3 == 2) && (lost3 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 /*
                 if ((shot % 3 == 0) && (lost1 == true)) {
@@ -522,19 +521,19 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             }
             if (players == 4) {
                 if ((shot % 4 == 0) && (lost1 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 4 == 1) && (lost2 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 4 == 2) && (lost3 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 4 == 3) && (lost4 == true)) {
-                    shot ++;
+                    shot++;
                 }
                 if ((shot % 4 == 0) && (lost1 == true)) {
-                    shot ++;
+                    shot++;
                 }
             }
 
@@ -542,9 +541,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
             // TODO Для остальных случаев (1,2,3)
             //Прописываем изменения кнопки
-            if (((players==2)&&(cell.player[yy][xx] == 1) && (shot % 2 == 0))
-                    ||((players==3)&&(cell.player[yy][xx] == 1) && (shot % 3 == 0))
-                    ||((players==4)&&(cell.player[yy][xx] == 1) && (shot % 4 == 0))) {
+            if (((players == 2) && (cell.player[yy][xx] == 1) && (shot % 2 == 0))
+                    || ((players == 3) && (cell.player[yy][xx] == 1) && (shot % 3 == 0))
+                    || ((players == 4) && (cell.player[yy][xx] == 1) && (shot % 4 == 0))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.bblue2);
@@ -573,9 +572,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                 }
             }
-            if (((players==2)&&(cell.player[yy][xx] == 2) && (shot % 2 == 1))
-                    ||((players==3)&&(cell.player[yy][xx] == 2) && (shot % 3 == 1))
-                    ||((players==4)&&(cell.player[yy][xx] == 2) && (shot % 4 == 1))) {
+            if (((players == 2) && (cell.player[yy][xx] == 2) && (shot % 2 == 1))
+                    || ((players == 3) && (cell.player[yy][xx] == 2) && (shot % 3 == 1))
+                    || ((players == 4) && (cell.player[yy][xx] == 2) && (shot % 4 == 1))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.bgreen2);
@@ -600,8 +599,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                 }
             }
-            if (((players==3)&&(cell.player[yy][xx] == 3) && (shot % 3 == 2))
-                    ||((players==4)&&(cell.player[yy][xx] == 3) && (shot % 4 == 2))) {
+            if (((players == 3) && (cell.player[yy][xx] == 3) && (shot % 3 == 2))
+                    || ((players == 4) && (cell.player[yy][xx] == 3) && (shot % 4 == 2))) {
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
                 if (cell.cellsmas[yy][xx] == 1) {
                     bt.setImageResource(R.drawable.wblue2);
@@ -675,7 +674,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 System.out.println("shot при первом ходе-" + shot);
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-            if ((players>=3)&&(cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
+            if ((players >= 3) && (cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
                 bt.setImageResource(R.drawable.wblue1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
@@ -684,7 +683,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 System.out.println("shot при первом ходе-" + shot);
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
-            if ((players>=4)&&(cell.cellsmas[yy][xx] == 0) && (shot == 3)) {
+            if ((players >= 4) && (cell.cellsmas[yy][xx] == 0) && (shot == 3)) {
                 bt.setImageResource(R.drawable.wgreen1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
@@ -699,9 +698,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             // TODO смена игроков
             //может ли  игрок походить на данную  клетку
 
-            if ((((players==2)&&(shot % 2 == 0) && (cell.player[yy][xx] == 1))
-                    ||((players==3)&&(shot % 3 == 0) && (cell.player[yy][xx] == 1))
-                    ||((players==4)&&(shot % 4 == 0) && (cell.player[yy][xx] == 1))) && (block[yy][xx] == 0)) {
+            if ((((players == 2) && (shot % 2 == 0) && (cell.player[yy][xx] == 1))
+                    || ((players == 3) && (shot % 3 == 0) && (cell.player[yy][xx] == 1))
+                    || ((players == 4) && (shot % 4 == 0) && (cell.player[yy][xx] == 1))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 1) {  // TODO Надо будет как-то исправить
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -722,9 +721,9 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
 
             }
-            if ((((players==2)&&(shot % 2 == 1) && (cell.player[yy][xx] == 2))
-                    ||((players==3)&&(shot % 3 == 1) && (cell.player[yy][xx] == 2))
-                    ||((players==4)&&(shot % 4 == 1) && (cell.player[yy][xx] == 2))) && (block[yy][xx] == 0)) {
+            if ((((players == 2) && (shot % 2 == 1) && (cell.player[yy][xx] == 2))
+                    || ((players == 3) && (shot % 3 == 1) && (cell.player[yy][xx] == 2))
+                    || ((players == 4) && (shot % 4 == 1) && (cell.player[yy][xx] == 2))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 2) {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -744,8 +743,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                 }
 
             }
-            if ((((players==3)&&(shot % 3 == 2) && (cell.player[yy][xx] == 3))
-                    ||((players==4)&&(shot % 4 == 2) && (cell.player[yy][xx] == 3))) && (block[yy][xx] == 0)) {
+            if ((((players == 3) && (shot % 3 == 2) && (cell.player[yy][xx] == 3))
+                    || ((players == 4) && (shot % 4 == 2) && (cell.player[yy][xx] == 3))) && (block[yy][xx] == 0)) {
 
                 if (clickbuttonn < 3) {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
@@ -911,77 +910,74 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                                 cell.player[i][j] = 0;
                                 if (playerp == 1) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 1;
 
                                     }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 1;
                                     }
-                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 1;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
+                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 1;
                                     }
-                                }
-                                else if (playerp == 2) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
+                                } else if (playerp == 2) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 2;
 
                                     }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 2;
                                     }
-                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 2;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
+                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 2;
                                     }
-                                }
-                                else if (playerp == 3) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
+                                } else if (playerp == 3) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 3;
 
                                     }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 3;
                                     }
-                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 3;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
+                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 3;
                                     }
-                                }
-                                else if (playerp == 4) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i-1][j] == 0)){
+                                } else if (playerp == 4) {
+                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
                                         cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                         cell.player[i - 1][j] = 4;
 
                                     }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i+1][j] == 0)) {
+                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
                                         cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                         cell.player[i + 1][j] = 4;
                                     }
-                                    if ((j < 6) && (vision[i ][j+1] == 1) && (block[i][j+1] == 0)) {
+                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
                                         cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                         cell.player[i][j + 1] = 4;
                                     }
-                                    if ((j > 0) && (vision[i][j-1] == 1) && (block[i][j-1] == 0)) {
+                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
                                         cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                         cell.player[i][j - 1] = 4;
                                     }
@@ -1031,11 +1027,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     }
 
                     Random random = new Random();
-                    int probability = random.nextInt(2-1) + 1;
+                    int probability = random.nextInt(2 - 1) + 1;
                     if (probability == 1) {
 
-                        int randomcell = random.nextInt(64-0) + 0;
-                        int numberofmoves = random.nextInt(11-2) + 2;
+                        int randomcell = random.nextInt(64 - 0) + 0;
+                        int numberofmoves = random.nextInt(11 - 2) + 2;
 
                         // ищем координаты рандомной точки
 
@@ -1090,214 +1086,214 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         // создаём поле вокруг клетки
 
-                        if (((xx > 0) && (block[yy][xx-1] == 0)) && (((player[yy][xx-1] == 1) && (k1 > 1))
-                                || ((player[yy][xx-1] == 2) && (k2 > 1)) || ((player[yy][xx-1] == 3) && (k3 > 1))
-                                || ((player[yy][xx-1] == 4) && (k4 > 1)) || (player[yy][xx-1] == 0))){
-                            int r21 = random.nextInt(2-1) + 1;
+                        if (((xx > 0) && (block[yy][xx - 1] == 0)) && (((player[yy][xx - 1] == 1) && (k1 > 1))
+                                || ((player[yy][xx - 1] == 2) && (k2 > 1)) || ((player[yy][xx - 1] == 3) && (k3 > 1))
+                                || ((player[yy][xx - 1] == 4) && (k4 > 1)) || (player[yy][xx - 1] == 0))) {
+                            int r21 = random.nextInt(2 - 1) + 1;
                             if (r21 == 1) {
-                                int n21 = random.nextInt(11-2) + 2;
+                                int n21 = random.nextInt(11 - 2) + 2;
 
-                                block[yy][xx-1] = n21;
-                                cell.cellsmas[yy][xx-1] = 0;
+                                block[yy][xx - 1] = n21;
+                                cell.cellsmas[yy][xx - 1] = 0;
 
-                                if ((player[yy][xx-1] == 1) && (k1 > 1)) {
+                                if ((player[yy][xx - 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy][xx-1] == 2) && (k2 > 1)) {
+                                if ((player[yy][xx - 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy][xx-1] == 3) && (k3 > 1)) {
+                                if ((player[yy][xx - 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy][xx-1] == 4) && (k4 > 1)) {
+                                if ((player[yy][xx - 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
 
-                                player[yy][xx-1] = 0;
+                                player[yy][xx - 1] = 0;
                             }
 
                         }
 
-                        if (((xx < 6) && (block[yy][xx+1] == 0)) && (((player[yy][xx+1] == 1) && (k1 > 1))
-                                || ((player[yy][xx+1] == 2) && (k2 > 1)) || ((player[yy][xx+1] == 3) && (k3 > 1))
-                                || ((player[yy][xx+1] == 4) && (k4 > 1)) || (player[yy][xx+1] == 0))) {
-                            int r23 = random.nextInt(2-1) + 1;
+                        if (((xx < 6) && (block[yy][xx + 1] == 0)) && (((player[yy][xx + 1] == 1) && (k1 > 1))
+                                || ((player[yy][xx + 1] == 2) && (k2 > 1)) || ((player[yy][xx + 1] == 3) && (k3 > 1))
+                                || ((player[yy][xx + 1] == 4) && (k4 > 1)) || (player[yy][xx + 1] == 0))) {
+                            int r23 = random.nextInt(2 - 1) + 1;
                             if (r23 == 1) {
-                                int n23 = random.nextInt(11-2) + 2;
+                                int n23 = random.nextInt(11 - 2) + 2;
 
-                                block[yy][xx+1] = n23;
-                                cell.cellsmas[yy][xx+1] = 0;
+                                block[yy][xx + 1] = n23;
+                                cell.cellsmas[yy][xx + 1] = 0;
 
-                                if ((player[yy][xx+1] == 1) && (k1 > 1)) {
+                                if ((player[yy][xx + 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy][xx+1] == 2) && (k2 > 1)) {
+                                if ((player[yy][xx + 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy][xx+1] == 3) && (k3 > 1)) {
+                                if ((player[yy][xx + 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy][xx+1] == 4) && (k4 > 1)) {
+                                if ((player[yy][xx + 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy][xx+1] = 0;
+                                player[yy][xx + 1] = 0;
                             }
                         }
 
-                        if (((yy > 0) && (block[yy-1][xx] == 0)) && (((player[yy-1][xx] == 1) && (k1 > 1))
-                                || ((player[yy-1][xx] == 2) && (k2 > 1)) || ((player[yy-1][xx] == 3) && (k3 > 1))
-                                || ((player[yy-1][xx] == 4) && (k4 > 1)) || (player[yy-1][xx] == 0))) {
-                            int r12 = random.nextInt(2-1) + 1;
+                        if (((yy > 0) && (block[yy - 1][xx] == 0)) && (((player[yy - 1][xx] == 1) && (k1 > 1))
+                                || ((player[yy - 1][xx] == 2) && (k2 > 1)) || ((player[yy - 1][xx] == 3) && (k3 > 1))
+                                || ((player[yy - 1][xx] == 4) && (k4 > 1)) || (player[yy - 1][xx] == 0))) {
+                            int r12 = random.nextInt(2 - 1) + 1;
                             if (r12 == 1) {
-                                int n12 = random.nextInt(11-2) + 2;
+                                int n12 = random.nextInt(11 - 2) + 2;
 
-                                block[yy-1][xx] = n12;
-                                cell.cellsmas[yy-1][xx] = 0;
+                                block[yy - 1][xx] = n12;
+                                cell.cellsmas[yy - 1][xx] = 0;
 
-                                if ((player[yy-1][xx] == 1) && (k1 > 1)) {
+                                if ((player[yy - 1][xx] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy-1][xx] == 2) && (k2 > 1)) {
+                                if ((player[yy - 1][xx] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy-1][xx] == 3) && (k3 > 1)) {
+                                if ((player[yy - 1][xx] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy-1][xx] == 4) && (k4 > 1)) {
+                                if ((player[yy - 1][xx] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy-1][xx] = 0;
+                                player[yy - 1][xx] = 0;
                             }
 
                         }
 
-                        if (((yy < 6) && (block[yy+1][xx] == 0)) && (((player[yy+1][xx] == 1) && (k1 > 1))
-                                || ((player[yy+1][xx] == 2) && (k2 > 1)) || ((player[yy+1][xx] == 3) && (k3 > 1))
-                                || ((player[yy+1][xx] == 4) && (k4 > 1)) || (player[yy+1][xx] == 0))) {
-                            int r32 = random.nextInt(2-1) + 1;
+                        if (((yy < 6) && (block[yy + 1][xx] == 0)) && (((player[yy + 1][xx] == 1) && (k1 > 1))
+                                || ((player[yy + 1][xx] == 2) && (k2 > 1)) || ((player[yy + 1][xx] == 3) && (k3 > 1))
+                                || ((player[yy + 1][xx] == 4) && (k4 > 1)) || (player[yy + 1][xx] == 0))) {
+                            int r32 = random.nextInt(2 - 1) + 1;
                             if (r32 == 1) {
-                                int n32 = random.nextInt(11-2) + 2;
+                                int n32 = random.nextInt(11 - 2) + 2;
 
-                                block[yy+1][xx] = n32;
-                                cell.cellsmas[yy+1][xx] = 0;
+                                block[yy + 1][xx] = n32;
+                                cell.cellsmas[yy + 1][xx] = 0;
 
-                                if ((player[yy+1][xx] == 1) && (k1 > 1)) {
+                                if ((player[yy + 1][xx] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy+1][xx] == 2) && (k2 > 1)) {
+                                if ((player[yy + 1][xx] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy+1][xx] == 3) && (k3 > 1)) {
+                                if ((player[yy + 1][xx] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy+1][xx] == 4) && (k4 > 1)) {
+                                if ((player[yy + 1][xx] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy+1][xx] = 0;
+                                player[yy + 1][xx] = 0;
                             }
                         }
 
-                        if ((((xx > 0) && (yy > 0)) && (block[yy-1][xx-1] == 0)) && (((player[yy-1][xx-1] == 1) && (k1 > 1))
-                                || ((player[yy-1][xx-1] == 2) && (k2 > 1)) || ((player[yy-1][xx-1] == 3) && (k3 > 1))
-                                || ((player[yy-1][xx-1] == 4) && (k4 > 1)) || (player[yy-1][xx-1] == 0))) {
-                            int r11 = random.nextInt(2-1) + 1;
+                        if ((((xx > 0) && (yy > 0)) && (block[yy - 1][xx - 1] == 0)) && (((player[yy - 1][xx - 1] == 1) && (k1 > 1))
+                                || ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx - 1] == 3) && (k3 > 1))
+                                || ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) || (player[yy - 1][xx - 1] == 0))) {
+                            int r11 = random.nextInt(2 - 1) + 1;
                             if (r11 == 1) {
-                                int n11 = random.nextInt(11-2) + 2;
+                                int n11 = random.nextInt(11 - 2) + 2;
 
-                                block[yy-1][xx-1] = n11;
-                                cell.cellsmas[yy-1][xx-1] = 0;
+                                block[yy - 1][xx - 1] = n11;
+                                cell.cellsmas[yy - 1][xx - 1] = 0;
 
-                                if ((player[yy-1][xx-1] == 1) && (k1 > 1)) {
+                                if ((player[yy - 1][xx - 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy-1][xx-1] == 2) && (k2 > 1)) {
+                                if ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy-1][xx-1] == 3) && (k3 > 1)) {
+                                if ((player[yy - 1][xx - 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy-1][xx-1] == 4) && (k4 > 1)) {
+                                if ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy-1][xx-1] = 0;
+                                player[yy - 1][xx - 1] = 0;
                             }
                         }
 
-                        if ((((xx < 6) && (yy > 0)) && (block[yy-1][xx+1] == 0)) && (((player[yy-1][xx+1] == 1) && (k1 > 1))
-                                || ((player[yy-1][xx+1] == 2) && (k2 > 1)) || ((player[yy-1][xx+1] == 3) && (k3 > 1))
-                                || ((player[yy-1][xx+1] == 4) && (k4 > 1)) || (player[yy-1][xx+1] == 0))) {
-                            int r13 = random.nextInt(2-1) + 1;
+                        if ((((xx < 6) && (yy > 0)) && (block[yy - 1][xx + 1] == 0)) && (((player[yy - 1][xx + 1] == 1) && (k1 > 1))
+                                || ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx + 1] == 3) && (k3 > 1))
+                                || ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) || (player[yy - 1][xx + 1] == 0))) {
+                            int r13 = random.nextInt(2 - 1) + 1;
                             if (r13 == 1) {
-                                int n13 = random.nextInt(11-2) + 2;
+                                int n13 = random.nextInt(11 - 2) + 2;
 
-                                block[yy-1][xx+1] = n13;
-                                cell.cellsmas[yy-1][xx+1] = 0;
+                                block[yy - 1][xx + 1] = n13;
+                                cell.cellsmas[yy - 1][xx + 1] = 0;
 
-                                if ((player[yy-1][xx+1] == 1) && (k1 > 1)) {
+                                if ((player[yy - 1][xx + 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy-1][xx+1] == 2) && (k2 > 1)) {
+                                if ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy-1][xx+1] == 3) && (k3 > 1)) {
+                                if ((player[yy - 1][xx + 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy-1][xx+1] == 4) && (k4 > 1)) {
+                                if ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy-1][xx+1] = 0;
+                                player[yy - 1][xx + 1] = 0;
                             }
                         }
 
-                        if ((((xx > 0) && (yy < 6)) && (block[yy+1][xx-1] == 0)) && (((player[yy+1][xx-1] == 1) && (k1 > 1))
-                                || ((player[yy+1][xx-1] == 2) && (k2 > 1)) || ((player[yy+1][xx-1] == 3) && (k3 > 1))
-                                || ((player[yy+1][xx-1] == 4) && (k4 > 1)) || (player[yy+1][xx-1] == 0))) {
-                            int r31 = random.nextInt(2-1) + 1;
+                        if ((((xx > 0) && (yy < 6)) && (block[yy + 1][xx - 1] == 0)) && (((player[yy + 1][xx - 1] == 1) && (k1 > 1))
+                                || ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx - 1] == 3) && (k3 > 1))
+                                || ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) || (player[yy + 1][xx - 1] == 0))) {
+                            int r31 = random.nextInt(2 - 1) + 1;
                             if (r31 == 1) {
-                                int n31 = random.nextInt(11-2) + 2;
+                                int n31 = random.nextInt(11 - 2) + 2;
 
-                                block[yy+1][xx-1] = n31;
-                                cell.cellsmas[yy+1][xx-1] = 0;
+                                block[yy + 1][xx - 1] = n31;
+                                cell.cellsmas[yy + 1][xx - 1] = 0;
 
-                                if ((player[yy+1][xx-1] == 1) && (k1 > 1)) {
+                                if ((player[yy + 1][xx - 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy+1][xx-1] == 2) && (k2 > 1)) {
+                                if ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy+1][xx-1] == 3) && (k3 > 1)) {
+                                if ((player[yy + 1][xx - 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy+1][xx-1] == 4) && (k4 > 1)) {
+                                if ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy+1][xx-1] = 0;
+                                player[yy + 1][xx - 1] = 0;
                             }
                         }
 
-                        if ((((xx < 6) && (yy < 6)) && (block[yy+1][xx+1] == 0))  && (((player[yy+1][xx+1] == 1) && (k1 > 1))
-                                || ((player[yy+1][xx+1] == 2) && (k2 > 1)) || ((player[yy+1][xx+1] == 3) && (k3 > 1))
-                                || ((player[yy+1][xx+1] == 4) && (k4 > 1)) || (player[yy+1][xx+1] == 0))) {
-                            int r33 = random.nextInt(2-1) + 1;
+                        if ((((xx < 6) && (yy < 6)) && (block[yy + 1][xx + 1] == 0)) && (((player[yy + 1][xx + 1] == 1) && (k1 > 1))
+                                || ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx + 1] == 3) && (k3 > 1))
+                                || ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) || (player[yy + 1][xx + 1] == 0))) {
+                            int r33 = random.nextInt(2 - 1) + 1;
                             if (r33 == 1) {
-                                int n33 = random.nextInt(11-2) + 2;
+                                int n33 = random.nextInt(11 - 2) + 2;
 
-                                block[yy+1][xx+1] = n33;
-                                cell.cellsmas[yy+1][xx+1] = 0;
+                                block[yy + 1][xx + 1] = n33;
+                                cell.cellsmas[yy + 1][xx + 1] = 0;
 
-                                if ((player[yy+1][xx+1] == 1) && (k1 > 1)) {
+                                if ((player[yy + 1][xx + 1] == 1) && (k1 > 1)) {
                                     k1 -= 1;
                                 }
-                                if ((player[yy+1][xx+1] == 2) && (k2 > 1)) {
+                                if ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) {
                                     k2 -= 1;
                                 }
-                                if ((player[yy+1][xx+1] == 3) && (k3 > 1)) {
+                                if ((player[yy + 1][xx + 1] == 3) && (k3 > 1)) {
                                     k3 -= 1;
                                 }
-                                if ((player[yy+1][xx+1] == 4) && (k4 > 1)) {
+                                if ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) {
                                     k4 -= 1;
                                 }
-                                player[yy+1][xx+1] = 0;
+                                player[yy + 1][xx + 1] = 0;
                             }
                         }
                         //win();
@@ -1483,44 +1479,34 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                         if (block[i][j] == 10) {
                             bt.setImageResource(R.drawable.lock10);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 9){
+                        } else if (block[i][j] == 9) {
                             bt.setImageResource(R.drawable.lock9);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 8){
+                        } else if (block[i][j] == 8) {
                             bt.setImageResource(R.drawable.lock8);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 7){
+                        } else if (block[i][j] == 7) {
                             bt.setImageResource(R.drawable.lock7);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 6){
+                        } else if (block[i][j] == 6) {
                             bt.setImageResource(R.drawable.lock6);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 5){
+                        } else if (block[i][j] == 5) {
                             bt.setImageResource(R.drawable.lock5);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 4){
+                        } else if (block[i][j] == 4) {
                             bt.setImageResource(R.drawable.lock4);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 3){
+                        } else if (block[i][j] == 3) {
                             bt.setImageResource(R.drawable.lock3);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 2){
+                        } else if (block[i][j] == 2) {
                             bt.setImageResource(R.drawable.lock2);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if (block[i][j] == 1){
+                        } else if (block[i][j] == 1) {
                             bt.setImageResource(R.drawable.lock1);
                             System.out.println("block[" + i + "][" + j + "] = " + block[i][j]);
-                        }
-                        else if ((block[i][j] == 0) && (player[i][j] == 0)){
+                        } else if ((block[i][j] == 0) && (player[i][j] == 0)) {
                             bt.setImageResource(R.drawable.emptycell);
                         }
                     }
@@ -1573,7 +1559,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             lost4 = true;
         }
 
-        if ((k1 == 0) && (k2 == 0) && (k3 == 0)){
+        if ((k1 == 0) && (k2 == 0) && (k3 == 0)) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Победил первый игрок!",
                     Toast.LENGTH_SHORT);
@@ -1611,38 +1597,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             repaintblock = false;
         }
     }
-
-    void fieldclear() {
-        for (int i = 0; i < 7 ; i ++) {
-            for (int j = 0; j < 7 ; j ++) {
-                block[i][j] = 0;
-                cell.player[i][j] = 0;
-                cell.cellsmas[i][j] = 0;
-
-                ImageButton bt = findViewById(mas[i][j]);
-                bt.setImageResource(R.drawable.emptycell);
-            }
-        }
-        lost1 = false;
-        lost2 = false;
-        lost3 = false;
-        lost4 = false;
-        shot = 0;
-        shotp = -1;
-        trigger = false;
-        clickbuttonn = 0;
-        speed = false;
-        num = 0;
-        nump = 0;
-        playerp = 0;
-        clickbutton = 0;
-        razm = 8;
-        paintcells = false;
-        repaintblock = false;
-        EndOfAsynck = false;
-        StartRepaint = false;
-    }
 }
+
 
 
 
