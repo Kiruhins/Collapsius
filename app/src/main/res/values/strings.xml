@@ -93,5 +93,9 @@
     <string name="bt_4players">bt_4players</string>
     <string name="allsettings">allsettings</string>
     <string name="back_to_menu">back_to_menu</string>
+    <string name="Back">Назад</string>
+    <string name="_00_00">00:00</string>
+    <string name="bt_back2">bt_back2</string>
+    <string name="_00">00</string>
 
 </resources>

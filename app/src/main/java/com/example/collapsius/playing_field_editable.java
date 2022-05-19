@@ -8,18 +8,17 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
-
-
-
-
+import java.util.Locale;
 
 
 public class playing_field_editable extends AppCompatActivity implements View.OnTouchListener {
@@ -61,13 +60,25 @@ public class playing_field_editable extends AppCompatActivity implements View.On
     Integer Mountain;
     Integer Infinity;
 
-
     boolean FromBackToProgress;
 
+    // для таймера игры
+
+    private static final long START_TIME_IN_MILLIS = 600000;
+    private TextView mTextViewCountDown;
+    private CountDownTimer gCountDownTimer;
+    private boolean mTimerRunning;
+    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+
+    // для таймера игрока
+
+    private TextView TimerRound;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playing_field);
+        setContentView(R.layout.activity_playing_field_editable);
 
         bt_back = findViewById(R.id.bt_backk);
 
@@ -436,6 +447,9 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         mas[6][6] = b49.getId();
         b49.setOnTouchListener(this);
 
+        mTextViewCountDown = findViewById(R.id.TimerGame);
+
+        TimerRound = findViewById(R.id.TimerRound);
 
         // TODO Меняем поля в зависимости от выбранного режима
 
@@ -455,12 +469,65 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         Log.d("players", String.valueOf(players));
         Log.d("map", String.valueOf(map));
 
+
+
+        //System.out.println("mTextViewCountDown" + mTextViewCountDown.getId());
+        updateCountDownText();
+        startTimer();
+
     }
+
+    // для обновления таймера
+
+
+
+    private void updateCountDownText() {
+        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+
+        mTextViewCountDown.setText(timeLeftFormatted);
+    }
+
+    // для начала отсчёта
+
+    private void startTimer() {
+        gCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                mTextViewCountDown.setText("End!");
+
+            }
+        }.start();
+    }
+
+
+
 
     // просто нажимаем любую кнопку + находим по тегу
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                String timeLeft = String.format(Locale.getDefault(), "%02d",millisUntilFinished / 1000 );
+                TimerRound.setText(timeLeft);
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                TimerRound.setText("done!");
+            }
+
+        }.start();
 
         if (paintcells == false) {
             ImageButton bt = (ImageButton) findViewById(v.getId());

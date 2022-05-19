@@ -41,6 +41,12 @@ public class SelectMode extends AppCompatActivity {
         question3=findViewById(R.id.question3);
         question4=findViewById(R.id.question4);
 
+        Intent intent=getIntent();
+        Integer Gametime=intent.getIntExtra("Gametime",0);
+        Integer Roundtime=intent.getIntExtra("Roundtime",0);
+        Integer Mountain=intent.getIntExtra("Mountain",0);
+        Integer Infinity=intent.getIntExtra("Infinity",0);
+
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,6 +180,7 @@ public class SelectMode extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",5);
+
                 startActivity(intent);
                 bt_triangle.setImageResource(R.drawable.trigontk1);
             }
@@ -184,6 +191,7 @@ public class SelectMode extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",2);
+
                 startActivity(intent);
                 bt_peklo.setImageResource(R.drawable.bgtk);
             }
@@ -194,6 +202,7 @@ public class SelectMode extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",3);
+
                 startActivity(intent);
                 bt_5in1.setImageResource(R.drawable.animation2_6tk);
             }
@@ -204,6 +213,11 @@ public class SelectMode extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
                 intent.putExtra("mode",4);
+                intent.putExtra("Gametime", Gametime);
+                intent.putExtra("Roundtime", Roundtime);
+                intent.putExtra("Mountain", Mountain);
+                intent.putExtra("Infinity", Infinity);
+
                 startActivity(intent);
             }
         });
