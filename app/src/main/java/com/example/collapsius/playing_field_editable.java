@@ -87,7 +87,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
     // проверка,выбрана ли рандомная клетка или нет
 
-    boolean choice = false;
+    boolean find_cell = false;
 
     // походил в разрешённую клетку
 
@@ -889,13 +889,13 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         }
 
 
-        // accept проверяет,можно ли сюда походить, change перезапускает таймер, choice показывает,выбрана ли клетка
+        // accept проверяет,можно ли сюда походить, change перезапускает таймер, find_cell показывает,выбрана ли клетка
 
         if (accept = true) {
 
             // рандомная клетка не выбрана
 
-            choice = false;
+            find_cell = false;
 
             while (change == true) {
 
@@ -951,7 +951,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                         // выбираем рандомную клетку для хода
 
-                        while (choice == false) {
+                        while (find_cell == false) {
 
                             Log.d("ggg", "пошёл поиск рандомной клетки");
 
@@ -1013,7 +1013,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                                 // выбираем раномную пустую клетку, присваиваем её игроку, значение 1
 
-                                while (choice == false) {
+                                while (find_cell == false) {
 
                                     int free_cell = random.nextInt(49 - 0) + 0;
 
@@ -1044,7 +1044,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                     }
 
                                     if (player[yy][xx] == 0) {
-                                        choice = true;
+                                        find_cell = true;
                                     }
 
                                 }
@@ -1077,6 +1077,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                             else {
 
                                 Log.d("ggg", "ищем непустую клетку");
+
                                 change = true;
 
                                 for (int i = 0; i < 6; i ++) {
@@ -1215,11 +1216,15 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                         }
                     }
                 }.start();
+
+                find_cell = false;
+                stop = true;
+
             }
         }
 
         //change = true;
-        choice = false;
+        find_cell = false;
         stop = true;
 
         return true;
