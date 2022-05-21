@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
+import java.util.Random;
 
 
 public class playing_field_editable extends AppCompatActivity implements View.OnTouchListener {
@@ -34,8 +35,6 @@ public class playing_field_editable extends AppCompatActivity implements View.On
     boolean lost2 = false;
     boolean lost3 = false;
     boolean lost4 = false;
-
-    boolean change = false;
 
     Integer shot = 0;
     Integer shotp = -1;
@@ -72,8 +71,47 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
     // для таймера игрока
 
-    private TextView TimerRound;
+    public TextView TimerRound;
 
+    Integer TimeforRound = 5000;
+
+    public CountDownTimer CountDownTimer;
+
+    // чтобы перезапускать таймер
+
+    boolean change = false;
+
+    // рандомная клетка для игрока,который не успел походить
+
+    Integer random_choice;
+
+    // проверка,выбрана ли рандомная клетка или нет
+
+    boolean choice = false;
+
+    // походил в разрешённую клетку
+
+    boolean accept;
+
+    // для поиска самой клетки
+
+    Integer Search;
+
+    // показывает есть ли клетки у игрока
+
+    boolean zero_cells;
+
+    // выбирает рандомную клетку из пустых
+
+    Integer free_cell;
+
+    // чтобы несколько раз подряд происходил рандомный выбор клетки,если игроки не ходят
+
+    boolean repeat;
+
+    // чтобы можно было остановить таймер
+
+    boolean stop = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -479,8 +517,6 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
     // для обновления таймера
 
-
-
     private void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
@@ -515,19 +551,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
-        new CountDownTimer(30000, 1000) {
 
-            public void onTick(long millisUntilFinished) {
-                String timeLeft = String.format(Locale.getDefault(), "%02d",millisUntilFinished / 1000 );
-                TimerRound.setText(timeLeft);
-                //here you can have your logic to set text to edittext
-            }
-
-            public void onFinish() {
-                TimerRound.setText("done!");
-            }
-
-        }.start();
 
         if (paintcells == false) {
             ImageButton bt = (ImageButton) findViewById(v.getId());
@@ -766,6 +790,11 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
             // Log.d("ggg", "запустился paintobjects()");
 
+            // accept проверяет можно ли походить, change перезапускает таймер
+
+            accept = false;
+            change = true;
+
             // TODO смена игроков
             //может ли  игрок походить на данную  клетку
 
@@ -778,6 +807,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Первый ход темно-зеленного-" + shot);
                     clickbuttonn++;
                     shot++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 1) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -786,6 +816,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     cell.player[yy][xx] = 1;
                     shot++;
                     clickbutton++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -800,6 +831,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Первй ход темно-синего-" + shot);
                     clickbuttonn++;
                     shot++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 2) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -808,6 +840,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     cell.player[yy][xx] = 2;
                     shot++;
                     clickbutton++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -819,6 +852,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     clickbuttonn++;
                     shot++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 3) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -827,6 +861,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     cell.player[yy][xx] = 3;
                     shot++;
                     clickbutton++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -837,6 +872,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     clickbuttonn++;
                     shot++;
+                    accept = true;
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 4) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -846,13 +882,347 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
+                    accept = true;
                 }
 
             }
         }
 
-        return true;
 
+        // accept проверяет,можно ли сюда походить, change перезапускает таймер, choice показывает,выбрана ли клетка
+
+        if (accept = true) {
+
+            // рандомная клетка не выбрана
+
+            choice = false;
+
+            while (change == true) {
+
+                if (stop == true) {
+                    CountDownTimer.cancel();
+                }
+
+                change = false;
+
+                CountDownTimer = new CountDownTimer(TimeforRound, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        String timeLeft = String.format(Locale.getDefault(), "%02d",millisUntilFinished / 1000 );
+                        TimerRound.setText(timeLeft);
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                        Log.d("ggg", "время закончилось");
+
+
+                        // считаем кол-во клеток для каждого игрока
+
+                        int k1 = 0;
+                        int k2 = 0;
+                        int k3 = 0;
+                        int k4 = 0;
+                        int Search = 0;
+
+                        zero_cells = false;
+
+                        for (int i = 0; i < 7; i++) {
+                            for (int j = 0; j < 7; j++) {
+
+                                if (cell.player[i][j] == 1) {
+                                    k1++;
+                                }
+
+                                if (cell.player[i][j] == 2) {
+                                    k2++;
+                                }
+
+                                if (cell.player[i][j] == 3) {
+                                    k3++;
+                                }
+
+                                if (cell.player[i][j] == 4) {
+                                    k4++;
+                                }
+                            }
+                        }
+
+                        // выбираем рандомную клетку для хода
+
+                        while (choice == false) {
+
+                            Log.d("ggg", "пошёл поиск рандомной клетки");
+
+                            Random random = new Random();
+
+                            if (((players == 2) && (shot % 2 == 0)) || ((players == 3) && (shot % 3 == 0))
+                                    || ((players == 4) && (shot % 4 == 0))) {
+
+                                int random_choice = random.nextInt(k1+1 - 0) + 0;
+
+                                if (k1 == 0) {
+                                    zero_cells = true;
+                                    Log.d("ggg", "у 1-ого нет клеток");
+                                }
+
+                            }
+                            if (((players == 2) && (shot % 2 == 1)) || ((players == 3) && (shot % 3 == 1))
+                                    || ((players == 4) && (shot % 4 == 1))) {
+
+                                int random_choice = random.nextInt(k2+1 - 0) + 0;
+
+                                if (k2 == 0) {
+                                    zero_cells = true;
+                                    Log.d("ggg", "у 2-ого нет клеток");
+                                }
+
+                            }
+                            if (((players == 3) && (shot % 3 == 2))
+                                    || ((players == 4) && (shot % 4 == 2))) {
+
+                                int random_choice = random.nextInt(k3+1 - 0) + 0;
+
+                                if (k3 == 0) {
+                                    zero_cells = true;
+                                    Log.d("ggg", "у 3-его нет клеток");
+                                }
+
+                            }
+                            if ((players == 4) && (shot % 4 == 3)) {
+
+                                int random_choice = random.nextInt(k4+1 - 0) + 0;
+
+                                if (k4 == 0) {
+                                    zero_cells = true;
+                                    Log.d("ggg", "у 4-ого нет клеток");
+                                }
+
+                            }
+
+                            // zero_cells если у игрока нет клеток, choice показывает,что клетка не выбрана
+
+                            if (zero_cells == true) {
+
+                                Log.d("ggg", "ищём пустую клетку");
+                                change = true;
+
+                                int xx = 0;
+                                int yy = 0;
+
+                                // выбираем раномную пустую клетку, присваиваем её игроку, значение 1
+
+                                while (choice == false) {
+
+                                    int free_cell = random.nextInt(49 - 0) + 0;
+
+                                    xx = 0;
+                                    yy = 0;
+
+                                    if (free_cell <= 6) {
+                                        xx = free_cell;
+                                        yy = 0;
+                                    } else if ((free_cell > 6) && (free_cell <= 13)) {
+                                        xx = free_cell - 7;
+                                        yy = yy + 1;
+                                    } else if ((free_cell <= 20) && (free_cell > 13)) {
+                                        xx = free_cell - 14;
+                                        yy = yy + 2;
+                                    } else if ((free_cell <= 27) && (free_cell > 20)) {
+                                        xx = free_cell - 21;
+                                        yy = yy + 3;
+                                    } else if ((free_cell <= 34) && (free_cell > 27)) {
+                                        xx = free_cell - 28;
+                                        yy = yy + 4;
+                                    } else if ((free_cell <= 41) && (free_cell > 34)) {
+                                        xx = free_cell - 35;
+                                        yy = yy + 5;
+                                    } else if ((free_cell <= 48) && (free_cell > 41)) {
+                                        xx = free_cell - 42;
+                                        yy = yy + 6;
+                                    }
+
+                                    if (player[yy][xx] == 0) {
+                                        choice = true;
+                                    }
+
+                                }
+
+                                // перерисовка после пересчёта и присваивания
+
+                                player[yy][xx] = shot;
+                                cellsmas[yy][xx] = 1;
+
+                                ImageButton bt = findViewById(mas[yy][xx]);
+
+                                if (shot % players == 0) {
+                                    bt.setImageResource(R.drawable.bblue1);
+                                }
+                                if (shot % players == 1) {
+                                    bt.setImageResource(R.drawable.bgreen1);
+                                }
+                                if (shot % players == 2) {
+                                    bt.setImageResource(R.drawable.wblue1);
+                                }
+                                if (shot % players == 3) {
+                                    bt.setImageResource(R.drawable.wgreen1);
+                                }
+
+                                shot ++;
+                                clickbuttonn ++;
+
+                            }
+
+                            else {
+
+                                Log.d("ggg", "ищем непустую клетку");
+                                change = true;
+
+                                for (int i = 0; i < 6; i ++) {
+                                    for (int j = 0; j < 6; j++) {
+                                        if (player[i][j] == (shot % players)) {
+                                            Search ++;
+                                            // у нас player[i][j] та самая клетка,которая выпала random
+                                            if (Search == random_choice) {
+
+                                                ImageButton bt = findViewById(mas[i][j]);
+
+                                                int yy = i;
+                                                int xx = j;
+
+                                                if (((players == 2) && (cell.player[yy][xx] == 1) && (shot % 2 == 0))
+                                                        || ((players == 3) && (cell.player[yy][xx] == 1) && (shot % 3 == 0))
+                                                        || ((players == 4) && (cell.player[yy][xx] == 1) && (shot % 4 == 0))) {
+                                                    //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                                                    if (cell.cellsmas[yy][xx] == 1) {
+                                                        bt.setImageResource(R.drawable.bblue2);
+                                                        cell.cellsmas[yy][xx] = 2;
+                                                        //cell.lastcellsmas[yy][xx] = 2;
+                                                        System.out.println("shot при втором ходе-" + shot);
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                                                    } else if (cell.cellsmas[yy][xx] == 2) {
+                                                        bt.setImageResource(R.drawable.bblue3);
+                                                        cell.cellsmas[yy][xx] = 3;
+                                                        //cell.lastcellsmas[yy][xx] = 3;
+                                                        System.out.println("shot при третьем ходе-" + shot);
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                    } else if (cell.cellsmas[yy][xx] == 3) {
+                                                        cell.cellsmas[yy][xx] = 4;
+                                                        //cell.lastcellsmas[yy][xx] = 4;
+                                                        System.out.println("shot при третьем ходе-" + shot);
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                        Log.d("ggg", "запустился paintobjects()");
+                                                        bt.setImageResource(R.drawable.bblue4);
+                                                        //paintobjects();
+                                                        paintcells = true;
+                                                        speed = true;
+                                                        //doWork();
+
+                                                    }
+                                                }
+                                                if (((players == 2) && (cell.player[yy][xx] == 2) && (shot % 2 == 1))
+                                                        || ((players == 3) && (cell.player[yy][xx] == 2) && (shot % 3 == 1))
+                                                        || ((players == 4) && (cell.player[yy][xx] == 2) && (shot % 4 == 1))) {
+                                                    //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                                                    if (cell.cellsmas[yy][xx] == 1) {
+                                                        bt.setImageResource(R.drawable.bgreen2);
+                                                        cell.cellsmas[yy][xx] = 2;
+                                                        //cell.lastcellsmas[yy][xx] = 2;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                    } else if (cell.cellsmas[yy][xx] == 2) {
+                                                        bt.setImageResource(R.drawable.bgreen3);
+                                                        cell.cellsmas[yy][xx] = 3;
+                                                        //cell.lastcellsmas[yy][xx] = 3;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                    } else if (cell.cellsmas[yy][xx] == 3) {
+                                                        cell.cellsmas[yy][xx] = 4;
+                                                        //cell.lastcellsmas[yy][xx] = 4;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                        Log.d("ggg", "запустился paintobjects()");
+                                                        bt.setImageResource(R.drawable.bgreen4);
+                                                        //paintobjects();
+                                                        paintcells = true;
+                                                        speed = true;
+                                                        //doWork();
+
+                                                    }
+                                                }
+                                                if (((players == 3) && (cell.player[yy][xx] == 3) && (shot % 3 == 2))
+                                                        || ((players == 4) && (cell.player[yy][xx] == 3) && (shot % 4 == 2))) {
+                                                    //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                                                    if (cell.cellsmas[yy][xx] == 1) {
+                                                        bt.setImageResource(R.drawable.wblue2);
+                                                        cell.cellsmas[yy][xx] = 2;
+                                                        //cell.lastcellsmas[yy][xx] = 2;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                                                    } else if (cell.cellsmas[yy][xx] == 2) {
+                                                        bt.setImageResource(R.drawable.wblue3);
+                                                        cell.cellsmas[yy][xx] = 3;
+                                                        //cell.lastcellsmas[yy][xx] = 3;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                    } else if (cell.cellsmas[yy][xx] == 3) {
+                                                        cell.cellsmas[yy][xx] = 4;
+                                                        //cell.lastcellsmas[yy][xx] = 4;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                        Log.d("ggg", "запустился paintobjects()");
+                                                        bt.setImageResource(R.drawable.wblue4);
+                                                        //paintobjects();
+                                                        paintcells = true;
+                                                        speed = true;
+                                                        //doWork();
+
+                                                    }
+                                                }
+                                                if ((cell.player[yy][xx] == 4) && (shot % 4 == 3)) {
+                                                    //cell.lastplayer[yy][xx] = cell.player[yy][xx];
+                                                    if (cell.cellsmas[yy][xx] == 1) {
+                                                        bt.setImageResource(R.drawable.wgreen2);
+                                                        cell.cellsmas[yy][xx] = 2;
+                                                        //cell.lastcellsmas[yy][xx] = 2;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                                                    } else if (cell.cellsmas[yy][xx] == 2) {
+                                                        bt.setImageResource(R.drawable.wgreen3);
+                                                        cell.cellsmas[yy][xx] = 3;
+                                                        //cell.lastcellsmas[yy][xx] = 3;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                    } else if (cell.cellsmas[yy][xx] == 3) {
+                                                        cell.cellsmas[yy][xx] = 4;
+                                                        //cell.lastcellsmas[yy][xx] = 4;
+                                                        System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                                                        Log.d("ggg", "запустился paintobjects()");
+                                                        bt.setImageResource(R.drawable.wgreen4);
+                                                        //paintobjects();
+                                                        paintcells = true;
+                                                        speed = true;
+                                                        //doWork();
+
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                                shot ++;
+                                clickbuttonn ++;
+
+                            }
+                        }
+                    }
+                }.start();
+            }
+        }
+
+        //change = true;
+        choice = false;
+        stop = true;
+
+        return true;
 
     }
 

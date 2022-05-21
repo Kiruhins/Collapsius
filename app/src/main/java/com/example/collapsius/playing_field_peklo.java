@@ -1027,10 +1027,11 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                     }
 
                     Random random = new Random();
+
                     int probability = random.nextInt(2 - 1) + 1;
                     if (probability == 1) {
 
-                        int randomcell = random.nextInt(64 - 0) + 0;
+                        int randomcell = random.nextInt(49 - 0) + 0;
                         int numberofmoves = random.nextInt(11 - 2) + 2;
 
                         // ищем координаты рандомной точки
@@ -1060,7 +1061,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             yy = yy + 6;
                         }
 
-                        if ((block[yy][xx] == 0) && (((player[yy][xx] == 1) && (k1 > 1))
+                        if ((block[yy][xx] == 0) && (((player[yy][xx] == 1) && (k1 > 1 ))
                                 || ((player[yy][xx] == 2) && (k2 > 1)) || ((player[yy][xx] == 3) && (k3 > 1))
                                 || ((player[yy][xx] == 4) && (k4 > 1)) || (player[yy][xx] == 0))) {
 
