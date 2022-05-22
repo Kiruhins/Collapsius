@@ -36,6 +36,14 @@ public class playing_field_editable extends AppCompatActivity implements View.On
     boolean lost3 = false;
     boolean lost4 = false;
 
+    Integer k1;
+    Integer k2;
+    Integer k3;
+    Integer k4;
+
+    Integer xx;
+    Integer yy;
+
     Integer shot = 0;
     Integer shotp = -1;
     Boolean trigger = false;
@@ -60,6 +68,14 @@ public class playing_field_editable extends AppCompatActivity implements View.On
     Integer Infinity;
 
     boolean FromBackToProgress;
+
+    // для создания гор
+
+    Integer mountain1;
+    Integer mountain2;
+    Integer mountain3;
+    Integer mountain4;
+    Integer mountain5;
 
     // для таймера игры
 
@@ -485,6 +501,148 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         mas[6][6] = b49.getId();
         b49.setOnTouchListener(this);
 
+        if (Mountain == 1) {
+            // создаём горы
+
+            Random random = new Random();
+
+            mountain1 = random.nextInt(49 - 0) - 0;
+            xx = 0;
+            yy = 0;
+            if (mountain1 <= 6) {
+                xx = mountain1;
+                yy = 0;
+            } else if ((mountain1 > 6) && (mountain1 <= 13)) {
+                xx = mountain1 - 7;
+                yy = yy + 1;
+            } else if ((mountain1 <= 20) && (mountain1 > 13)) {
+                xx = mountain1 - 14;
+                yy = yy + 2;
+            } else if ((mountain1 <= 27) && (mountain1 > 20)) {
+                xx = mountain1 - 21;
+                yy = yy + 3;
+            } else if ((mountain1 <= 34) && (mountain1 > 27)) {
+                xx = mountain1 - 28;
+                yy = yy + 4;
+            } else if ((mountain1 <= 41) && (mountain1 > 34)) {
+                xx = mountain1 - 35;
+                yy = yy + 5;
+            } else if ((mountain1 <= 48) && (mountain1 > 41)) {
+                xx = mountain1 - 42;
+                yy = yy + 6;
+            }
+            hard[yy][xx] = 1;
+
+            mountain2 = random.nextInt(49 - 0) - 0;
+            xx = 0;
+            yy = 0;
+            if (mountain2 <= 6) {
+                xx = mountain2;
+                yy = 0;
+            } else if ((mountain2 > 6) && (mountain2 <= 13)) {
+                xx = mountain2 - 7;
+                yy = yy + 1;
+            } else if ((mountain2 <= 20) && (mountain2 > 13)) {
+                xx = mountain2 - 14;
+                yy = yy + 2;
+            } else if ((mountain2 <= 27) && (mountain2 > 20)) {
+                xx = mountain2 - 21;
+                yy = yy + 3;
+            } else if ((mountain2 <= 34) && (mountain2 > 27)) {
+                xx = mountain2 - 28;
+                yy = yy + 4;
+            } else if ((mountain2 <= 41) && (mountain2 > 34)) {
+                xx = mountain2 - 35;
+                yy = yy + 5;
+            } else if ((mountain2 <= 48) && (mountain2 > 41)) {
+                xx = mountain2 - 42;
+                yy = yy + 6;
+            }
+            hard[yy][xx] = 1;
+
+            mountain3 = random.nextInt(49 - 0) - 0;
+            xx = 0;
+            yy = 0;
+            if (mountain3 <= 6) {
+                xx = mountain3;
+                yy = 0;
+            } else if ((mountain3 > 6) && (mountain3 <= 13)) {
+                xx = mountain3 - 7;
+                yy = yy + 1;
+            } else if ((mountain3 <= 20) && (mountain3 > 13)) {
+                xx = mountain3 - 14;
+                yy = yy + 2;
+            } else if ((mountain3 <= 27) && (mountain3 > 20)) {
+                xx = mountain3 - 21;
+                yy = yy + 3;
+            } else if ((mountain3 <= 34) && (mountain3 > 27)) {
+                xx = mountain3 - 28;
+                yy = yy + 4;
+            } else if ((mountain3 <= 41) && (mountain3 > 34)) {
+                xx = mountain3 - 35;
+                yy = yy + 5;
+            } else if ((mountain3 <= 48) && (mountain3 > 41)) {
+                xx = mountain3 - 42;
+                yy = yy + 6;
+            }
+            hard[yy][xx] = 1;
+
+            mountain4 = random.nextInt(49 - 0) - 0;
+            xx = 0;
+            yy = 0;
+            if (mountain4 <= 6) {
+                xx = mountain4;
+                yy = 0;
+            } else if ((mountain4 > 6) && (mountain4 <= 13)) {
+                xx = mountain4 - 7;
+                yy = yy + 1;
+            } else if ((mountain4 <= 20) && (mountain4 > 13)) {
+                xx = mountain4 - 14;
+                yy = yy + 2;
+            } else if ((mountain4 <= 27) && (mountain4 > 20)) {
+                xx = mountain4 - 21;
+                yy = yy + 3;
+            } else if ((mountain4 <= 34) && (mountain4 > 27)) {
+                xx = mountain4 - 28;
+                yy = yy + 4;
+            } else if ((mountain4 <= 41) && (mountain4 > 34)) {
+                xx = mountain4 - 35;
+                yy = yy + 5;
+            } else if ((mountain4 <= 48) && (mountain4 > 41)) {
+                xx = mountain4 - 42;
+                yy = yy + 6;
+            }
+            hard[yy][xx] = 1;
+
+            mountain5 = random.nextInt(49 - 0) - 0;
+            xx = 0;
+            yy = 0;
+            if (mountain5 <= 6) {
+                xx = mountain5;
+                yy = 0;
+            } else if ((mountain5 > 6) && (mountain5 <= 13)) {
+                xx = mountain5 - 7;
+                yy = yy + 1;
+            } else if ((mountain5 <= 20) && (mountain5 > 13)) {
+                xx = mountain5 - 14;
+                yy = yy + 2;
+            } else if ((mountain5 <= 27) && (mountain5 > 20)) {
+                xx = mountain5 - 21;
+                yy = yy + 3;
+            } else if ((mountain5 <= 34) && (mountain5 > 27)) {
+                xx = mountain5 - 28;
+                yy = yy + 4;
+            } else if ((mountain5 <= 41) && (mountain5 > 34)) {
+                xx = mountain5 - 35;
+                yy = yy + 5;
+            } else if ((mountain5 <= 48) && (mountain5 > 41)) {
+                xx = mountain5 - 42;
+                yy = yy + 6;
+            }
+            hard[yy][xx] = 1;
+
+        }
+
         mTextViewCountDown = findViewById(R.id.TimerGame);
 
         TimerRound = findViewById(R.id.TimerRound);
@@ -538,7 +696,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
             @Override
             public void onFinish() {
-                mTextViewCountDown.setText("End!");
+                TimeWinner();
 
             }
         }.start();
@@ -634,6 +792,9 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
             System.out.println("shot после пересчёта" + shot);
 
+            //accept = false;
+            //change = true;
+
             // TODO Для остальных случаев (1,2,3)
             //Прописываем изменения кнопки
             if (((players == 2) && (cell.player[yy][xx] == 1) && (shot % 2 == 0))
@@ -644,25 +805,36 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     bt.setImageResource(R.drawable.bblue2);
                     cell.cellsmas[yy][xx] = 2;
                     //cell.lastcellsmas[yy][xx] = 2;
-                    System.out.println("shot при втором ходе-" + shot);
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("shot при втором ходе-" + shot);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "1");
 
                 } else if (cell.cellsmas[yy][xx] == 2) {
                     bt.setImageResource(R.drawable.bblue3);
                     cell.cellsmas[yy][xx] = 3;
                     //cell.lastcellsmas[yy][xx] = 3;
-                    System.out.println("shot при третьем ходе-" + shot);
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("shot при третьем ходе-" + shot);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "2");
+
                 } else if (cell.cellsmas[yy][xx] == 3) {
                     cell.cellsmas[yy][xx] = 4;
                     //cell.lastcellsmas[yy][xx] = 4;
-                    System.out.println("shot при третьем ходе-" + shot);
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
-                    Log.d("ggg", "запустился paintobjects()");
+                    //System.out.println("shot при третьем ходе-" + shot);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //Log.d("ggg", "запустился paintobjects()");
                     bt.setImageResource(R.drawable.bblue4);
                     //paintobjects();
+
+                    //accept = true;
                     paintcells = true;
                     speed = true;
+
+                    //Log.d("ggg", "3");
                     //doWork();
 
                 }
@@ -675,21 +847,31 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     bt.setImageResource(R.drawable.bgreen2);
                     cell.cellsmas[yy][xx] = 2;
                     //cell.lastcellsmas[yy][xx] = 2;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "4");
                 } else if (cell.cellsmas[yy][xx] == 2) {
                     bt.setImageResource(R.drawable.bgreen3);
                     cell.cellsmas[yy][xx] = 3;
                     //cell.lastcellsmas[yy][xx] = 3;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "5");
+
                 } else if (cell.cellsmas[yy][xx] == 3) {
                     cell.cellsmas[yy][xx] = 4;
                     //cell.lastcellsmas[yy][xx] = 4;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
-                    Log.d("ggg", "запустился paintobjects()");
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //Log.d("ggg", "запустился paintobjects()");
                     bt.setImageResource(R.drawable.bgreen4);
                     //paintobjects();
+
+                    //accept = true;
                     paintcells = true;
                     speed = true;
+                    //Log.d("ggg", "6");
                     //doWork();
 
                 }
@@ -701,22 +883,31 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     bt.setImageResource(R.drawable.wblue2);
                     cell.cellsmas[yy][xx] = 2;
                     //cell.lastcellsmas[yy][xx] = 2;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "7");
 
                 } else if (cell.cellsmas[yy][xx] == 2) {
                     bt.setImageResource(R.drawable.wblue3);
                     cell.cellsmas[yy][xx] = 3;
                     //cell.lastcellsmas[yy][xx] = 3;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "8");
                 } else if (cell.cellsmas[yy][xx] == 3) {
                     cell.cellsmas[yy][xx] = 4;
                     //cell.lastcellsmas[yy][xx] = 4;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
-                    Log.d("ggg", "запустился paintobjects()");
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //Log.d("ggg", "запустился paintobjects()");
                     bt.setImageResource(R.drawable.wblue4);
                     //paintobjects();
+
+                    //accept = true;
                     paintcells = true;
                     speed = true;
+                    //Log.d("ggg", "9");
                     //doWork();
 
                 }
@@ -727,22 +918,31 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     bt.setImageResource(R.drawable.wgreen2);
                     cell.cellsmas[yy][xx] = 2;
                     //cell.lastcellsmas[yy][xx] = 2;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "10");
 
                 } else if (cell.cellsmas[yy][xx] == 2) {
                     bt.setImageResource(R.drawable.wgreen3);
                     cell.cellsmas[yy][xx] = 3;
                     //cell.lastcellsmas[yy][xx] = 3;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+
+                    //accept = true;
+                    //Log.d("ggg", "11");
                 } else if (cell.cellsmas[yy][xx] == 3) {
                     cell.cellsmas[yy][xx] = 4;
                     //cell.lastcellsmas[yy][xx] = 4;
-                    System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
-                    Log.d("ggg", "запустился paintobjects()");
+                    //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                    //Log.d("ggg", "запустился paintobjects()");
                     bt.setImageResource(R.drawable.wgreen4);
                     //paintobjects();
+
+                    //accept = true;
                     paintcells = true;
                     speed = true;
+                    //Log.d("ggg", "12");
                     //doWork();
 
                 }
@@ -755,36 +955,47 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 bt.setImageResource(R.drawable.bblue1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
-                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 1;
-                System.out.println("shot при первом ходе-" + shot);
+                //System.out.println("shot при первом ходе-" + shot);
+
+                //accept = true;
+                //Log.d("ggg", "13");
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
             if ((cell.cellsmas[yy][xx] == 0) && (shot == 1)) {
                 bt.setImageResource(R.drawable.bgreen1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
-                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 2;
-                System.out.println("shot при первом ходе-" + shot);
+                //System.out.println("shot при первом ходе-" + shot);
+
+                //accept = true;
+                //Log.d("ggg", "14");
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
             if ((players >= 3) && (cell.cellsmas[yy][xx] == 0) && (shot == 2)) {
                 bt.setImageResource(R.drawable.wblue1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
-                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 3;
-                System.out.println("shot при первом ходе-" + shot);
+                //System.out.println("shot при первом ходе-" + shot);
+
+                //accept = true;
+                //Log.d("ggg", "15");
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
             if ((players >= 4) && (cell.cellsmas[yy][xx] == 0) && (shot == 3)) {
                 bt.setImageResource(R.drawable.wgreen1);
                 cell.cellsmas[yy][xx] = 1;
                 //cell.lastcellsmas[yy][xx] = 1;
-                System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
+                //System.out.println("cellmass[" + yy + "][" + xx + "] = " + cell.cellsmas[yy][xx]);
                 cell.player[yy][xx] = 4;
-                System.out.println("shot при первом ходе-" + shot);
+                //System.out.println("shot при первом ходе-" + shot);
+                //accept = true;
+                //Log.d("ggg", "16");
                 //cell.lastplayer[yy][xx] = cell.player[yy][xx];
             }
 
@@ -792,8 +1003,6 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
             // accept проверяет можно ли походить, change перезапускает таймер
 
-            accept = false;
-            change = true;
 
             // TODO смена игроков
             //может ли  игрок походить на данную  клетку
@@ -807,16 +1016,16 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Первый ход темно-зеленного-" + shot);
                     clickbuttonn++;
                     shot++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
-                } else if ((cell.player[yy][xx] != 1) || (cell.cellsmas[yy][xx] == 0)) {
+                } else if ((cell.player[yy][xx] != 1) || (cell.cellsmas[yy][xx] == 0) ) {
 
                 } else {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     cell.player[yy][xx] = 1;
                     shot++;
                     clickbutton++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -831,16 +1040,17 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Первй ход темно-синего-" + shot);
                     clickbuttonn++;
                     shot++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
-                } else if ((cell.player[yy][xx] != 2) || (cell.cellsmas[yy][xx] == 0)) {
+                } else if ((cell.player[yy][xx] != 2) || (cell.cellsmas[yy][xx] == 0) ) {
+
 
                 } else {
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     cell.player[yy][xx] = 2;
                     shot++;
                     clickbutton++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -852,7 +1062,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     clickbuttonn++;
                     shot++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 3) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -861,7 +1071,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     cell.player[yy][xx] = 3;
                     shot++;
                     clickbutton++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
                 }
 
@@ -872,7 +1082,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     System.out.println("Значение клетки-" + cell.cellsmas[yy][xx]);
                     clickbuttonn++;
                     shot++;
-                    accept = true;
+
                     System.out.println("Какой игрок-" + shot);
                 } else if ((cell.player[yy][xx] != 4) || (cell.cellsmas[yy][xx] == 0)) {
 
@@ -882,7 +1092,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     shot++;
                     clickbutton++;
                     System.out.println("Какой игрок-" + shot);
-                    accept = true;
+
                 }
 
             }
@@ -890,7 +1100,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
 
         // accept проверяет,можно ли сюда походить, change перезапускает таймер, find_cell показывает,выбрана ли клетка
-
+        /*
         if (accept = true) {
 
             // рандомная клетка не выбрана
@@ -915,16 +1125,16 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                     @Override
                     public void onFinish() {
 
-                        Log.d("ggg", "время закончилось");
+                        //Log.d("ggg", "время закончилось");
 
 
                         // считаем кол-во клеток для каждого игрока
 
-                        int k1 = 0;
-                        int k2 = 0;
-                        int k3 = 0;
-                        int k4 = 0;
-                        int Search = 0;
+                        k1 = 0;
+                        k2 = 0;
+                        k3 = 0;
+                        k4 = 0;
+                        Search = 0;
 
                         zero_cells = false;
 
@@ -953,50 +1163,62 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                         while (find_cell == false) {
 
-                            Log.d("ggg", "пошёл поиск рандомной клетки");
+                            //Log.d("ggg", "пошёл поиск рандомной клетки");
 
                             Random random = new Random();
 
                             if (((players == 2) && (shot % 2 == 0)) || ((players == 3) && (shot % 3 == 0))
                                     || ((players == 4) && (shot % 4 == 0))) {
 
-                                int random_choice = random.nextInt(k1+1 - 0) + 0;
-
                                 if (k1 == 0) {
                                     zero_cells = true;
-                                    Log.d("ggg", "у 1-ого нет клеток");
+                                    //Log.d("ggg", "у 1-ого нет клеток");
+                                }
+
+                                if (k1 > 0) {
+                                    int random_choice = random.nextInt(k1+1 - 1) + 1;
+                                    //Log.d("ggg", "у 1-ого есть клетки");
                                 }
 
                             }
                             if (((players == 2) && (shot % 2 == 1)) || ((players == 3) && (shot % 3 == 1))
                                     || ((players == 4) && (shot % 4 == 1))) {
 
-                                int random_choice = random.nextInt(k2+1 - 0) + 0;
-
                                 if (k2 == 0) {
                                     zero_cells = true;
-                                    Log.d("ggg", "у 2-ого нет клеток");
+                                    //Log.d("ggg", "у 2-ого нет клеток");
+                                }
+
+                                if (k2 > 0) {
+                                    int random_choice = random.nextInt(k2+1 - 1) + 1;
+                                    //Log.d("ggg", "у 2-ого есть клетки");
                                 }
 
                             }
                             if (((players == 3) && (shot % 3 == 2))
                                     || ((players == 4) && (shot % 4 == 2))) {
 
-                                int random_choice = random.nextInt(k3+1 - 0) + 0;
-
                                 if (k3 == 0) {
                                     zero_cells = true;
-                                    Log.d("ggg", "у 3-его нет клеток");
+                                    //Log.d("ggg", "у 3-его нет клеток");
+                                }
+
+                                if (k3 > 0) {
+                                    int random_choice = random.nextInt(k3+1 - 1) + 1;
+                                    //Log.d("ggg", "у 3-ого есть клетки");
                                 }
 
                             }
                             if ((players == 4) && (shot % 4 == 3)) {
 
-                                int random_choice = random.nextInt(k4+1 - 0) + 0;
-
                                 if (k4 == 0) {
                                     zero_cells = true;
-                                    Log.d("ggg", "у 4-ого нет клеток");
+                                    //Log.d("ggg", "у 4-ого нет клеток");
+                                }
+
+                                if (k4 > 0) {
+                                    int random_choice = random.nextInt(k4+1 - 1) + 1;
+                                    //Log.d("ggg", "у 4-ого есть клетки");
                                 }
 
                             }
@@ -1005,17 +1227,18 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                             if (zero_cells == true) {
 
-                                Log.d("ggg", "ищём пустую клетку");
+                                //Log.d("ggg", "ищём пустую клетку");
+
                                 change = true;
 
-                                int xx = 0;
-                                int yy = 0;
+                                xx = 0;
+                                yy = 0;
 
                                 // выбираем раномную пустую клетку, присваиваем её игроку, значение 1
 
                                 while (find_cell == false) {
 
-                                    int free_cell = random.nextInt(49 - 0) + 0;
+                                    free_cell = random.nextInt(49 - 0) + 0;
 
                                     xx = 0;
                                     yy = 0;
@@ -1051,7 +1274,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                                 // перерисовка после пересчёта и присваивания
 
-                                player[yy][xx] = shot;
+                                player[yy][xx] = (shot + 1);
                                 cellsmas[yy][xx] = 1;
 
                                 ImageButton bt = findViewById(mas[yy][xx]);
@@ -1076,14 +1299,15 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                             else {
 
-                                Log.d("ggg", "ищем непустую клетку");
+                                //Log.d("ggg", "ищем непустую клетку");
 
                                 change = true;
 
                                 for (int i = 0; i < 6; i ++) {
                                     for (int j = 0; j < 6; j++) {
-                                        if (player[i][j] == (shot % players)) {
+                                        if (player[i][j] == (shot+1) % players) {
                                             Search ++;
+
                                             // у нас player[i][j] та самая клетка,которая выпала random
                                             if (Search == random_choice) {
 
@@ -1226,6 +1450,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         //change = true;
         find_cell = false;
         stop = true;
+        */
 
         return true;
 
@@ -2081,9 +2306,201 @@ public class playing_field_editable extends AppCompatActivity implements View.On
             toast.show();
         }
     }
+
+
+    void TimeWinner() // Функция для выявления победителя
+    {
+        //System.out.println("AAAAAAAAAAAAAAAAA " + clickbutton);
+        int k1 = 0;
+        int k2 = 0;
+        int k3 = 0;
+        int k4 = 0;
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (cell.player[i][j] == 1) {
+                    k1++;
+
+                }
+                if (cell.player[i][j] == 2) {
+                    k2++;
+                }
+                if (cell.player[i][j] == 3) {
+                    k3++;
+                }
+                if (cell.player[i][j] == 4) {
+                    k4++;
+                }
+            }
+        }
+
+        if (players == 2) {
+
+            if (k1 > k2) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил первый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if (k2 > k1) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил второй игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if (k1 == k2) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Ничья!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+
+        }
+        if (players == 3) {
+
+            if ((k1 > k2) && (k1 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил первый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 > k1) && (k2 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил второй игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k3 > k1) && (k3 > k2)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый и второй игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k3) && (k3 > k2)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый и третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 == k3) && (k2 > k1)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили второй и третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 == k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Ничья!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+
+        }
+        if (players == 4) {
+
+            if ((k1 > k2) && (k1 > k3) && (k1 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил первый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 > k1) && (k2 > k3) && (k2 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил второй игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k3 > k1) && (k3 > k2) && (k3 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k4 > k1) && (k4 > k2) && (k4 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победил четвертый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 > k3) && (k1 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый и второй игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k3) && (k1 > k2) && (k1 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый и третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k4) && (k1 > k2) && (k1 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 == k3) && (k2 > k1) && (k2 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили второй и третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 == k4) && (k2 > k1) && (k2 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили второй и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k3 == k4) && (k3 > k2) && (k3 > k1)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили третий и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 == k3) && (k1 > k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый,второй и третий игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 == k4) && (k1 > k3)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый,второй и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k3) && (k1 == k4) && (k1 > k2)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили первый,третий и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k2 == k3) && (k2 == k4) && (k2 > k1)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Победили второй,третий и четвёртый игрок!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else if ((k1 == k2) && (k1 == k3) && (k1 == k4)) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Ничья!",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+
+        }
+
+    }
 }
-
-
 
 
 
