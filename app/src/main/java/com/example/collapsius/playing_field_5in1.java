@@ -76,18 +76,18 @@ public class playing_field_5in1 extends AppCompatActivity implements View.OnTouc
         }
 
         if (map == 2) {
-            vision[1][3] = 0;
-            vision[1][4] = 0;
+            vision[0][3] = 0;
+            vision[0][4] = 0;
+            vision[0][2] = 0;
+            vision[6][2] = 0;
             vision[6][3] = 0;
             vision[6][4] = 0;
-            vision[3][1] = 0;
-            vision[4][1] = 0;
+            vision[2][0] = 0;
+            vision[3][0] = 0;
+            vision[4][0] = 0;
+            vision[2][6] = 0;
             vision[3][6] = 0;
             vision[4][6] = 0;
-            for (int i = 0; i < 7; i++) {
-                vision[0][i] = 0;
-                vision[i][0] = 0;
-            }
         }
 
         if (map == 3) {
