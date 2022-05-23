@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class Settings extends AppCompatActivity {
     private ImageButton BacktoMenu;
-    //Boolean checked;
+    Boolean checked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class Settings extends AppCompatActivity {
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        //checked = true;
+        checked = true;
 
         setContentView(R.layout.activity_settings);
 
@@ -28,6 +28,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(Settings.this,MainActivity.class);
+                intent.putExtra("check",checked);
                 startActivity(intent);
             }
         });

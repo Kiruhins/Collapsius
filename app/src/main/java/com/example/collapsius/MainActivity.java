@@ -4,22 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
-//import android.media.MediaPlayer;
 //import {checked} from './Settings.java';
 
 public class MainActivity<mPlayer> extends AppCompatActivity {
 
     private ImageButton buttonNewGame;
     private ImageButton Settings;
-    //private MediaPlayer Click;
+    public MediaPlayer Click;
+
+    public void soundPlay (MediaPlayer sound){
+        sound.start();
+    }
 
    // public int choosemode;
+   Boolean checkedMain=true;
 
     @SuppressLint("ResourceType")
     @Override
@@ -30,9 +35,13 @@ public class MainActivity<mPlayer> extends AppCompatActivity {
         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY); // нижняя панель появляется поверх игры и исчезает
 
         setContentView(R.layout.activity_main);
-        //Click = MediaPlayer.create(this, R.raw.click);
+        Click = MediaPlayer.create(this, R.raw.click);
 
         buttonNewGame= findViewById(R.id.NewGame);
+
+        Intent intent=getIntent();
+        checkedMain=intent.getBooleanExtra("check",true);
+
         //buttonNewGame = (ImageButton)findViewById(R.raw.click);
         buttonNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +50,9 @@ public class MainActivity<mPlayer> extends AppCompatActivity {
                 Log.d("ggg","Mode- ");
                Intent intent = new Intent(MainActivity.this, SelectMode.class);
                startActivity(intent);
-                //if (checked) {
-                    //soundPlay(Click);
-                //}
+                if (checkedMain) {
+                    soundPlay(Click);
+                }
             }
         });
 
@@ -54,16 +63,14 @@ public class MainActivity<mPlayer> extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Settings.class);
                 startActivity(intent);
-                //if (checked) {
-                    //soundPlay(Click);
-                //}
+                if (checkedMain) {
+                    soundPlay(Click);
+                }
             }
         });
 
 
     }
-    //public void soundPlay (MediaPlayer sound){
-        //sound.start();
-    //}
+
 
 }
