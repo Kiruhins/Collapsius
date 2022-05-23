@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Settings extends AppCompatActivity {
     private ImageButton BacktoMenu;
+    //Boolean checked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,8 @@ public class Settings extends AppCompatActivity {
         Window w = getWindow();
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        //checked = true;
 
         setContentView(R.layout.activity_settings);
 
@@ -29,6 +31,8 @@ public class Settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 }
 
