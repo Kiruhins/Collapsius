@@ -21,6 +21,7 @@ public class SelectMode extends AppCompatActivity {
     private ImageButton question2;
     private ImageButton question3;
     private ImageButton question4;
+    private ImageButton question6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class SelectMode extends AppCompatActivity {
         question2=findViewById(R.id.question2);
         question3=findViewById(R.id.question3);
         question4=findViewById(R.id.question4);
+        question6=findViewById(R.id.question6);
 
         Intent intent=getIntent();
         Integer Gametime=intent.getIntExtra("Gametime",0);
@@ -175,6 +177,109 @@ public class SelectMode extends AppCompatActivity {
             }
         });
 
+        question6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bt_editable.setImageResource(R.drawable.animportal1);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animportal2);
+                    }
+                }, 400);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animportal3);
+
+                    }
+                },800);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animwall1);
+                    }
+                },1300);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animwall2);
+                    }
+                },1700);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animwall3);
+
+                    }
+                },2100);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animwall4);
+
+                    }
+                },2500);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animmountain1);
+
+                    }
+                },3000);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animmountain2);
+
+                    }
+                },3400);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animmountain3);
+
+                    }
+                },3800);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animmountain4);
+
+                    }
+                },4200);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animmountain5);
+
+                    }
+                },4600);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animescape1);
+
+                    }
+                },5100);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.animescape2);
+
+                    }
+                },5500);
+
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        bt_editable.setImageResource(R.drawable.hard);
+
+                    }
+                },5900);
+            }
+
+
+        });
         bt_triangle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -217,7 +322,7 @@ public class SelectMode extends AppCompatActivity {
                 intent.putExtra("Roundtime", Roundtime);
                 intent.putExtra("Mountain", Mountain);
                 intent.putExtra("Infinity", Infinity);
-
+                bt_editable.setImageResource(R.drawable.takehard);
                 startActivity(intent);
             }
         });
