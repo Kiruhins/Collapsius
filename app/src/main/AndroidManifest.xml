@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Collapsius">
         <activity
+            android:name=".configuration_editable"
+            android:exported="false" />
+        <activity
             android:name=".playing_field_triangle"
             android:exported="false" />
         <activity
