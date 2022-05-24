@@ -6,4 +6,279 @@
     android:layout_height="match_parent"
     tools:context=".configuration_editable">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL_field_configuration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back__xz"
+        android:contentDescription="@string/CL_field_configuration"
+        tools:context=".FieldConfiguration">
+
+        <TextView
+            android:id="@+id/players"
+            android:layout_width="260dp"
+            android:layout_height="44dp"
+            android:alpha="1"
+            android:background="@drawable/take_players"
+            android:fontFamily="@font/alata"
+            android:text="@string/_numberofplayers"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07999998" />
+
+        <ImageButton
+            android:id="@+id/bt_2players"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/bt_2players"
+            android:scaleType="centerInside"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/maps"
+            app:layout_constraintEnd_toStartOf="@+id/bt_3players"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/players"
+            app:srcCompat="@drawable/pusto" />
+
+        <TextView
+            android:id="@+id/players2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="@string/_2"
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_2players"
+            app:layout_constraintEnd_toEndOf="@+id/bt_2players"
+            app:layout_constraintStart_toStartOf="@+id/bt_2players"
+            app:layout_constraintTop_toTopOf="@+id/bt_2players" />
+
+        <ImageButton
+            android:id="@+id/bt_3players"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/bt_3players"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toTopOf="@+id/maps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/players"
+            app:srcCompat="@drawable/pusto" />
+
+        <TextView
+            android:id="@+id/players3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="@string/_3"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_3players"
+            app:layout_constraintEnd_toEndOf="@+id/bt_3players"
+            app:layout_constraintStart_toStartOf="@+id/bt_3players"
+            app:layout_constraintTop_toTopOf="@+id/bt_3players" />
+
+        <ImageButton
+            android:id="@+id/bt_4players"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/bt_4players"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toTopOf="@+id/maps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bt_3players"
+            app:layout_constraintTop_toBottomOf="@+id/players"
+            app:srcCompat="@drawable/pusto" />
+
+        <TextView
+            android:id="@+id/players4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="@string/_4"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_4players"
+            app:layout_constraintEnd_toEndOf="@+id/bt_4players"
+            app:layout_constraintStart_toStartOf="@+id/bt_4players"
+            app:layout_constraintTop_toTopOf="@+id/bt_4players" />
+
+        <ImageButton
+            android:id="@+id/bt_wall"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/map2"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.294"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="@+id/textView9"
+            app:srcCompat="@drawable/animwall1"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/bt_time"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/map5"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/bt_portal"
+            app:layout_constraintStart_toStartOf="@+id/bt_portal"
+            app:layout_constraintTop_toBottomOf="@+id/bt_portal"
+            app:srcCompat="@drawable/time"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/bt_esc"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/map3"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/bt_wall"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/bt_wall"
+            app:layout_constraintTop_toBottomOf="@+id/bt_wall"
+            app:srcCompat="@drawable/animescape1"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/bt_portal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/map1"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toStartOf="@+id/textView9"
+            app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView9"
+            app:srcCompat="@drawable/animportal1"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/maps"
+            android:layout_width="250dp"
+            android:layout_height="44dp"
+            android:background="@drawable/take_players"
+            android:fontFamily="@font/alata"
+            android:text="Настройки режима"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.381" />
+
+        <TextView
+            android:id="@+id/centerlobby"
+            android:layout_width="30dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/bt_backs"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="25dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="bt_back2"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/centerlobby"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/pusto" />
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="@string/_bt_back2"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_backs"
+            app:layout_constraintEnd_toEndOf="@+id/bt_backs"
+            app:layout_constraintStart_toStartOf="@+id/bt_backs"
+            app:layout_constraintTop_toTopOf="@+id/bt_backs"
+            app:layout_constraintVertical_bias="0.45999998" />
+
+        <ImageButton
+            android:id="@+id/bt_Nexts"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="25dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/_next"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/centerlobby"
+            app:srcCompat="@drawable/pusto" />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="@string/_next"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bt_Nexts"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="@+id/bt_Nexts"
+            app:layout_constraintTop_toTopOf="@+id/bt_Nexts"
+            app:layout_constraintVertical_bias="0.32" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="59dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/centerlobby"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/maps"
+            app:layout_constraintVertical_bias="0.045" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

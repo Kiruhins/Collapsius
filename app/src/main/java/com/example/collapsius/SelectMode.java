@@ -186,89 +186,54 @@ public class SelectMode extends AppCompatActivity {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animportal2);
                     }
-                }, 400);
+                }, 600);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animwall1);
                     }
-                },900);
+                },1200);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animwall2);
                     }
-                },1300);
+                },1800);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animwall3);
 
                     }
-                },1700);
+                },2400);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animwall4);
 
                     }
-                },2100);
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        bt_editable.setImageResource(R.drawable.animmountain1);
-
-                    }
-                },2600);
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        bt_editable.setImageResource(R.drawable.animmountain2);
-
-                    }
                 },3000);
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        bt_editable.setImageResource(R.drawable.animmountain3);
-
-                    }
-                },3400);
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        bt_editable.setImageResource(R.drawable.animmountain4);
-
-                    }
-                },3800);
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        bt_editable.setImageResource(R.drawable.animmountain5);
-
-                    }
-                },4200);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animescape1);
 
                     }
-                },4700);
+                },3600);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.animescape2);
 
                     }
-                },5100);
+                },4200);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         bt_editable.setImageResource(R.drawable.hard);
 
                     }
-                },5900);
+                },4800);
             }
 
 

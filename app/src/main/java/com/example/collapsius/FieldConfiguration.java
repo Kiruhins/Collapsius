@@ -34,17 +34,17 @@ public class FieldConfiguration extends AppCompatActivity {
 
         setContentView(R.layout.activity_field_configuration);
 
-        bt_back2=findViewById(R.id.bt_back2);
+        bt_back2=findViewById(R.id.bt_backs);
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
         bt_4players=findViewById(R.id.bt_4players);
-        bt_map1=findViewById(R.id.bt_map1);
-        bt_map2=findViewById(R.id.bt_map2);
-        bt_map3=findViewById(R.id.bt_map3);
+        bt_map1=findViewById(R.id.bt_portal);
+        bt_map2=findViewById(R.id.bt_wall);
+        bt_map3=findViewById(R.id.bt_esc);
         bt_map4=findViewById(R.id.bt_map4);
-        bt_map5=findViewById(R.id.bt_map5);
+        bt_map5=findViewById(R.id.bt_time);
         bt_map6=findViewById(R.id.bt_map6);
-        bt_Next=findViewById(R.id.bt_Next);
+        bt_Next=findViewById(R.id.bt_Nexts);
 
         bt_2players.setImageResource(R.drawable.tackpl);
         bt_map1.setImageResource(R.drawable.choicemap1);

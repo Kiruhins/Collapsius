@@ -113,7 +113,7 @@
       app:layout_constraintTop_toTopOf="@+id/bt_4players" />
 
   <ImageButton
-      android:id="@+id/bt_map2"
+      android:id="@+id/bt_wall"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:background="#00FFFFFF"
@@ -137,8 +137,8 @@
       android:scaleType="centerInside"
       app:layout_constraintBottom_toTopOf="@+id/centerlobby"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/bt_map5"
-      app:layout_constraintTop_toBottomOf="@+id/bt_map3"
+      app:layout_constraintStart_toEndOf="@+id/bt_time"
+      app:layout_constraintTop_toBottomOf="@+id/bt_esc"
       app:layout_constraintVertical_bias="0.263"
       app:srcCompat="@drawable/map6"
       tools:ignore="ImageContrastCheck" />
@@ -151,16 +151,16 @@
       android:contentDescription="@string/map4"
       android:scaleType="centerInside"
       app:layout_constraintBottom_toTopOf="@+id/centerlobby"
-      app:layout_constraintEnd_toStartOf="@+id/bt_map5"
+      app:layout_constraintEnd_toStartOf="@+id/bt_time"
       app:layout_constraintHorizontal_bias="0.509"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/bt_map1"
+      app:layout_constraintTop_toBottomOf="@+id/bt_portal"
       app:layout_constraintVertical_bias="0.263"
       app:srcCompat="@drawable/map4"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
-      android:id="@+id/bt_map5"
+      android:id="@+id/bt_time"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:background="#00FFFFFF"
@@ -170,13 +170,13 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/bt_map2"
+      app:layout_constraintTop_toBottomOf="@+id/bt_wall"
       app:layout_constraintVertical_bias="0.26"
       app:srcCompat="@drawable/map5"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
-      android:id="@+id/bt_map3"
+      android:id="@+id/bt_esc"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:background="#00FFFFFF"
@@ -184,21 +184,21 @@
       android:scaleType="centerInside"
       app:layout_constraintBottom_toTopOf="@+id/centerlobby"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/bt_map2"
+      app:layout_constraintStart_toEndOf="@+id/bt_wall"
       app:layout_constraintTop_toBottomOf="@+id/maps"
       app:layout_constraintVertical_bias="0.29000002"
       app:srcCompat="@drawable/map3"
       tools:ignore="ImageContrastCheck" />
 
   <ImageButton
-      android:id="@+id/bt_map1"
+      android:id="@+id/bt_portal"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:background="#00FFFFFF"
       android:contentDescription="@string/map1"
       android:scaleType="centerInside"
       app:layout_constraintBottom_toTopOf="@+id/centerlobby"
-      app:layout_constraintEnd_toStartOf="@+id/bt_map2"
+      app:layout_constraintEnd_toStartOf="@+id/bt_wall"
       app:layout_constraintHorizontal_bias="0.509"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/maps"
@@ -236,7 +236,7 @@
       app:layout_constraintVertical_bias="1.0" />
 
   <ImageButton
-      android:id="@+id/bt_back2"
+      android:id="@+id/bt_backs"
       android:layout_width="90dp"
       android:layout_height="90dp"
       android:layout_marginEnd="5dp"
@@ -260,14 +260,14 @@
       android:textColor="#000000"
       android:textSize="20sp"
       android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@+id/bt_back2"
-      app:layout_constraintEnd_toEndOf="@+id/bt_back2"
-      app:layout_constraintStart_toStartOf="@+id/bt_back2"
-      app:layout_constraintTop_toTopOf="@+id/bt_back2"
+      app:layout_constraintBottom_toBottomOf="@+id/bt_backs"
+      app:layout_constraintEnd_toEndOf="@+id/bt_backs"
+      app:layout_constraintStart_toStartOf="@+id/bt_backs"
+      app:layout_constraintTop_toTopOf="@+id/bt_backs"
       app:layout_constraintVertical_bias="0.45999998" />
 
   <ImageButton
-      android:id="@+id/bt_Next"
+      android:id="@+id/bt_Nexts"
       android:layout_width="90dp"
       android:layout_height="90dp"
       android:layout_marginStart="5dp"
@@ -291,10 +291,10 @@
       android:textSize="20sp"
       android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/bt_Next"
+      app:layout_constraintEnd_toEndOf="@+id/bt_Nexts"
       app:layout_constraintHorizontal_bias="0.483"
-      app:layout_constraintStart_toStartOf="@+id/bt_Next"
-      app:layout_constraintTop_toTopOf="@+id/bt_Next"
+      app:layout_constraintStart_toStartOf="@+id/bt_Nexts"
+      app:layout_constraintTop_toTopOf="@+id/bt_Nexts"
       app:layout_constraintVertical_bias="0.32" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
