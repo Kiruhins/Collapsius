@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 
 public class Configurationeditable extends Activity {
@@ -38,6 +39,9 @@ public class Configurationeditable extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow();
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION //скрываем нижнюю панель
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY); // нижняя панель появляется поверх игры и исчезает
         setContentView(R.layout.activity_configuration_editable);
 
         bt_backs=findViewById(R.id.bt_backks);

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -69,6 +70,9 @@ public class PlayingField extends AppCompatActivity implements View.OnTouchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow();
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION //скрываем нижнюю панель
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY); // нижняя панель появляется поверх игры и исчезает
         setContentView(R.layout.activity_playing_field);
 
         bt_back = findViewById(R.id.bt_back5);
