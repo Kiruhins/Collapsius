@@ -553,7 +553,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
         mTextViewCountDown = findViewById(R.id.TimerGame);
 
-        TimerRound = findViewById(R.id.TimerRound);
+
 
         Log.d("players", String.valueOf(players));
         Log.d("portal", String.valueOf(Portal));
