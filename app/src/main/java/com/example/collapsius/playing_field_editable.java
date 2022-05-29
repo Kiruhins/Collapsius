@@ -80,7 +80,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
     // для таймера игры
 
-    private static final long START_TIME_IN_MILLIS = 600000;
+    private static final long START_TIME_IN_MILLIS = 10000;
     private TextView mTextViewCountDown;
     private CountDownTimer gCountDownTimer;
     private boolean mTimerRunning;
