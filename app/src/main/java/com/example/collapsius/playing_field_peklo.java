@@ -116,6 +116,10 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
             vision[2][6] = 0;
             vision[3][6] = 0;
             vision[4][6] = 0;
+            vision[1][3] = 0;
+            vision[5][3] = 0;
+            vision[3][1] = 0;
+            vision[3][5] = 0;
         }
 
         if (map == 3) {
@@ -1051,7 +1055,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                         Random random = new Random();
 
-                        int probability = random.nextInt(2 - 1) + 1;
+                        int probability = random.nextInt(6 - 1) + 1;
                         if (probability == 1) {
 
                             int randomcell = random.nextInt(49 - 0) + 0;
@@ -1113,7 +1117,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if (((xx > 0) && (block[yy][xx - 1] == 0)) && (((player[yy][xx - 1] == 1) && (k1 > 1))
                                     || ((player[yy][xx - 1] == 2) && (k2 > 1)) || ((player[yy][xx - 1] == 3) && (k3 > 1))
                                     || ((player[yy][xx - 1] == 4) && (k4 > 1)) || (player[yy][xx - 1] == 0))) {
-                                int r21 = random.nextInt(2 - 1) + 1;
+                                int r21 = random.nextInt(6 - 1) + 1;
                                 if (r21 == 1) {
                                     int n21 = random.nextInt(11 - 2) + 2;
 
@@ -1141,7 +1145,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if (((xx < 6) && (block[yy][xx + 1] == 0)) && (((player[yy][xx + 1] == 1) && (k1 > 1))
                                     || ((player[yy][xx + 1] == 2) && (k2 > 1)) || ((player[yy][xx + 1] == 3) && (k3 > 1))
                                     || ((player[yy][xx + 1] == 4) && (k4 > 1)) || (player[yy][xx + 1] == 0))) {
-                                int r23 = random.nextInt(2 - 1) + 1;
+                                int r23 = random.nextInt(6 - 1) + 1;
                                 if (r23 == 1) {
                                     int n23 = random.nextInt(11 - 2) + 2;
 
@@ -1167,7 +1171,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if (((yy > 0) && (block[yy - 1][xx] == 0)) && (((player[yy - 1][xx] == 1) && (k1 > 1))
                                     || ((player[yy - 1][xx] == 2) && (k2 > 1)) || ((player[yy - 1][xx] == 3) && (k3 > 1))
                                     || ((player[yy - 1][xx] == 4) && (k4 > 1)) || (player[yy - 1][xx] == 0))) {
-                                int r12 = random.nextInt(2 - 1) + 1;
+                                int r12 = random.nextInt(6 - 1) + 1;
                                 if (r12 == 1) {
                                     int n12 = random.nextInt(11 - 2) + 2;
 
@@ -1194,7 +1198,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if (((yy < 6) && (block[yy + 1][xx] == 0)) && (((player[yy + 1][xx] == 1) && (k1 > 1))
                                     || ((player[yy + 1][xx] == 2) && (k2 > 1)) || ((player[yy + 1][xx] == 3) && (k3 > 1))
                                     || ((player[yy + 1][xx] == 4) && (k4 > 1)) || (player[yy + 1][xx] == 0))) {
-                                int r32 = random.nextInt(2 - 1) + 1;
+                                int r32 = random.nextInt(6 - 1) + 1;
                                 if (r32 == 1) {
                                     int n32 = random.nextInt(11 - 2) + 2;
 
@@ -1220,7 +1224,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if ((((xx > 0) && (yy > 0)) && (block[yy - 1][xx - 1] == 0)) && (((player[yy - 1][xx - 1] == 1) && (k1 > 1))
                                     || ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx - 1] == 3) && (k3 > 1))
                                     || ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) || (player[yy - 1][xx - 1] == 0))) {
-                                int r11 = random.nextInt(2 - 1) + 1;
+                                int r11 = random.nextInt(6 - 1) + 1;
                                 if (r11 == 1) {
                                     int n11 = random.nextInt(11 - 2) + 2;
 
@@ -1246,7 +1250,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if ((((xx < 6) && (yy > 0)) && (block[yy - 1][xx + 1] == 0)) && (((player[yy - 1][xx + 1] == 1) && (k1 > 1))
                                     || ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx + 1] == 3) && (k3 > 1))
                                     || ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) || (player[yy - 1][xx + 1] == 0))) {
-                                int r13 = random.nextInt(2 - 1) + 1;
+                                int r13 = random.nextInt(6 - 1) + 1;
                                 if (r13 == 1) {
                                     int n13 = random.nextInt(11 - 2) + 2;
 
@@ -1272,7 +1276,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if ((((xx > 0) && (yy < 6)) && (block[yy + 1][xx - 1] == 0)) && (((player[yy + 1][xx - 1] == 1) && (k1 > 1))
                                     || ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx - 1] == 3) && (k3 > 1))
                                     || ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) || (player[yy + 1][xx - 1] == 0))) {
-                                int r31 = random.nextInt(2 - 1) + 1;
+                                int r31 = random.nextInt(6 - 1) + 1;
                                 if (r31 == 1) {
                                     int n31 = random.nextInt(11 - 2) + 2;
 
@@ -1298,7 +1302,7 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
                             if ((((xx < 6) && (yy < 6)) && (block[yy + 1][xx + 1] == 0)) && (((player[yy + 1][xx + 1] == 1) && (k1 > 1))
                                     || ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx + 1] == 3) && (k3 > 1))
                                     || ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) || (player[yy + 1][xx + 1] == 0))) {
-                                int r33 = random.nextInt(2 - 1) + 1;
+                                int r33 = random.nextInt(6 - 1) + 1;
                                 if (r33 == 1) {
                                     int n33 = random.nextInt(11 - 2) + 2;
 

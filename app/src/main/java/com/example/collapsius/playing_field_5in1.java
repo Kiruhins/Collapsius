@@ -97,6 +97,10 @@ public class playing_field_5in1 extends AppCompatActivity implements View.OnTouc
             vision[2][6] = 0;
             vision[3][6] = 0;
             vision[4][6] = 0;
+            vision[1][3] = 0;
+            vision[5][3] = 0;
+            vision[3][1] = 0;
+            vision[3][5] = 0;
         }
 
         if (map == 3) {
