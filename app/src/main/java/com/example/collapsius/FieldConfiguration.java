@@ -53,10 +53,7 @@ public class FieldConfiguration extends AppCompatActivity {
 
         Integer mode=intent.getIntExtra("mode",0);
 
-        Integer Gametime=intent.getIntExtra("Gametime",0);
-        Integer Roundtime=intent.getIntExtra("Roundtime",0);
-        Integer Mountain=intent.getIntExtra("Mountain",0);
-        Integer Infinity=intent.getIntExtra("Infinity",0);
+
 
 
 
@@ -198,20 +195,6 @@ public class FieldConfiguration extends AppCompatActivity {
                     intent.putExtra("mode", mode);
                     startActivity(intent);
                 }
-                if (mode == 4) {
-                    Intent intent = new Intent(FieldConfiguration.this, playing_field_editable.class);
-
-                    intent.putExtra("map", map);
-                    intent.putExtra("player", player);
-                    intent.putExtra("mode", mode);
-
-                    intent.putExtra("Gametime", Gametime);
-                    intent.putExtra("Roundtime", Roundtime);
-                    intent.putExtra("Mountain", Mountain);
-                    intent.putExtra("Infinity", Infinity);
-                    startActivity(intent);
-                }
-
             }
         });
         bt_back2.setOnClickListener(new View.OnClickListener() {

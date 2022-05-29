@@ -21,6 +21,8 @@ import java.util.Random;
 
 public class playing_field_peklo extends AppCompatActivity implements View.OnTouchListener {
 
+    private ImageButton bt_back5;
+
     int[][] cellsmas = new int[7][7];
     int[][] player = new int[7][7];
 
@@ -67,6 +69,8 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_field);
+
+        bt_back5 = findViewById(R.id.bt_back5);
 
         Intent intent = getIntent();
         Integer mode = intent.getIntExtra("mode", 0);
@@ -813,17 +817,32 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
         protected Void doInBackground(Integer... params) {
             //Integer values = 1;
             //publishProgress(values);
-            while (true) {
-                publishProgress((int) (num));
-                try {
-                    sleep(20);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
 
-                //Log.d("ggg", "запустился doInBackground");
-                while (paintcells == true) {
-                    Log.d("ggg", "произошло деление");
+            bt_back5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cancel(true);
+
+                    finish();
+                    //onBackPressed();
+                    Intent intent = new Intent(playing_field_peklo.this, SelectMode.class);
+                    startActivity(intent);
+                    System.exit(1);
+                }
+            });
+
+            if (!isCancelled()) {
+                while (true) {
+                    publishProgress((int) (num));
+                    try {
+                        sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    //Log.d("ggg", "запустился doInBackground");
+                    while (paintcells == true) {
+                        Log.d("ggg", "произошло деление");
 
                     /*
                     if (speed == false) {
@@ -885,440 +904,442 @@ public class playing_field_peklo extends AppCompatActivity implements View.OnTou
 
                     */
 
-                    for (int i = 0; i < 7; i++) {
-                        for (int j = 0; j < 7; j++) {
+                        for (int i = 0; i < 7; i++) {
+                            for (int j = 0; j < 7; j++) {
 
-                            ImageButton bt = findViewById(mas[i][j]);
-                            //Log.d("ggg" , "запустилось деление");
+                                ImageButton bt = findViewById(mas[i][j]);
+                                //Log.d("ggg" , "запустилось деление");
 
-                            if (cell.cellsmas[i][j] >= 4) { // Значение 8 вроде не может быть
+                                if (cell.cellsmas[i][j] >= 4) { // Значение 8 вроде не может быть
 
-                                try {
-                                    sleep(500);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
+                                    try {
+                                        sleep(500);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    cell.cellsmas[i][j] = 0;
+
+
+                                    //bt.setImageResource(R.drawable.emptycell);
+                                    playerp = cell.player[i][j];
+                                    //paintobjects();
+                                    System.out.println("playerp " + playerp);
+
+
+                                    cell.player[i][j] = 0;
+                                    if (playerp == 1) {
+                                        if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
+                                            cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                            cell.player[i - 1][j] = 1;
+
+                                        }
+                                        if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
+                                            cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                            cell.player[i + 1][j] = 1;
+                                        }
+                                        if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
+                                            cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                            cell.player[i][j + 1] = 1;
+                                        }
+                                        if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
+                                            cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                            cell.player[i][j - 1] = 1;
+                                        }
+                                    } else if (playerp == 2) {
+                                        if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
+                                            cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                            cell.player[i - 1][j] = 2;
+
+                                        }
+                                        if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
+                                            cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                            cell.player[i + 1][j] = 2;
+                                        }
+                                        if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
+                                            cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                            cell.player[i][j + 1] = 2;
+                                        }
+                                        if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
+                                            cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                            cell.player[i][j - 1] = 2;
+                                        }
+                                    } else if (playerp == 3) {
+                                        if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
+                                            cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                            cell.player[i - 1][j] = 3;
+
+                                        }
+                                        if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
+                                            cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                            cell.player[i + 1][j] = 3;
+                                        }
+                                        if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
+                                            cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                            cell.player[i][j + 1] = 3;
+                                        }
+                                        if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
+                                            cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                            cell.player[i][j - 1] = 3;
+                                        }
+                                    } else if (playerp == 4) {
+                                        if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
+                                            cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
+                                            cell.player[i - 1][j] = 4;
+
+                                        }
+                                        if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
+                                            cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
+                                            cell.player[i + 1][j] = 4;
+                                        }
+                                        if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
+                                            cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
+                                            cell.player[i][j + 1] = 4;
+                                        }
+                                        if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
+                                            cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
+                                            cell.player[i][j - 1] = 4;
+                                        }
+                                    }
+
+
+                                    if (speed == true) {
+                                        speed = false; // Эта переменная не дает программе считать очки, пока не пройдет рисовка
+                                        System.out.println("speed " + speed);
+                                    }
+                                    //paintobjects();
+
+                                    FromBackToProgress = true;
+                                    publishProgress((int) (num));
+
                                 }
-
-                                cell.cellsmas[i][j] = 0;
-
-
-                                //bt.setImageResource(R.drawable.emptycell);
-                                playerp = cell.player[i][j];
-                                //paintobjects();
-                                System.out.println("playerp " + playerp);
-
-
-                                cell.player[i][j] = 0;
-                                if (playerp == 1) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
-                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
-                                        cell.player[i - 1][j] = 1;
-
-                                    }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
-                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
-                                        cell.player[i + 1][j] = 1;
-                                    }
-                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
-                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
-                                        cell.player[i][j + 1] = 1;
-                                    }
-                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
-                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
-                                        cell.player[i][j - 1] = 1;
-                                    }
-                                } else if (playerp == 2) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
-                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
-                                        cell.player[i - 1][j] = 2;
-
-                                    }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
-                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
-                                        cell.player[i + 1][j] = 2;
-                                    }
-                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
-                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
-                                        cell.player[i][j + 1] = 2;
-                                    }
-                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
-                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
-                                        cell.player[i][j - 1] = 2;
-                                    }
-                                } else if (playerp == 3) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
-                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
-                                        cell.player[i - 1][j] = 3;
-
-                                    }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
-                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
-                                        cell.player[i + 1][j] = 3;
-                                    }
-                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
-                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
-                                        cell.player[i][j + 1] = 3;
-                                    }
-                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
-                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
-                                        cell.player[i][j - 1] = 3;
-                                    }
-                                } else if (playerp == 4) {
-                                    if ((i > 0) && (vision[i - 1][j] == 1) && (block[i - 1][j] == 0)) {
-                                        cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
-                                        cell.player[i - 1][j] = 4;
-
-                                    }
-                                    if ((i < 6) && (vision[i + 1][j] == 1) && (block[i + 1][j] == 0)) {
-                                        cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
-                                        cell.player[i + 1][j] = 4;
-                                    }
-                                    if ((j < 6) && (vision[i][j + 1] == 1) && (block[i][j + 1] == 0)) {
-                                        cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
-                                        cell.player[i][j + 1] = 4;
-                                    }
-                                    if ((j > 0) && (vision[i][j - 1] == 1) && (block[i][j - 1] == 0)) {
-                                        cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
-                                        cell.player[i][j - 1] = 4;
-                                    }
-                                }
-
-
-                                if (speed == true) {
-                                    speed = false; // Эта переменная не дает программе считать очки, пока не пройдет рисовка
-                                    System.out.println("speed " + speed);
-                                }
-                                //paintobjects();
-
-                                FromBackToProgress = true;
-                                publishProgress((int) (num));
-
                             }
                         }
+
                     }
 
+                    // рандомно выбераем 1 из 15 на вероятность, потом выбераем 1 клетку,
+                    // потом выбераем кол-во от 1 до 4.
+
+                    if (EndOfAsynck == true) {
+
+                        int k1 = 0;
+                        int k2 = 0;
+                        int k3 = 0;
+                        int k4 = 0;
+                        for (int i = 0; i < 7; i++) {
+                            for (int j = 0; j < 7; j++) {
+                                if (cell.player[i][j] == 1) {
+                                    k1++;
+
+                                }
+                                if (cell.player[i][j] == 2) {
+                                    k2++;
+                                }
+                                if (cell.player[i][j] == 3) {
+                                    k3++;
+                                }
+                                if (cell.player[i][j] == 4) {
+                                    k4++;
+                                }
+                            }
+                        }
+
+                        Random random = new Random();
+
+                        int probability = random.nextInt(2 - 1) + 1;
+                        if (probability == 1) {
+
+                            int randomcell = random.nextInt(49 - 0) + 0;
+                            int numberofmoves = random.nextInt(11 - 2) + 2;
+
+                            // ищем координаты рандомной точки
+
+                            int xx = 0;
+                            int yy = 0;
+                            if (randomcell <= 6) {
+                                xx = randomcell;
+                                yy = 0;
+                            } else if ((randomcell > 6) && (randomcell <= 13)) {
+                                xx = randomcell - 7;
+                                yy = yy + 1;
+                            } else if ((randomcell <= 20) && (randomcell > 13)) {
+                                xx = randomcell - 14;
+                                yy = yy + 2;
+                            } else if ((randomcell <= 27) && (randomcell > 20)) {
+                                xx = randomcell - 21;
+                                yy = yy + 3;
+                            } else if ((randomcell <= 34) && (randomcell > 27)) {
+                                xx = randomcell - 28;
+                                yy = yy + 4;
+                            } else if ((randomcell <= 41) && (randomcell > 34)) {
+                                xx = randomcell - 35;
+                                yy = yy + 5;
+                            } else if ((randomcell <= 48) && (randomcell > 41)) {
+                                xx = randomcell - 42;
+                                yy = yy + 6;
+                            }
+
+                            if ((block[yy][xx] == 0) && (((player[yy][xx] == 1) && (k1 > 1))
+                                    || ((player[yy][xx] == 2) && (k2 > 1)) || ((player[yy][xx] == 3) && (k3 > 1))
+                                    || ((player[yy][xx] == 4) && (k4 > 1)) || (player[yy][xx] == 0))) {
+
+                                block[yy][xx] = numberofmoves;
+                                cell.cellsmas[yy][xx] = 0;
+
+                                if ((player[yy][xx] == 1) && (k1 > 1)) {
+                                    k1 -= 1;
+                                }
+                                if ((player[yy][xx] == 2) && (k2 > 1)) {
+                                    k2 -= 1;
+                                }
+                                if ((player[yy][xx] == 3) && (k3 > 1)) {
+                                    k3 -= 1;
+                                }
+                                if ((player[yy][xx] == 4) && (k4 > 1)) {
+                                    k4 -= 1;
+                                }
+
+                                player[yy][xx] = 0;
+
+                            }
+
+                            // создаём поле вокруг клетки
+
+                            if (((xx > 0) && (block[yy][xx - 1] == 0)) && (((player[yy][xx - 1] == 1) && (k1 > 1))
+                                    || ((player[yy][xx - 1] == 2) && (k2 > 1)) || ((player[yy][xx - 1] == 3) && (k3 > 1))
+                                    || ((player[yy][xx - 1] == 4) && (k4 > 1)) || (player[yy][xx - 1] == 0))) {
+                                int r21 = random.nextInt(2 - 1) + 1;
+                                if (r21 == 1) {
+                                    int n21 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy][xx - 1] = n21;
+                                    cell.cellsmas[yy][xx - 1] = 0;
+
+                                    if ((player[yy][xx - 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy][xx - 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy][xx - 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy][xx - 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+
+                                    player[yy][xx - 1] = 0;
+                                }
+
+                            }
+
+                            if (((xx < 6) && (block[yy][xx + 1] == 0)) && (((player[yy][xx + 1] == 1) && (k1 > 1))
+                                    || ((player[yy][xx + 1] == 2) && (k2 > 1)) || ((player[yy][xx + 1] == 3) && (k3 > 1))
+                                    || ((player[yy][xx + 1] == 4) && (k4 > 1)) || (player[yy][xx + 1] == 0))) {
+                                int r23 = random.nextInt(2 - 1) + 1;
+                                if (r23 == 1) {
+                                    int n23 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy][xx + 1] = n23;
+                                    cell.cellsmas[yy][xx + 1] = 0;
+
+                                    if ((player[yy][xx + 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy][xx + 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy][xx + 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy][xx + 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy][xx + 1] = 0;
+                                }
+                            }
+
+                            if (((yy > 0) && (block[yy - 1][xx] == 0)) && (((player[yy - 1][xx] == 1) && (k1 > 1))
+                                    || ((player[yy - 1][xx] == 2) && (k2 > 1)) || ((player[yy - 1][xx] == 3) && (k3 > 1))
+                                    || ((player[yy - 1][xx] == 4) && (k4 > 1)) || (player[yy - 1][xx] == 0))) {
+                                int r12 = random.nextInt(2 - 1) + 1;
+                                if (r12 == 1) {
+                                    int n12 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy - 1][xx] = n12;
+                                    cell.cellsmas[yy - 1][xx] = 0;
+
+                                    if ((player[yy - 1][xx] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy - 1][xx] = 0;
+                                }
+
+                            }
+
+                            if (((yy < 6) && (block[yy + 1][xx] == 0)) && (((player[yy + 1][xx] == 1) && (k1 > 1))
+                                    || ((player[yy + 1][xx] == 2) && (k2 > 1)) || ((player[yy + 1][xx] == 3) && (k3 > 1))
+                                    || ((player[yy + 1][xx] == 4) && (k4 > 1)) || (player[yy + 1][xx] == 0))) {
+                                int r32 = random.nextInt(2 - 1) + 1;
+                                if (r32 == 1) {
+                                    int n32 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy + 1][xx] = n32;
+                                    cell.cellsmas[yy + 1][xx] = 0;
+
+                                    if ((player[yy + 1][xx] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy + 1][xx] = 0;
+                                }
+                            }
+
+                            if ((((xx > 0) && (yy > 0)) && (block[yy - 1][xx - 1] == 0)) && (((player[yy - 1][xx - 1] == 1) && (k1 > 1))
+                                    || ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx - 1] == 3) && (k3 > 1))
+                                    || ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) || (player[yy - 1][xx - 1] == 0))) {
+                                int r11 = random.nextInt(2 - 1) + 1;
+                                if (r11 == 1) {
+                                    int n11 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy - 1][xx - 1] = n11;
+                                    cell.cellsmas[yy - 1][xx - 1] = 0;
+
+                                    if ((player[yy - 1][xx - 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx - 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy - 1][xx - 1] = 0;
+                                }
+                            }
+
+                            if ((((xx < 6) && (yy > 0)) && (block[yy - 1][xx + 1] == 0)) && (((player[yy - 1][xx + 1] == 1) && (k1 > 1))
+                                    || ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx + 1] == 3) && (k3 > 1))
+                                    || ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) || (player[yy - 1][xx + 1] == 0))) {
+                                int r13 = random.nextInt(2 - 1) + 1;
+                                if (r13 == 1) {
+                                    int n13 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy - 1][xx + 1] = n13;
+                                    cell.cellsmas[yy - 1][xx + 1] = 0;
+
+                                    if ((player[yy - 1][xx + 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx + 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy - 1][xx + 1] = 0;
+                                }
+                            }
+
+                            if ((((xx > 0) && (yy < 6)) && (block[yy + 1][xx - 1] == 0)) && (((player[yy + 1][xx - 1] == 1) && (k1 > 1))
+                                    || ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx - 1] == 3) && (k3 > 1))
+                                    || ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) || (player[yy + 1][xx - 1] == 0))) {
+                                int r31 = random.nextInt(2 - 1) + 1;
+                                if (r31 == 1) {
+                                    int n31 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy + 1][xx - 1] = n31;
+                                    cell.cellsmas[yy + 1][xx - 1] = 0;
+
+                                    if ((player[yy + 1][xx - 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx - 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy + 1][xx - 1] = 0;
+                                }
+                            }
+
+                            if ((((xx < 6) && (yy < 6)) && (block[yy + 1][xx + 1] == 0)) && (((player[yy + 1][xx + 1] == 1) && (k1 > 1))
+                                    || ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx + 1] == 3) && (k3 > 1))
+                                    || ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) || (player[yy + 1][xx + 1] == 0))) {
+                                int r33 = random.nextInt(2 - 1) + 1;
+                                if (r33 == 1) {
+                                    int n33 = random.nextInt(11 - 2) + 2;
+
+                                    block[yy + 1][xx + 1] = n33;
+                                    cell.cellsmas[yy + 1][xx + 1] = 0;
+
+                                    if ((player[yy + 1][xx + 1] == 1) && (k1 > 1)) {
+                                        k1 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) {
+                                        k2 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx + 1] == 3) && (k3 > 1)) {
+                                        k3 -= 1;
+                                    }
+                                    if ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) {
+                                        k4 -= 1;
+                                    }
+                                    player[yy + 1][xx + 1] = 0;
+                                }
+                            }
+                            //win();
+
+                        }
+
+                        // Убавляем с каждым ходом в блокировке по 1
+
+                        for (int i = 0; i < 7; i++) {
+                            for (int j = 0; j < 7; j++) {
+                                if (block[i][j] > 0) {
+                                    block[i][j] -= 1;
+                                }
+                            }
+                        }
+
+                        StartRepaint = false;
+                        repaintblock = true;
+                        publishProgress((int) (num));
+                        EndOfAsynck = false;
+                    }
                 }
-
-                // рандомно выбераем 1 из 15 на вероятность, потом выбераем 1 клетку,
-                // потом выбераем кол-во от 1 до 4.
-
-                if (EndOfAsynck == true) {
-
-                    int k1 = 0;
-                    int k2 = 0;
-                    int k3 = 0;
-                    int k4 = 0;
-                    for (int i = 0; i < 7; i++) {
-                        for (int j = 0; j < 7; j++) {
-                            if (cell.player[i][j] == 1) {
-                                k1++;
-
-                            }
-                            if (cell.player[i][j] == 2) {
-                                k2++;
-                            }
-                            if (cell.player[i][j] == 3) {
-                                k3++;
-                            }
-                            if (cell.player[i][j] == 4) {
-                                k4++;
-                            }
-                        }
-                    }
-
-                    Random random = new Random();
-
-                    int probability = random.nextInt(2 - 1) + 1;
-                    if (probability == 1) {
-
-                        int randomcell = random.nextInt(49 - 0) + 0;
-                        int numberofmoves = random.nextInt(11 - 2) + 2;
-
-                        // ищем координаты рандомной точки
-
-                        int xx = 0;
-                        int yy = 0;
-                        if (randomcell <= 6) {
-                            xx = randomcell;
-                            yy = 0;
-                        } else if ((randomcell > 6) && (randomcell <= 13)) {
-                            xx = randomcell - 7;
-                            yy = yy + 1;
-                        } else if ((randomcell <= 20) && (randomcell > 13)) {
-                            xx = randomcell - 14;
-                            yy = yy + 2;
-                        } else if ((randomcell <= 27) && (randomcell > 20)) {
-                            xx = randomcell - 21;
-                            yy = yy + 3;
-                        } else if ((randomcell <= 34) && (randomcell > 27)) {
-                            xx = randomcell - 28;
-                            yy = yy + 4;
-                        } else if ((randomcell <= 41) && (randomcell > 34)) {
-                            xx = randomcell - 35;
-                            yy = yy + 5;
-                        } else if ((randomcell <= 48) && (randomcell > 41)) {
-                            xx = randomcell - 42;
-                            yy = yy + 6;
-                        }
-
-                        if ((block[yy][xx] == 0) && (((player[yy][xx] == 1) && (k1 > 1 ))
-                                || ((player[yy][xx] == 2) && (k2 > 1)) || ((player[yy][xx] == 3) && (k3 > 1))
-                                || ((player[yy][xx] == 4) && (k4 > 1)) || (player[yy][xx] == 0))) {
-
-                            block[yy][xx] = numberofmoves;
-                            cell.cellsmas[yy][xx] = 0;
-
-                            if ((player[yy][xx] == 1) && (k1 > 1)) {
-                                k1 -= 1;
-                            }
-                            if ((player[yy][xx] == 2) && (k2 > 1)) {
-                                k2 -= 1;
-                            }
-                            if ((player[yy][xx] == 3) && (k3 > 1)) {
-                                k3 -= 1;
-                            }
-                            if ((player[yy][xx] == 4) && (k4 > 1)) {
-                                k4 -= 1;
-                            }
-
-                            player[yy][xx] = 0;
-
-                        }
-
-                        // создаём поле вокруг клетки
-
-                        if (((xx > 0) && (block[yy][xx - 1] == 0)) && (((player[yy][xx - 1] == 1) && (k1 > 1))
-                                || ((player[yy][xx - 1] == 2) && (k2 > 1)) || ((player[yy][xx - 1] == 3) && (k3 > 1))
-                                || ((player[yy][xx - 1] == 4) && (k4 > 1)) || (player[yy][xx - 1] == 0))) {
-                            int r21 = random.nextInt(2 - 1) + 1;
-                            if (r21 == 1) {
-                                int n21 = random.nextInt(11 - 2) + 2;
-
-                                block[yy][xx - 1] = n21;
-                                cell.cellsmas[yy][xx - 1] = 0;
-
-                                if ((player[yy][xx - 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy][xx - 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy][xx - 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy][xx - 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-
-                                player[yy][xx - 1] = 0;
-                            }
-
-                        }
-
-                        if (((xx < 6) && (block[yy][xx + 1] == 0)) && (((player[yy][xx + 1] == 1) && (k1 > 1))
-                                || ((player[yy][xx + 1] == 2) && (k2 > 1)) || ((player[yy][xx + 1] == 3) && (k3 > 1))
-                                || ((player[yy][xx + 1] == 4) && (k4 > 1)) || (player[yy][xx + 1] == 0))) {
-                            int r23 = random.nextInt(2 - 1) + 1;
-                            if (r23 == 1) {
-                                int n23 = random.nextInt(11 - 2) + 2;
-
-                                block[yy][xx + 1] = n23;
-                                cell.cellsmas[yy][xx + 1] = 0;
-
-                                if ((player[yy][xx + 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy][xx + 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy][xx + 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy][xx + 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy][xx + 1] = 0;
-                            }
-                        }
-
-                        if (((yy > 0) && (block[yy - 1][xx] == 0)) && (((player[yy - 1][xx] == 1) && (k1 > 1))
-                                || ((player[yy - 1][xx] == 2) && (k2 > 1)) || ((player[yy - 1][xx] == 3) && (k3 > 1))
-                                || ((player[yy - 1][xx] == 4) && (k4 > 1)) || (player[yy - 1][xx] == 0))) {
-                            int r12 = random.nextInt(2 - 1) + 1;
-                            if (r12 == 1) {
-                                int n12 = random.nextInt(11 - 2) + 2;
-
-                                block[yy - 1][xx] = n12;
-                                cell.cellsmas[yy - 1][xx] = 0;
-
-                                if ((player[yy - 1][xx] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy - 1][xx] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy - 1][xx] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy - 1][xx] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy - 1][xx] = 0;
-                            }
-
-                        }
-
-                        if (((yy < 6) && (block[yy + 1][xx] == 0)) && (((player[yy + 1][xx] == 1) && (k1 > 1))
-                                || ((player[yy + 1][xx] == 2) && (k2 > 1)) || ((player[yy + 1][xx] == 3) && (k3 > 1))
-                                || ((player[yy + 1][xx] == 4) && (k4 > 1)) || (player[yy + 1][xx] == 0))) {
-                            int r32 = random.nextInt(2 - 1) + 1;
-                            if (r32 == 1) {
-                                int n32 = random.nextInt(11 - 2) + 2;
-
-                                block[yy + 1][xx] = n32;
-                                cell.cellsmas[yy + 1][xx] = 0;
-
-                                if ((player[yy + 1][xx] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy + 1][xx] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy + 1][xx] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy + 1][xx] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy + 1][xx] = 0;
-                            }
-                        }
-
-                        if ((((xx > 0) && (yy > 0)) && (block[yy - 1][xx - 1] == 0)) && (((player[yy - 1][xx - 1] == 1) && (k1 > 1))
-                                || ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx - 1] == 3) && (k3 > 1))
-                                || ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) || (player[yy - 1][xx - 1] == 0))) {
-                            int r11 = random.nextInt(2 - 1) + 1;
-                            if (r11 == 1) {
-                                int n11 = random.nextInt(11 - 2) + 2;
-
-                                block[yy - 1][xx - 1] = n11;
-                                cell.cellsmas[yy - 1][xx - 1] = 0;
-
-                                if ((player[yy - 1][xx - 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy - 1][xx - 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy - 1][xx - 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy - 1][xx - 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy - 1][xx - 1] = 0;
-                            }
-                        }
-
-                        if ((((xx < 6) && (yy > 0)) && (block[yy - 1][xx + 1] == 0)) && (((player[yy - 1][xx + 1] == 1) && (k1 > 1))
-                                || ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy - 1][xx + 1] == 3) && (k3 > 1))
-                                || ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) || (player[yy - 1][xx + 1] == 0))) {
-                            int r13 = random.nextInt(2 - 1) + 1;
-                            if (r13 == 1) {
-                                int n13 = random.nextInt(11 - 2) + 2;
-
-                                block[yy - 1][xx + 1] = n13;
-                                cell.cellsmas[yy - 1][xx + 1] = 0;
-
-                                if ((player[yy - 1][xx + 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy - 1][xx + 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy - 1][xx + 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy - 1][xx + 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy - 1][xx + 1] = 0;
-                            }
-                        }
-
-                        if ((((xx > 0) && (yy < 6)) && (block[yy + 1][xx - 1] == 0)) && (((player[yy + 1][xx - 1] == 1) && (k1 > 1))
-                                || ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx - 1] == 3) && (k3 > 1))
-                                || ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) || (player[yy + 1][xx - 1] == 0))) {
-                            int r31 = random.nextInt(2 - 1) + 1;
-                            if (r31 == 1) {
-                                int n31 = random.nextInt(11 - 2) + 2;
-
-                                block[yy + 1][xx - 1] = n31;
-                                cell.cellsmas[yy + 1][xx - 1] = 0;
-
-                                if ((player[yy + 1][xx - 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy + 1][xx - 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy + 1][xx - 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy + 1][xx - 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy + 1][xx - 1] = 0;
-                            }
-                        }
-
-                        if ((((xx < 6) && (yy < 6)) && (block[yy + 1][xx + 1] == 0)) && (((player[yy + 1][xx + 1] == 1) && (k1 > 1))
-                                || ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) || ((player[yy + 1][xx + 1] == 3) && (k3 > 1))
-                                || ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) || (player[yy + 1][xx + 1] == 0))) {
-                            int r33 = random.nextInt(2 - 1) + 1;
-                            if (r33 == 1) {
-                                int n33 = random.nextInt(11 - 2) + 2;
-
-                                block[yy + 1][xx + 1] = n33;
-                                cell.cellsmas[yy + 1][xx + 1] = 0;
-
-                                if ((player[yy + 1][xx + 1] == 1) && (k1 > 1)) {
-                                    k1 -= 1;
-                                }
-                                if ((player[yy + 1][xx + 1] == 2) && (k2 > 1)) {
-                                    k2 -= 1;
-                                }
-                                if ((player[yy + 1][xx + 1] == 3) && (k3 > 1)) {
-                                    k3 -= 1;
-                                }
-                                if ((player[yy + 1][xx + 1] == 4) && (k4 > 1)) {
-                                    k4 -= 1;
-                                }
-                                player[yy + 1][xx + 1] = 0;
-                            }
-                        }
-                        //win();
-
-                    }
-
-                    // Убавляем с каждым ходом в блокировке по 1
-
-                    for (int i = 0; i < 7; i++) {
-                        for (int j = 0; j < 7; j++) {
-                            if (block[i][j] > 0) {
-                                block[i][j] -= 1;
-                            }
-                        }
-                    }
-
-                    StartRepaint = false;
-                    repaintblock = true;
-                    publishProgress((int) (num));
-                    EndOfAsynck = false;
-                }
-
             }
-
+            else {
+                return null;
+            }
 
         }
 

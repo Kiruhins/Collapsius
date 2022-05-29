@@ -43,11 +43,6 @@ public class SelectMode extends AppCompatActivity {
         question4=findViewById(R.id.question4);
         question6=findViewById(R.id.question6);
 
-        Intent intent=getIntent();
-        Integer Gametime=intent.getIntExtra("Gametime",0);
-        Integer Roundtime=intent.getIntExtra("Roundtime",0);
-        Integer Mountain=intent.getIntExtra("Mountain",0);
-        Integer Infinity=intent.getIntExtra("Infinity",0);
 
         question.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -274,14 +269,13 @@ public class SelectMode extends AppCompatActivity {
         bt_editable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(SelectMode.this,FieldConfiguration.class);
-                intent.putExtra("mode",4);
-                intent.putExtra("Gametime", Gametime);
-                intent.putExtra("Roundtime", Roundtime);
-                intent.putExtra("Mountain", Mountain);
-                intent.putExtra("Infinity", Infinity);
-                bt_editable.setImageResource(R.drawable.takehard);
+                Intent intent= new Intent(SelectMode.this,Configurationeditable.class);
+                intent.putExtra("Gametime", 0);
+                intent.putExtra("Portal", 0);
+                intent.putExtra("Mountain", 0);
+                intent.putExtra("Infinity", 0);
                 startActivity(intent);
+                bt_editable.setImageResource(R.drawable.takehard);
             }
         });
 

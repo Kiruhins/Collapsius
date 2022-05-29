@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Configurationeditable extends Activity {
+
     private ImageButton bt_Nexts;
     private ImageButton bt_backs;
-    private ImageButton bt_2players;
-    private ImageButton bt_3players;
-    private ImageButton bt_4players;
+    private ImageButton bbt_2players;
+    private ImageButton bbt_3players;
+    private ImageButton bbt_4players;
     private ImageButton bt_portal;
     private ImageButton bt_esc;
     private ImageButton bt_time;
@@ -22,75 +23,81 @@ public class Configurationeditable extends Activity {
 
     Integer player=2;
 
+    boolean check1 = true;
+    boolean check2 = true;
+    boolean check3 = true;
+    boolean check4 = true;
+
+    Integer Gametime = 0;
+    Integer Portal = 0;
+    Integer Mountain = 0;
+    Integer Infinity = 0;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration_editable);
 
-        bt_backs=findViewById(R.id.bt_backs);
-        bt_2players=findViewById(R.id.bt_2players);
-        bt_3players=findViewById(R.id.bt_3players);
-        bt_4players=findViewById(R.id.bt_4players);
-        bt_portal=findViewById(R.id.bt_map1);
-        bt_wall=findViewById(R.id.bt_map2);
-        bt_esc=findViewById(R.id.bt_map3);
+        bt_backs=findViewById(R.id.bt_backks);
+        bbt_2players=findViewById(R.id.bt_player2_2);
+        bbt_3players=findViewById(R.id.bt_player3_3);
+        bbt_4players=findViewById(R.id.bt_player4_4);
+        bt_portal=findViewById(R.id.bt_portal);
+        bt_wall=findViewById(R.id.bt_wall);
+        bt_esc=findViewById(R.id.bt_esc);
         bt_time=findViewById(R.id.bt_time);
-        bt_Nexts=findViewById(R.id.bt_Nexts);
+        bt_Nexts=findViewById(R.id.bt_nextts);
 
-        bt_2players.setImageResource(R.drawable.tackpl);
+        bbt_2players.setImageResource(R.drawable.tackpl);
 
-        Intent intent=getIntent();
-
-        Integer mode=intent.getIntExtra("mode",0);
-
-        Integer Gametime=intent.getIntExtra("Gametime",0);
-        Integer Roundtime=intent.getIntExtra("Roundtime",0);
-        Integer Mountain=intent.getIntExtra("Mountain",0);
-        Integer Infinity=intent.getIntExtra("Infinity",0);
-
-        bt_2players.setOnClickListener(new View.OnClickListener() {
+        bbt_2players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 player = 2;
                 // меняем изображение на кнопке
-                bt_2players.setImageResource(R.drawable.tackpl);
-                bt_3players.setImageResource(R.drawable.pusto);
-                bt_4players.setImageResource(R.drawable.pusto);
+                bbt_2players.setImageResource(R.drawable.tackpl);
+                bbt_3players.setImageResource(R.drawable.pusto);
+                bbt_4players.setImageResource(R.drawable.pusto);
             }
         });
 
-        bt_3players.setOnClickListener(new View.OnClickListener() {
+        bbt_3players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 player = 3;
                 // меняем изображение на кнопке
-                bt_2players.setImageResource(R.drawable.pusto);
-                bt_3players.setImageResource(R.drawable.tackpl);
-                bt_4players.setImageResource(R.drawable.pusto);
+                bbt_2players.setImageResource(R.drawable.pusto);
+                bbt_3players.setImageResource(R.drawable.tackpl);
+                bbt_4players.setImageResource(R.drawable.pusto);
             }
         });
 
-        bt_4players.setOnClickListener(new View.OnClickListener() {
+        bbt_4players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 player = 4;
-                bt_3players.setImageResource(R.drawable.pusto);
-                bt_2players.setImageResource(R.drawable.pusto);
-                bt_4players.setImageResource(R.drawable.tackpl);
+                bbt_3players.setImageResource(R.drawable.pusto);
+                bbt_2players.setImageResource(R.drawable.pusto);
+                bbt_4players.setImageResource(R.drawable.tackpl);
             }
         });
 
         bt_portal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean check1;
-                check1 = true;
+
                 if (check1){
                     bt_portal.setImageResource(R.drawable.portaltk);
                     check1 = !check1;
+                    Portal = 1;
                 }
                 else{
                     bt_portal.setImageResource(R.drawable.animportal1);
+                    check1 = true;
+                    Portal = 0;
+
                 }
 
             }
@@ -99,8 +106,7 @@ public class Configurationeditable extends Activity {
         bt_wall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean check2;
-                check2 = true;
+
                 if (check2){
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -122,9 +128,13 @@ public class Configurationeditable extends Activity {
                         }
                     },800);
                     check2 = !check2;
+                    Mountain = 1;
                 }
                 else{
                     bt_wall.setImageResource(R.drawable.animwall1);
+                    check2 = true;
+                    Mountain = 0;
+
                 }
             }
         });
@@ -132,14 +142,16 @@ public class Configurationeditable extends Activity {
         bt_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean check3;
-                check3 = true;
+
                 if (check3){
                     bt_time.setImageResource(R.drawable.timetk);
                     check3 = !check3;
+                    Gametime = 1;
                 }
                 else{
                     bt_time.setImageResource(R.drawable.time);
+                    check3 = true;
+                    Gametime = 0;
                 }
 
             }
@@ -148,14 +160,16 @@ public class Configurationeditable extends Activity {
         bt_esc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean check4;
-                check4 = true;
+
                 if (check4){
                     bt_esc.setImageResource(R.drawable.esctk);
                     check4 = !check4;
+                    Infinity = 1;
                 }
                 else{
                     bt_esc.setImageResource(R.drawable.animescape1);
+                    check4 = true;
+                    Infinity = 0;
                 }
             }
         });
@@ -163,52 +177,25 @@ public class Configurationeditable extends Activity {
         bt_Nexts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mode == 1) {
-                    Intent intent = new Intent(configuration_editable.this, PlayingField.class);
-                    //intent.putExtra("map", map);
-                    intent.putExtra("player", player);
-                    intent.putExtra("mode", mode);
-                    startActivity(intent);
-                }
-                if (mode == 2) {
-                    Intent intent = new Intent(configuration_editable.this, playing_field_peklo.class);
 
-                    //intent.putExtra("map", map);
-                    intent.putExtra("player", player);
-                    intent.putExtra("mode", mode);
-                    startActivity(intent);
-                }
-                if (mode == 3) {
-                    Intent intent = new Intent(configuration_editable.this, playing_field_5in1.class);
+                Intent intent = new Intent(Configurationeditable.this, playing_field_editable.class);
+                intent.putExtra("player", player);
+                intent.putExtra("Gametime", Gametime);
+                intent.putExtra("Portal", Portal);
+                intent.putExtra("Mountain", Mountain);
+                intent.putExtra("Infinity", Infinity);
+                startActivity(intent);
 
-                    //intent.putExtra("map", map);
-                    intent.putExtra("player", player);
-                    intent.putExtra("mode", mode);
-                    startActivity(intent);
-                }
-                if (mode == 4) {
-                    Intent intent = new Intent(configuration_editable.this, playing_field_editable.class);
-
-                    //intent.putExtra("map", map);
-                    intent.putExtra("player", player);
-                    intent.putExtra("mode", mode);
-
-                    intent.putExtra("Gametime", Gametime);
-                    intent.putExtra("Roundtime", Roundtime);
-                    intent.putExtra("Mountain", Mountain);
-                    intent.putExtra("Infinity", Infinity);
-                    startActivity(intent);
-                }
 
             }
         });
         bt_backs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(configuration_editable.this,SelectMode.class);
+                Intent intent= new Intent(Configurationeditable.this,SelectMode.class);
                 startActivity(intent);
             }
         });
     }
 }
-}
+
