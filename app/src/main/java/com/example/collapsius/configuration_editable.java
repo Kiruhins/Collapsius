@@ -31,9 +31,9 @@ public class configuration_editable extends AppCompatActivity {
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
         bt_4players=findViewById(R.id.bt_4players);
-        bt_portal=findViewById(R.id.bt_portal);
-        bt_wall=findViewById(R.id.bt_wall);
-        bt_esc=findViewById(R.id.bt_esc);
+        bt_portal=findViewById(R.id.bt_map1);
+        bt_wall=findViewById(R.id.bt_map2);
+        bt_esc=findViewById(R.id.bt_map3);
         bt_time=findViewById(R.id.bt_time);
         bt_Nexts=findViewById(R.id.bt_Nexts);
 

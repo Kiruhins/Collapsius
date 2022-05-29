@@ -38,9 +38,9 @@ public class FieldConfiguration extends AppCompatActivity {
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
         bt_4players=findViewById(R.id.bt_4players);
-        bt_map1=findViewById(R.id.bt_portal);
-        bt_map2=findViewById(R.id.bt_wall);
-        bt_map3=findViewById(R.id.bt_esc);
+        bt_map1=findViewById(R.id.bt_map1);
+        bt_map2=findViewById(R.id.bt_map2);
+        bt_map3=findViewById(R.id.bt_map3);
         bt_map4=findViewById(R.id.bt_map4);
         bt_map5=findViewById(R.id.bt_time);
         bt_map6=findViewById(R.id.bt_map6);
