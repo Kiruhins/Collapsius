@@ -34,7 +34,7 @@ public class FieldConfiguration extends AppCompatActivity {
 
         setContentView(R.layout.activity_field_configuration);
 
-        bt_back2=findViewById(R.id.bt_backs);
+        bt_back2=findViewById(R.id.bt_back);
         bt_2players=findViewById(R.id.bt_2players);
         bt_3players=findViewById(R.id.bt_3players);
         bt_4players=findViewById(R.id.bt_4players);
@@ -44,7 +44,7 @@ public class FieldConfiguration extends AppCompatActivity {
         bt_map4=findViewById(R.id.bt_map4);
         bt_map5=findViewById(R.id.bt_time);
         bt_map6=findViewById(R.id.bt_map6);
-        bt_Next=findViewById(R.id.bt_Nexts);
+        bt_Next=findViewById(R.id.bt_Next);
 
         bt_2players.setImageResource(R.drawable.tackpl);
         bt_map1.setImageResource(R.drawable.choicemap1);
