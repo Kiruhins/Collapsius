@@ -42,7 +42,7 @@ public class FieldConfiguration extends AppCompatActivity {
         bt_map2=findViewById(R.id.bt_map2);
         bt_map3=findViewById(R.id.bt_map3);
         bt_map4=findViewById(R.id.bt_map4);
-        bt_map5=findViewById(R.id.bt_time);
+        bt_map5=findViewById(R.id.bt_map5);
         bt_map6=findViewById(R.id.bt_map6);
         bt_Next=findViewById(R.id.bt_Next);
 
