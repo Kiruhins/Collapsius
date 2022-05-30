@@ -684,7 +684,7 @@
         app:layout_constraintTop_toTopOf="@+id/bt_back5" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Timer_back"
         android:layout_width="158dp"
         android:layout_height="59dp"
         android:background="@drawable/settings"
@@ -708,9 +708,9 @@
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/Timer_back"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/Timer_back"
+        app:layout_constraintTop_toTopOf="@+id/Timer_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

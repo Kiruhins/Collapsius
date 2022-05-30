@@ -26,6 +26,7 @@ import java.util.Random;
 public class playing_field_editable extends AppCompatActivity implements View.OnTouchListener {
 
     private ImageButton bt_back5;
+    private TextView Timer_back;
 
     int[][] cellsmas = new int[7][7];
     int[][] player = new int[7][7];
@@ -409,6 +410,8 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         mas[6][6] = b49.getId();
         b49.setOnTouchListener(this);
 
+        Timer_back = findViewById(R.id.Timer_back);
+
         if (Mountain == 1) {
             // создаём горы
 
@@ -440,6 +443,8 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 yy = yy + 6;
             }
             hard[yy][xx] = 1;
+            ImageButton bt = findViewById(mas[yy][xx]);
+            bt.setImageResource(R.drawable.wall_v2);
 
             mountain2 = random.nextInt(49 - 0) - 0;
             xx = 0;
@@ -467,6 +472,8 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 yy = yy + 6;
             }
             hard[yy][xx] = 1;
+            bt = findViewById(mas[yy][xx]);
+            bt.setImageResource(R.drawable.wall_v2);
 
             mountain3 = random.nextInt(49 - 0) - 0;
             xx = 0;
@@ -494,6 +501,8 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 yy = yy + 6;
             }
             hard[yy][xx] = 1;
+            bt = findViewById(mas[yy][xx]);
+            bt.setImageResource(R.drawable.wall_v2);
 
             mountain4 = random.nextInt(49 - 0) - 0;
             xx = 0;
@@ -521,6 +530,8 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 yy = yy + 6;
             }
             hard[yy][xx] = 1;
+            bt = findViewById(mas[yy][xx]);
+            bt.setImageResource(R.drawable.wall_v2);
 
             mountain5 = random.nextInt(49 - 0) - 0;
             xx = 0;
@@ -548,12 +559,10 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                 yy = yy + 6;
             }
             hard[yy][xx] = 1;
+            bt = findViewById(mas[yy][xx]);
+            bt.setImageResource(R.drawable.wall_v2);
 
         }
-
-        mTextViewCountDown = findViewById(R.id.TimerGame);
-
-
 
         Log.d("players", String.valueOf(players));
         Log.d("portal", String.valueOf(Portal));
@@ -562,11 +571,17 @@ public class playing_field_editable extends AppCompatActivity implements View.On
         Log.d("esc", String.valueOf(Infinity));
 
 
-
+        mTextViewCountDown = findViewById(R.id.TimerGame);
 
         //System.out.println("mTextViewCountDown" + mTextViewCountDown.getId());
-        updateCountDownText();
-        startTimer();
+        if (GameTime == 1) {
+            updateCountDownText();
+            startTimer();
+        }
+        else {
+            mTextViewCountDown.setVisibility(View.INVISIBLE);
+            Timer_back.setVisibility(View.INVISIBLE);
+        }
 
     }
 
@@ -1493,7 +1508,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
                                     cell.player[i][j] = 0;
                                     if (playerp == 1) {
-                                        if ((i > 0) && (vision[i - 1][j] == 1)) {
+                                        if (i > 0) {
                                             if (hard[i-1][j] == 0) {
                                                 cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                                 cell.player[i - 1][j] = 1;
@@ -1502,7 +1517,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i-1][j] = 0;
                                             }
                                         }
-                                        if ((i < 6) && (vision[i + 1][j] == 1)) {
+                                        if (i < 6) {
                                             if (hard[i+1][j] == 0) {
                                                 cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                                 cell.player[i + 1][j] = 1;
@@ -1511,7 +1526,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i+1][j] = 0;
                                             }
                                         }
-                                        if ((j < 6) && (vision[i][j + 1] == 1)) {
+                                        if (j < 6) {
                                             if (hard[i][j+1] == 0) {
                                                 cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                                 cell.player[i][j + 1] = 1;
@@ -1520,7 +1535,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i][j+1] = 0;
                                             }
                                         }
-                                        if ((j > 0) && (vision[i][j - 1] == 1)) {
+                                        if (j > 0) {
                                             if (hard[i][j-1] == 0) {
                                                 cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                                 cell.player[i][j - 1] = 1;
@@ -1530,7 +1545,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                             }
                                         }
                                     } else if (playerp == 2) {
-                                        if ((i > 0) && (vision[i - 1][j] == 1)) {
+                                        if (i > 0)  {
                                             if (hard[i-1][j] == 0) {
                                                 cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                                 cell.player[i - 1][j] = 2;
@@ -1539,7 +1554,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i-1][j] = 0;
                                             }
                                         }
-                                        if ((i < 6) && (vision[i + 1][j] == 1)) {
+                                        if (i < 6)  {
                                             if (hard[i+1][j] == 0) {
                                                 cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                                 cell.player[i + 1][j] = 2;
@@ -1548,7 +1563,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i+1][j] = 0;
                                             }
                                         }
-                                        if ((j < 6) && (vision[i][j + 1] == 1)) {
+                                        if (j < 6)  {
                                             if (hard[i][j+1] == 0) {
                                                 cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                                 cell.player[i][j + 1] = 2;
@@ -1557,7 +1572,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i][j+1] = 0;
                                             }
                                         }
-                                        if ((j > 0) && (vision[i][j - 1] == 1)) {
+                                        if (j > 0) {
                                             if (hard[i][j-1] == 0) {
                                                 cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                                 cell.player[i][j - 1] = 2;
@@ -1567,7 +1582,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                             }
                                         }
                                     } else if (playerp == 3) {
-                                        if ((i > 0) && (vision[i - 1][j] == 1)) {
+                                        if (i > 0) {
                                             if (hard[i-1][j] == 0) {
                                                 cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                                 cell.player[i - 1][j] = 3;
@@ -1577,7 +1592,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                             }
 
                                         }
-                                        if ((i < 6) && (vision[i + 1][j] == 1)) {
+                                        if (i < 6) {
                                             if (hard[i+1][j] == 0) {
                                                 cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                                 cell.player[i + 1][j] = 3;
@@ -1586,7 +1601,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i+1][j] = 0;
                                             }
                                         }
-                                        if ((j < 6) && (vision[i][j + 1] == 1)) {
+                                        if (j < 6) {
                                             if (hard[i][j+1] == 0) {
                                                 cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                                 cell.player[i][j + 1] = 3;
@@ -1595,7 +1610,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i][j+1] = 0;
                                             }
                                         }
-                                        if ((j > 0) && (vision[i][j - 1] == 1)) {
+                                        if (j > 0) {
                                             if (hard[i][j-1] == 0) {
                                                 cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                                 cell.player[i][j - 1] = 3;
@@ -1605,7 +1620,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                             }
                                         }
                                     } else if (playerp == 4) {
-                                        if ((i > 0) && (vision[i - 1][j] == 1)) {
+                                        if (i > 0)  {
                                             if (hard[i-1][j] == 0) {
                                                 cell.cellsmas[i - 1][j] = cell.cellsmas[i - 1][j] + 1;
                                                 cell.player[i - 1][j] = 4;
@@ -1615,7 +1630,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                             }
 
                                         }
-                                        if ((i < 6) && (vision[i + 1][j] == 1)) {
+                                        if (i < 6) {
                                             if (hard[i+1][j] == 0) {
                                                 cell.cellsmas[i + 1][j] = cell.cellsmas[i + 1][j] + 1;
                                                 cell.player[i + 1][j] = 4;
@@ -1624,7 +1639,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i+1][j] = 0;
                                             }
                                         }
-                                        if ((j < 6) && (vision[i][j + 1] == 1)) {
+                                        if (j < 6) {
                                             if (hard[i][j+1] == 0) {
                                                 cell.cellsmas[i][j + 1] = cell.cellsmas[i][j + 1] + 1;
                                                 cell.player[i][j + 1] = 4;
@@ -1633,7 +1648,7 @@ public class playing_field_editable extends AppCompatActivity implements View.On
                                                 hard[i][j+1] = 0;
                                             }
                                         }
-                                        if ((j > 0) && (vision[i][j - 1] == 1)) {
+                                        if (j > 0) {
                                             if (hard[i][j-1] == 0) {
                                                 cell.cellsmas[i][j - 1] = cell.cellsmas[i][j - 1] + 1;
                                                 cell.player[i][j - 1] = 4;
@@ -2028,10 +2043,16 @@ public class playing_field_editable extends AppCompatActivity implements View.On
 
 
                         if (cell.cellsmas[i][j] == 0) {
-
-                            //bt.setImageResource(R.drawable.emptycell);
-                            bt.setImageResource(R.drawable.emptycell);
-                            bt.setBackgroundColor(Color.green(100));
+                            if (hard[i][j] == 0) {
+                                //bt.setImageResource(R.drawable.emptycell);
+                                bt.setImageResource(R.drawable.emptycell);
+                                bt.setBackgroundColor(Color.green(100));
+                            }
+                            else {
+                                //bt.setImageResource(R.drawable.emptycell);
+                                bt.setImageResource(R.drawable.wall_v2);
+                                bt.setBackgroundColor(Color.green(100));
+                            }
                             //Log.d("ggg", String.valueOf(NumOut(i, j, razm) - startid));
                             //Log.d("ggg", "перерисовка коллапса");
                         }
