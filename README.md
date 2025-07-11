@@ -1,0 +1,3 @@
+Collapsius is a digital implementation of a strategic board game, developed entirely in Java using Android Studio. This project was created as part of a coursework assignment for the "Project Activity" subject during my first year at Novosibirsk State University (NSU) in 2021.
+
+The primary goal of Collapsius is to digitally replicate the engaging mechanics and gameplay of a strategic board game, providing players with an intuitive user interface and smooth gameplay experience on Android devices. The project reflects a comprehensive application of fundamental programming principles and showcases effective use of Java's capabilities within the Android development ecosystem.
